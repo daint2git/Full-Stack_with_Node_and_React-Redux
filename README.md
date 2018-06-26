@@ -1,3 +1,4 @@
 # React_Enhancement
-Target: combination react, router, redux, storybook, webpack
-Author: DaiNT2
+
+* Target: combined library `react, router, redux, storybook, webpack` in only one project
+* Author: `DaiNT2`
