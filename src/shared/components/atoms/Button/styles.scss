@@ -1,0 +1,20 @@
+.root {
+  background-color: aquamarine;
+
+  &[disabled] {
+    color: #acbdcb;
+    background-color: #dde4ea;
+    cursor: no-drop;
+  }
+
+  &[data-size='large'] {
+    font-size: 16px;
+    min-width: 120px;
+    height: 40px;
+    padding: 0 15px;
+  }
+}
+
+.test {
+  margin-top: 50px;
+}
