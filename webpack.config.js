@@ -1,4 +1,5 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
 const path = require('path')
 const rootDir = path.resolve(process.cwd())
@@ -6,15 +7,18 @@ const srcPath = path.resolve(rootDir, 'src')
 const staticsPath = path.resolve(rootDir, 'statics')
 const buildPath = path.resolve(rootDir, 'build')
 
+const getMode = mode => mode ? mode : 'development'
+
 module.exports = (env, argv) => {
+  const devMode = getMode(argv.mode) === 'development'
   return {
-    mode: argv.mode ? 'production' : 'development',
+    mode: getMode(argv.mode),
     entry: {
       app: `${srcPath}/client/app.js`
     },
     output: {
       path: buildPath,
-      filename: '[name].[chunkhash].js'
+      filename: devMode ? '[name].js' : '[name].[hash].js'
     },
     module: {
       rules: [
@@ -24,9 +28,9 @@ module.exports = (env, argv) => {
           use: 'babel-loader'
         },
         {
-          test: /\.(css|scss)$/,
+          test: /\.(c|sc)ss$/,
           use: [
-            'style-loader',
+            devMode ? 'style-loader' : MiniCssExtractPlugin.loader,
             {
               loader: 'css-loader',
               options: {
@@ -62,6 +66,10 @@ module.exports = (env, argv) => {
         template: `${staticsPath}/template.html`,
         favicon: `${staticsPath}/favicon.ico`,
         filename: 'index.html'
+      }),
+      new MiniCssExtractPlugin({
+        filename: devMode ? '[name].css' : '[name].[hash].css',
+        chunkFilename: devMode ? '[id].css' : '[id].[hash].css',
       })
     ],
     devServer: {

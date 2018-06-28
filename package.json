@@ -18,10 +18,12 @@
     "babel-plugin-module-resolver": "^3.1.1",
     "css-loader": "^0.28.11",
     "html-webpack-plugin": "^3.2.0",
+    "mini-css-extract-plugin": "^0.4.0",
     "postcss-custom-selectors": "^4.0.1",
     "postcss-loader": "^2.1.5",
     "postcss-nested": "^3.0.0",
     "prettyjson": "^1.2.1",
+    "rimraf": "^2.6.2",
     "style-loader": "^0.21.0",
     "url-loader": "^1.0.1",
     "webpack": "^4.12.1",
@@ -30,6 +32,7 @@
   },
   "dependencies": {
     "axios": "^0.18.0",
+    "date-fns": "^1.29.0",
     "json-server": "^0.14.0",
     "prop-types": "^15.6.2",
     "react": "^16.4.1",
@@ -42,8 +45,9 @@
     "redux-actions": "^2.4.0"
   },
   "scripts": {
-    "build": "webpack --progress --color",
-    "dev": "webpack-dev-server --progress --color",
-    "storybook": "storybook-server -p 1234"
+    "build": "rimraf build && webpack --mode=production",
+    "dev": "webpack-dev-server --hot",
+    "storybook": "storybook-server -p 1234",
+    "server": "json-server -p 8080 -r src/server/routes.json -w src/server/db.json"
   }
 }
