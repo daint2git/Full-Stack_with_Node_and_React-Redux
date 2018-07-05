@@ -1,4 +1,6 @@
 # React_Enhancement
 
-* Target: combined library `react, router, redux, storybook, webpack` in only one project
-* Author: `DaiNT2`
+- Target: 
+  - Combined library `react, router, redux, storybook, webpack` in only one project
+  - Study `date-fns, lodash-es, common-tags, ...`
+- Author: `DaiNT2`
