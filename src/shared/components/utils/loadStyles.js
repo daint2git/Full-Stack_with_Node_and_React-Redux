@@ -1,5 +1,19 @@
+import { TemplateTag } from 'common-tags'
+
 export default function(styles) {
-  return function(keys) {
-    return keys.split(' ').reduce((result, key) => `${result} ${styles[key]}`, '')
+  function localClass(key) {
+    return Object.keys(styles).includes(key) ? styles[key] : key
   }
+
+  return new TemplateTag({
+    onSubstitution(substitution) {
+      return substitution ? substitution : ''
+    },
+    onEndResult(endResult) {
+      return endResult
+      .trim()
+      .split(' ')
+      .reduce((result, key) => `${result} ${localClass(key)}`, '')
+    }
+  })
 }

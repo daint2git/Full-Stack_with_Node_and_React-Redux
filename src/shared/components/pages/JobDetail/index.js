@@ -6,8 +6,7 @@ export default function(props) {
   const { jobId } = props.params
   return (
     <PageLayout>
-      <h3>{`JobDetail ${jobId} page`}</h3>
-      <div>{`JobDetail ${jobId} text`}</div>
+      <div>{`JobDetail ${jobId} page`}</div>
     </PageLayout>
   )
 }

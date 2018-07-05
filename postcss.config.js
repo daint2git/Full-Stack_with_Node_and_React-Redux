@@ -1,6 +1,8 @@
 const PLUGINS =[
   "postcss-custom-selectors",
   "postcss-nested",
+  "postcss-import",
+  "postcss-simple-vars",
   "autoprefixer"
 ]
 

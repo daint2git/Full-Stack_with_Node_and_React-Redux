@@ -1,10 +1,67 @@
+@import '../../utils/colors.scss';
+
 .root {
-  background-color: aquamarine;
+  border-radius: 4px;
+  box-shadow: 0 1px 3px 0 rgba(0,0,0,.3);
 
   &[disabled] {
-    color: #acbdcb;
     background-color: #dde4ea;
+    color: #acbdcb;
     cursor: no-drop;
+  }
+
+  &[data-type='primary'] {
+    background-color: $primary;
+    color: $white;
+  }
+
+  &[data-type='success'] {
+    background-color: $success;
+    color: $white;
+  }
+
+  &[data-type='info'] {
+    background-color: $info;
+    color: $white;
+  }
+
+  &[data-type='warning'] {
+    background-color: $warning;
+    color: $white;
+  }
+
+  &[data-type='danger'] {
+    background-color: $danger;
+    color: $white;
+  }
+
+  &[data-type='secondary'] {
+    background-color: $secondary;
+    color: $white;
+  }
+
+  &[data-type='dark'] {
+    background-color: $dark;
+    color: $white;
+  }
+
+  &[data-type='light'] {
+    background-color: $light;
+    color: $dark;
+  }
+
+  &[data-size='small'] {
+    font-size: 13px;
+    min-width: 70px;
+    height: 36px;
+    padding: 0 15px;
+  }
+
+  &[data-size='medium'] {
+    font-size: 13px;
+    min-width: 120px;
+    height: 36px;
+    padding: 0 15px;
   }
 
   &[data-size='large'] {
@@ -15,6 +72,10 @@
   }
 }
 
-.test {
+.test1 {
   margin-top: 50px;
+}
+
+.test2 {
+  margin-left: 50px;
 }

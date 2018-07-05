@@ -9,9 +9,10 @@ const buildPath = path.resolve(rootDir, 'build')
 
 const getMode = mode => mode ? mode : 'development'
 
-module.exports = (env, argv) => {
+module.exports = (env = {}, argv = {}) => {
   const devMode = getMode(argv.mode) === 'development'
   return {
+    context: path.resolve(rootDir, 'src'), // setting for debug
     mode: getMode(argv.mode),
     entry: {
       app: `${srcPath}/client/app.js`
@@ -20,6 +21,7 @@ module.exports = (env, argv) => {
       path: buildPath,
       filename: devMode ? '[name].js' : '[name].[hash].js'
     },
+    devtool: 'source-map', // setting for debug
     module: {
       rules: [
         {
