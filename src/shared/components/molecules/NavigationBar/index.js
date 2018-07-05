@@ -22,6 +22,16 @@ const MENU = [
     name: 'About page',
     path: '/about'
   },
+  {
+    id: 'date-fns',
+    name: 'date-fns module',
+    path: '/date-fns'
+  },
+  {
+    id: 'lodash-es',
+    name: 'lodash-es page',
+    path: '/lodash-es'
+  },
 ]
 
 function NavigationItem(props) {
