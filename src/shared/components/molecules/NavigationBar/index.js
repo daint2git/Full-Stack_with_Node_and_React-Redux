@@ -1,6 +1,11 @@
 import React from 'react'
 import { Link } from 'react-router'
 
+import loadStyles from 'shared/components/utils/loadStyles'
+import styles from './styles.scss'
+
+const loadClass = loadStyles(styles)
+
 const MENU = [
   {
     id: 'home',
@@ -29,24 +34,30 @@ const MENU = [
   },
   {
     id: 'lodash-es',
-    name: 'lodash-es page',
+    name: 'lodash-es module',
     path: '/lodash-es'
   },
 ]
 
 function NavigationItem(props) {
-  const { path, name } = props
+  const { path, name, currentPath } = props
   return (
-    <li>
-      <Link to={path} activeStyle={{ color: 'red' }}>{name}</Link>
-    </li>
+    <Link
+      className={loadClass`item`}
+      to={path}
+      data-active={path === currentPath}
+    >
+      <span>{name}</span>
+    </Link>
   )
 }
 
 export default function NavigationBar(props) {
+  const { currentPath } = props
   return (
-    <ul>
-      {MENU.map(item => <NavigationItem key={item.id} {...item} />)}
-    </ul>
+    <div className={loadClass`root`}>
+      {MENU.map(item =>
+        <NavigationItem key={item.id} currentPath={currentPath} {...item} />)}
+    </div>
   )
 }

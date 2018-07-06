@@ -1,18 +1,27 @@
 @import '../../utils/colors.scss';
 
 .root {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   border-radius: 4px;
-  box-shadow: 0 1px 3px 0 rgba(0,0,0,.3);
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.3);
 
-  &[disabled] {
-    background-color: #dde4ea;
-    color: #acbdcb;
-    cursor: no-drop;
+  &:hover,
+  &:active {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   }
 
   &[data-type='primary'] {
     background-color: $primary;
     color: $white;
+
+    &:disabled {
+      cursor: default;
+      pointer-events: none;
+      background-color: $pale_gray;
+      color: $pale_blue;
+    }
   }
 
   &[data-type='success'] {

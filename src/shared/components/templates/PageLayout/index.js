@@ -7,15 +7,20 @@ import styles from './styles.scss'
 const loadClass = loadStyles(styles)
 
 export default function PageLayout(props) {
-  const { children } = props
+  const { currentPath, children } = props
   return (
-    <section className={loadClass`root`}>
+    <div className={loadClass`root`}>
       <header className={loadClass`header`}><h2>HEADER</h2></header>
-      <section className={loadClass`body`}>
-        <nav className={loadClass`navigation-bar`}><NavigationBar /></nav>
-        <section className={loadClass`content`}><h2>CONTENT</h2>{children}</section>
-      </section>
+      <main className={loadClass`body`}>
+        <nav className={loadClass`navigation-bar`}>
+          <NavigationBar currentPath={currentPath} />
+        </nav>
+        <section className={loadClass`content`}>
+          <h2>CONTENT</h2>
+          {children}
+        </section>
+      </main>
       <footer className={loadClass`footer`}><h2>FOOTER</h2></footer>
-    </section>
+    </div>
   )
 }

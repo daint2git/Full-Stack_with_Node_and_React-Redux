@@ -4,7 +4,7 @@ import PageLayout from 'shared/components/templates/PageLayout'
 
 export default function(props) {
   return (
-    <PageLayout>
+    <PageLayout currentPath="/">
       <div>Home page</div>
     </PageLayout>
   )
