@@ -3,6 +3,7 @@
 .root {
   background-color: $light_grey;
   color: $dark;
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);
   height: 150px;
   padding: 10px;
 }

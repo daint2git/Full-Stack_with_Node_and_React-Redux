@@ -19,10 +19,11 @@ export default function() {
         <Route path=":jobId" component={JobDetail} />
       </Route>
       <Route path="/about" component={About} />
+      <Route path="/component-test" component={ComponentTest} />
+      <Route path="/css3" />
       <Route path="/date-fns" component={DateFnsModule} />
       <Route path="/lodash-es" component={LodashEsModule} />
       <Route path="/common-tags" />
-      <Route path="/component-test" component={ComponentTest} />
     </Route>
   )
 }
