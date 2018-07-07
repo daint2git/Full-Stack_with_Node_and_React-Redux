@@ -8,6 +8,7 @@ import JobDetail from 'shared/components/pages/JobDetail'
 import About from 'shared/components/pages/About'
 import DateFnsModule from 'shared/components/pages/DateFnsModule'
 import LodashEsModule from 'shared/components/pages/LodashEsModule'
+import ComponentTest from 'shared/components/pages/ComponentTest'
 
 export default function() {
   return (
@@ -20,6 +21,8 @@ export default function() {
       <Route path="/about" component={About} />
       <Route path="/date-fns" component={DateFnsModule} />
       <Route path="/lodash-es" component={LodashEsModule} />
+      <Route path="/common-tags" />
+      <Route path="/component-test" component={ComponentTest} />
     </Route>
   )
 }

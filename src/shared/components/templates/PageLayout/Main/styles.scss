@@ -1,0 +1,13 @@
+@import '../../../utils/colors.scss';
+
+.root {
+  display: flex;
+
+  .content {
+    width: 100%;
+    background-color: $light_grey;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);
+    margin-left: 10px;
+    padding: 10px;
+  }
+}
