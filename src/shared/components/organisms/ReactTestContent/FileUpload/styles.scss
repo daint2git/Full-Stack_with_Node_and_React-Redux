@@ -1,0 +1,12 @@
+.root {
+  display: flex;
+  align-items: center;
+
+  > input[type='file'] {
+    display: none;
+  }
+
+  .view {
+    margin-left: 10px;
+  }
+}

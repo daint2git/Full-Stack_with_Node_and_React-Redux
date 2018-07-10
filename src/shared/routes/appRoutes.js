@@ -9,6 +9,7 @@ import About from 'shared/components/pages/About'
 import DateFnsModule from 'shared/components/pages/DateFnsModule'
 import LodashEsModule from 'shared/components/pages/LodashEsModule'
 import ComponentTest from 'shared/components/pages/ComponentTest'
+import ReactTest from 'shared/components/pages/ReactTest'
 
 export default function() {
   return (
@@ -20,6 +21,7 @@ export default function() {
       </Route>
       <Route path="/about" component={About} />
       <Route path="/component-test" component={ComponentTest} />
+      <Route path="/react-test" component={ReactTest} />
       <Route path="/css3" />
       <Route path="/date-fns" component={DateFnsModule} />
       <Route path="/lodash-es" component={LodashEsModule} />
