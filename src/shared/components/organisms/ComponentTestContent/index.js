@@ -1,5 +1,5 @@
 import React from 'react'
-import { compose, withStateHandlers } from 'recompose';
+import { compose, withStateHandlers } from 'recompose'
 
 import ControlPanel from './ControlPanel'
 import Content from './Content'
@@ -23,10 +23,10 @@ export default compose(
   withStateHandlers(
     {
       type: 'primary',
-      size: 'small'
+      size: 'small',
     },
     {
-      onChange: state => e => ({ ...state, [e.target.name]: e.target.id })
-    }
+      onChange: state => e => ({ ...state, [e.target.name]: e.target.id }),
+    },
   )
 )(ComponentTestContent)

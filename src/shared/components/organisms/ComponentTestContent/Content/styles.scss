@@ -1,6 +1,10 @@
 @import '../../../utils/colors.scss';
 
 .content {
+  width: 100%;
+  display: flex;
   background-color: $white;
+  border-left: 4px solid $teal;
   padding: 20px;
+  box-sizing: border-box;
 }
