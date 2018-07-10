@@ -4,7 +4,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const path = require('path')
 const rootDir = path.resolve(process.cwd())
 const srcPath = path.resolve(rootDir, 'src')
-const staticsPath = path.resolve(rootDir, 'statics')
+const assetsPath = path.resolve(rootDir, 'assets')
 const buildPath = path.resolve(rootDir, 'build')
 
 const getMode = mode => mode ? mode : 'development'
@@ -65,8 +65,8 @@ module.exports = (env = {}, argv = {}) => {
     },
     plugins: [
       new HtmlWebpackPlugin({
-        template: `${staticsPath}/template.html`,
-        favicon: `${staticsPath}/favicon.ico`,
+        template: `${assetsPath}/template.html`,
+        favicon: `${assetsPath}/favicon.ico`,
         filename: 'index.html'
       }),
       new MiniCssExtractPlugin({
