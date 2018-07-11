@@ -1,32 +1,31 @@
 import React from 'react'
 import uuidv4 from 'uuid/v4'
-import fileExtension from 'file-extension'
 import { compose, withStateHandlers } from 'recompose'
 
-import DocIcon from './svg-icons/doc_icon.svg'
-import ZipIcon from './svg-icons/zip_icon.svg'
 import Button from 'shared/components/atoms/Button'
+import FileIcon from 'shared/components/molecules/FileIcon'
 
 import loadStyles from 'shared/components/utils/loadStyles'
 import styles from './styles.scss'
 
 const loadClass = loadStyles(styles)
 
-function FileTypeIcon(props) {
-  const { fileName } = props
-  switch(fileExtension(fileName)) {
-    case 'doc': return <DocIcon />
-    case 'zip': return <ZipIcon />
-    default: return null
-  }
+function FileName(props) {
+  return <span className={loadClass`name`}>{props.fileName}</span>
 }
 
-function FileName(props) {
+function FileView(props) {
   const { file } = props
   return (
     <div className={loadClass`view`}>
-      {file && file.name ? file.name : 'Không có tệp nào được chọn.'}
-      <FileTypeIcon fileName={file && file.name ? file.name : ''} />
+      {file && file.name ? (
+        <>
+          <FileIcon fileName={file.name} />
+          <FileName fileName={file.name} />
+        </>
+      ) : (
+        <FileName fileName="Không có tệp nào được chọn." />
+      )}
     </div>
   )
 }
@@ -41,7 +40,7 @@ function FileUpload(props) {
     <div className={loadClass`root`}>
       <Button onClick={() => document.getElementById(fileId).click()}>Upload</Button>
       <input type="file" id={fileId} onChange={onChangeFile} />
-      <FileName file={file} />
+      <FileView file={file} />
     </div>
   )
 }
@@ -49,7 +48,7 @@ function FileUpload(props) {
 export default compose(
   withStateHandlers(
     {
-      file: null,
+      file: {},
       fileId: `file-${uuidv4()}`,
     },
     {

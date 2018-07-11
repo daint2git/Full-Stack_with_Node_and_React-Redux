@@ -7,6 +7,12 @@
   }
 
   .view {
-    margin-left: 10px;
+    display: flex;
+    align-items: center;
+    padding-left: 5px;
+
+    .name {
+      padding-left: 3px;
+    }
   }
 }
