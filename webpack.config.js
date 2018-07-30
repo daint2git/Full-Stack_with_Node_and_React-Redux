@@ -1,3 +1,4 @@
+const webpack = require('webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
@@ -15,11 +16,11 @@ module.exports = (env = {}, argv = {}) => {
     context: path.resolve(rootDir, 'src'), // setting for debug
     mode: getMode(argv.mode),
     entry: {
-      app: `${srcPath}/client/app.js`
+      app: `${srcPath}/client/app.js`,
     },
     output: {
       path: buildPath,
-      filename: devMode ? '[name].js' : '[name].[hash].js'
+      filename: devMode ? '[name].js' : '[name].[hash].js',
     },
     devtool: 'source-map', // setting for debug
     module: {
@@ -27,7 +28,7 @@ module.exports = (env = {}, argv = {}) => {
         {
           test: /\.js$/,
           exclude: /node_modules/,
-          use: 'babel-loader'
+          use: 'babel-loader',
         },
         {
           test: /\.(c|sc)ss$/,
@@ -38,10 +39,10 @@ module.exports = (env = {}, argv = {}) => {
               options: {
                 modules: true,
                 importLoaders: 1,
-                localIdentName: '[path][name]__[local]--[hash:base64:5]'
+                localIdentName: '[path][name]__[local]--[hash:base64:5]',
               }
             },
-            'postcss-loader'
+            'postcss-loader',
           ]
         },
         {
@@ -50,7 +51,7 @@ module.exports = (env = {}, argv = {}) => {
             {
               loader: 'url-loader',
               options: {
-                limit: 10000
+                limit: 10000,
               }
             }
           ]
@@ -60,25 +61,28 @@ module.exports = (env = {}, argv = {}) => {
     optimization: {
       splitChunks: {
         name: 'vendor',
-        chunks: 'all'
+        chunks: 'all',
       }
     },
     plugins: [
       new HtmlWebpackPlugin({
         template: `${assetsPath}/template.html`,
         favicon: `${assetsPath}/favicon.ico`,
-        filename: 'index.html'
+        filename: 'index.html',
       }),
       new MiniCssExtractPlugin({
         filename: devMode ? '[name].css' : '[name].[hash].css',
         chunkFilename: devMode ? '[id].css' : '[id].[hash].css',
+      }),
+      new webpack.ProvidePlugin({
+        React: 'react',
       })
     ],
     devServer: {
       contentBase: buildPath,
       port: 9999,
       open: true,
-      historyApiFallback: true
+      historyApiFallback: true,
     }
   }
 }

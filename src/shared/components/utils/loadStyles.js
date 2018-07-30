@@ -9,11 +9,12 @@ export default function(styles) {
     onSubstitution(substitution) {
       return substitution ? substitution : ''
     },
+
     onEndResult(endResult) {
       return endResult
-      .trim()
-      .split(' ')
-      .reduce((result, key) => `${result} ${localClass(key)}`, '')
+        .split(' ')
+        .reduce((result, key) => `${result} ${localClass(key)}`, '')
+        .trim()
     }
   })
 }

@@ -8,12 +8,16 @@ export default function(
   return props => {
     const list = props[propName]
     if (!list) return null
-    const rest = {}
-    Object.keys(props).forEach(key => key !== propName ? rest[key] = props[key] : '')
+    const restProps = {}
+    for (let key of Object.keys(props)) {
+      if (key !== propName) {
+        restProps[key] = props[key]
+      }
+    }
     return (
       <>
         {list.map(elementProps => {
-          const newProps = { ...elementProps, ...rest }
+          const newProps = { ...elementProps, ...restProps }
           return <Component key={uuidv4()} {...newProps} />
         })}
       </>
