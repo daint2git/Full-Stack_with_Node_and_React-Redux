@@ -39,6 +39,11 @@ const MENU = [
     path: '/react-test',
   },
   {
+    id: 'javascript-test',
+    name: 'javascript-test',
+    path: '/javascript-test',
+  },
+  {
     id: 'css3',
     name: 'css3',
     path: '/css3',
