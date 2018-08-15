@@ -1,10 +1,10 @@
 import React from 'react'
 import { compose, defaultProps } from 'recompose'
 
-import loadStyles from 'shared/components/utils/loadStyles'
+import cssModuleNameTag from 'shared/components/utils/cssModuleNameTag'
 import styles from './styles.scss'
 
-const loadClass = loadStyles(styles)
+const loadClass = cssModuleNameTag(styles)
 
 function Button(props) {
   const {

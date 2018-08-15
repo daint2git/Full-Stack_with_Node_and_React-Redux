@@ -4,10 +4,10 @@ import { compose, withStateHandlers } from 'recompose'
 import ControlPanel from './ControlPanel'
 import Content from './Content'
 
-import loadStyles from 'shared/components/utils/loadStyles'
+import cssModuleNameTag from 'shared/components/utils/cssModuleNameTag'
 import styles from './styles.scss'
 
-const loadClass = loadStyles(styles)
+const loadClass = cssModuleNameTag(styles)
 
 function ComponentTestContent(props) {
   return (

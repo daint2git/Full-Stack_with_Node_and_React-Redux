@@ -7,10 +7,10 @@ import iconFileExcel from './svg/icon_file_excel.svg'
 import iconFilePowerPoint from './svg/icon_file_powerpoint.svg'
 import iconFileZip from './svg/icon_file_zip.svg'
 import iconOtherFile from './svg/icon_other_file.svg'
-import loadStyles from 'shared/components/utils/loadStyles'
+import cssModuleNameTag from 'shared/components/utils/cssModuleNameTag'
 import styles from './styles.scss'
 
-const loadClass = loadStyles(styles)
+const loadClass = cssModuleNameTag(styles)
 
 function injectSrcProps(svg) {
   return props => ({

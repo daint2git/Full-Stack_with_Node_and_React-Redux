@@ -2,10 +2,10 @@ import React from 'react'
 import { Link } from 'react-router'
 
 import reactDiffusioner from 'shared/components/utils/reactDiffusioner'
-import loadStyles from 'shared/components/utils/loadStyles'
+import cssModuleNameTag from 'shared/components/utils/cssModuleNameTag'
 import styles from './styles.scss'
 
-const loadClass = loadStyles(styles)
+const loadClass = cssModuleNameTag(styles)
 
 const MENU = [
   {

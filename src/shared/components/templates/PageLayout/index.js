@@ -4,19 +4,19 @@ import Header from './Header'
 import Main from './Main'
 import Footer from './Footer'
 
-import loadStyles from 'shared/components/utils/loadStyles'
+import cssModuleNameTag from 'shared/components/utils/cssModuleNameTag'
 import styles from './styles.scss'
 
-const loadClass = loadStyles(styles)
+const loadClass = cssModuleNameTag(styles)
 
-export default function PageLayout(props) {
+export default function(props) {
   return (
     <div className={loadClass`root`}>
-      <Header />
-      <div className={loadClass`spacer`} />
+      <Header {...props} />
+      <div className={loadClass`spacer-row`} />
       <Main {...props} />
-      <div className={loadClass`spacer`} />
-      <Footer />
+      <div className={loadClass`spacer-row`} />
+      <Footer {...props} />
     </div>
   )
 }

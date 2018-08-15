@@ -5,10 +5,10 @@ import { compose, withStateHandlers } from 'recompose'
 import Button from 'shared/components/atoms/Button'
 import FileIcon from 'shared/components/molecules/FileIcon'
 
-import loadStyles from 'shared/components/utils/loadStyles'
+import cssModuleNameTag from 'shared/components/utils/cssModuleNameTag'
 import styles from './styles.scss'
 
-const loadClass = loadStyles(styles)
+const loadClass = cssModuleNameTag(styles)
 
 function FileName(props) {
   return <span className={loadClass`name`}>{props.fileName}</span>

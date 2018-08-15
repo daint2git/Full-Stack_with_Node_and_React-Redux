@@ -2,10 +2,10 @@ import React from 'react'
 
 import NavigationBar from 'shared/components/molecules/NavigationBar'
 
-import loadStyles from 'shared/components/utils/loadStyles'
+import cssModuleNameTag from 'shared/components/utils/cssModuleNameTag'
 import styles from './styles.scss'
 
-const loadClass = loadStyles(styles)
+const loadClass = cssModuleNameTag(styles)
 
 export default function(props) {
   const { currentPath, children } = props

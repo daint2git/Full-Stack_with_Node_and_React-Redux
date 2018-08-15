@@ -1,5 +1,5 @@
 import React from 'react'
 
-export default function RootLayout(props) {
+export default function(props) {
   return <>{props.children}</>
 }

@@ -2,10 +2,10 @@ import React from 'react'
 
 import reactDiffusioner from 'shared/components/utils/reactDiffusioner'
 import Radio from 'shared/components/atoms/Radio'
-import loadStyles from 'shared/components/utils/loadStyles'
+import cssModuleNameTag from 'shared/components/utils/cssModuleNameTag'
 import styles from './styles.scss'
 
-const loadClass = loadStyles(styles)
+const loadClass = cssModuleNameTag(styles)
 
 const TYPES = ['primary', 'success', 'info', 'warning', 'danger', 'secondary', 'dark', 'light']
 const SIZES = ['small', 'medium', 'large']

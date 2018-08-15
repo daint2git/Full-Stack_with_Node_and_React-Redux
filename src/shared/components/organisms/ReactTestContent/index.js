@@ -2,10 +2,10 @@ import React from 'react'
 
 import FileUpload from './FileUpload'
 
-import loadStyles from 'shared/components/utils/loadStyles'
+import cssModuleNameTag from 'shared/components/utils/cssModuleNameTag'
 import styles from './styles.scss'
 
-const loadClass = loadStyles(styles)
+const loadClass = cssModuleNameTag(styles)
 
 export default function(props) {
   return (
