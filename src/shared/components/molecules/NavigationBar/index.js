@@ -1,4 +1,3 @@
-import React from 'react'
 import { Link } from 'react-router'
 
 import reactDiffusioner from 'shared/components/utils/reactDiffusioner'
@@ -29,26 +28,6 @@ const MENU = [
     path: '/about',
   },
   {
-    id: 'component-test',
-    name: 'component-test page',
-    path: '/component-test',
-  },
-  {
-    id: 'react-test',
-    name: 'react-test',
-    path: '/react-test',
-  },
-  {
-    id: 'javascript-test',
-    name: 'javascript-test',
-    path: '/javascript-test',
-  },
-  {
-    id: 'css3',
-    name: 'css3',
-    path: '/css3',
-  },
-  {
     id: 'date-fns',
     name: 'date-fns',
     path: '/date-fns',
@@ -62,6 +41,31 @@ const MENU = [
     id: 'common-tags',
     name: 'common-tags',
     path: '/common-tags',
+  },
+  {
+    id: 'component',
+    name: 'component',
+    path: '/component',
+  },
+  {
+    id: 'javascript',
+    name: 'javascript',
+    path: '/javascript',
+  },
+  {
+    id: 'react',
+    name: 'react',
+    path: '/react',
+  },
+  {
+    id: 'react-redux',
+    name: 'react-redux',
+    path: '/react-redux',
+  },
+  {
+    id: 'recompose',
+    name: 'recompose',
+    path: '/recompose',
   },
 ]
 

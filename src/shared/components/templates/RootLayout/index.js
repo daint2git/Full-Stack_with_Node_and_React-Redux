@@ -1,5 +1,10 @@
-import React from 'react'
+import Loading from 'shared/components/molecules/Loading'
 
 export default function(props) {
-  return <>{props.children}</>
+  return (
+    <>
+      {props.children}
+      <Loading />
+    </>
+  )
 }

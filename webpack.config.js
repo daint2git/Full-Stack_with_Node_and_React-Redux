@@ -83,6 +83,9 @@ module.exports = (env = {}, argv = {}) => {
       port: 9999,
       open: true,
       historyApiFallback: true,
+      proxy: {
+        '/api': 'http://localhost:8080',
+      },
     }
   }
 }
