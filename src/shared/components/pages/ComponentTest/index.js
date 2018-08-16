@@ -3,7 +3,7 @@ import ComponentTestContent from 'shared/components/organisms/ComponentTestConte
 
 export default function(props) {
   return (
-    <PageLayout currentPath="/component-test">
+    <PageLayout currentPath="/component">
       <ComponentTestContent />
     </PageLayout>
   )

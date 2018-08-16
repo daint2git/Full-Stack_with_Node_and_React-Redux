@@ -20,7 +20,7 @@ export default function(props) {
   console.log(0 >= null)
   console.log(0 <= null)
   return (
-    <PageLayout currentPath="/react-test">
+    <PageLayout currentPath="/javascript">
       <div>JavaScript page</div>
     </PageLayout>
   )

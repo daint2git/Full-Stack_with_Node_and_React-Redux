@@ -34,6 +34,7 @@ function StaticHtml(props) {
 export default function(props) {
   return (
     <PageLayout currentPath="/common-tags">
+      <div>common-tags module page</div>
       <Details summary="Available Tags">
         <Figure caption="stripIndent">
           <TextArea

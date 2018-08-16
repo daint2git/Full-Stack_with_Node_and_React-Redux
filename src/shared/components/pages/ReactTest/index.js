@@ -3,7 +3,8 @@ import ReactTestContent from 'shared/components/organisms/ReactTestContent'
 
 export default function(props) {
   return (
-    <PageLayout currentPath="/react-test">
+    <PageLayout currentPath="/react">
+      <div>React page</div>
       <ReactTestContent />
     </PageLayout>
   )

@@ -22,8 +22,8 @@ export default compose(
   )
 )(({ result, list, inputText, changeText, readPhones, onChange }) => {
   return (
-    <PageLayout currentPath="/react-redux-test">
-      <div>react-redux-test</div>
+    <PageLayout currentPath="/react-redux">
+      <div>React-redux page</div>
       <Text name="inputText" value={inputText} onChange={onChange} />
       <Button onClick={() => changeText(inputText)}>Click</Button>
       <Button onClick={readPhones}>Click</Button>
