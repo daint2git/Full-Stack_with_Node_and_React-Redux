@@ -1,4 +1,3 @@
-import React from 'react'
 import fileExtension from 'file-extension'
 import {
   IconFilePdf,

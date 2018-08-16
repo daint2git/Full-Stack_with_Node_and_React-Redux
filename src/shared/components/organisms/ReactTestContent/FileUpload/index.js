@@ -1,4 +1,3 @@
-import React from 'react'
 import uuidv4 from 'uuid/v4'
 import { compose, withStateHandlers } from 'recompose'
 

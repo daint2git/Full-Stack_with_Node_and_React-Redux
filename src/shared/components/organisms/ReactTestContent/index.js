@@ -1,5 +1,3 @@
-import React from 'react'
-
 import FileUpload from './FileUpload'
 
 import cssModuleNameTag from 'shared/components/utils/cssModuleNameTag'

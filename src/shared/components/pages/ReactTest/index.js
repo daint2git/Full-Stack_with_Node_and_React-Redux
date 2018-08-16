@@ -1,5 +1,3 @@
-import React from 'react'
-
 import PageLayout from 'shared/components/templates/PageLayout'
 import ReactTestContent from 'shared/components/organisms/ReactTestContent'
 

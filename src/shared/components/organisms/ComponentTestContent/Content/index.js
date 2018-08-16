@@ -1,5 +1,3 @@
-import React from 'react'
-
 import Button from 'shared/components/atoms/Button'
 
 import cssModuleNameTag from 'shared/components/utils/cssModuleNameTag'

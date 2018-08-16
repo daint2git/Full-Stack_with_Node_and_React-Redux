@@ -1,4 +1,3 @@
-import React from 'react'
 import { compose, mapProps } from 'recompose'
 
 import iconFilePdf from './svg/icon_file_pdf.svg'

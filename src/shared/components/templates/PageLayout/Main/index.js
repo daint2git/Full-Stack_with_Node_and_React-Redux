@@ -1,5 +1,3 @@
-import React from 'react'
-
 import NavigationBar from 'shared/components/molecules/NavigationBar'
 
 import cssModuleNameTag from 'shared/components/utils/cssModuleNameTag'

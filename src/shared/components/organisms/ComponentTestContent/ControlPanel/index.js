@@ -1,5 +1,3 @@
-import React from 'react'
-
 import reactDiffusioner from 'shared/components/utils/reactDiffusioner'
 import Radio from 'shared/components/atoms/Radio'
 import cssModuleNameTag from 'shared/components/utils/cssModuleNameTag'
