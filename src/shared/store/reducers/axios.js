@@ -1,5 +1,5 @@
 import axios from 'axios'
-import { EFFECTS_AXIOS } from 'shared/store/middlewares/redux-effects-axios'
+import { AXIOS } from 'shared/store/middlewares/redux-effects-axios'
 import { createAction  } from 'redux-actions'
 
 const defaultAxios = axios.create({
@@ -9,4 +9,4 @@ const defaultAxios = axios.create({
 })
 
 export const fetch = (request, instance = defaultAxios) =>
-  createAction(EFFECTS_AXIOS)({ request, instance })
+  createAction(AXIOS)({ request, instance })

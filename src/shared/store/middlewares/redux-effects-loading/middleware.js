@@ -2,14 +2,12 @@ import { preventSubmit, startLoading, stopLoading } from './reducer'
 
 const loading = ({ dispatch }, next, action) => {
   dispatch(preventSubmit())
-
   const timerId = setTimeout(() => dispatch(startLoading()), 100)
-
   return next(action)
-    .then(result => {
+    .then(({ data }) => {
       clearTimeout(timerId)
       dispatch(stopLoading())
-      return result
+      return data
     })
     .catch(error => {
       clearTimeout(timerId)
@@ -23,7 +21,6 @@ export default function loadingMiddleware(targetActions = []) {
     result[targetAction] = loading
     return result
   }, {})
-
   return store => next => action => {
     const handler = handlers[action.type]
     return handler ? handler(store, next, action) : next(action)

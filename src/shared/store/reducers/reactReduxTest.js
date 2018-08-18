@@ -11,7 +11,7 @@ export function changeText(text) {
 
 export function readPhones(request) {
   return steps(
-      fetch({
+    fetch({
       method: 'get',
       url: 'phones',
       ...request,
@@ -28,7 +28,7 @@ export const INITIAL_STATE = () => ({
 export default handleActions(
   {
     CHANGE_TEXT_SUCCESS: (state, { payload }) => ({ ...state, result: payload.text }),
-    READ_PHONES_SUCCESS: (state, { payload }) => ({ ...state, list: [] }),
+    READ_PHONES_SUCCESS: (state, { payload }) => ({ ...state, list: payload }),
   },
   INITIAL_STATE()
 )
