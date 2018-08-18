@@ -4,12 +4,10 @@ import styles from './styles.scss'
 const loadClass = cssModuleNameTag(styles)
 
 export default function(props) {
-  const { className, ...rest } = props
+  const { children } = props
   return (
-    <input
-      className={loadClass`root ${className}`}
-      type="text"
-      {...rest}
-    />
+    <div className={loadClass`root`}>
+      <div className={loadClass`form`}>{children}</div>
+    </div>
   )
 }

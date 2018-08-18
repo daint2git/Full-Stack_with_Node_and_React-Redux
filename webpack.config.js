@@ -1,4 +1,4 @@
-const webpack = require('webpack')
+const { DefinePlugin, ProvidePlugin } = require('webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
@@ -74,9 +74,12 @@ module.exports = (env = {}, argv = {}) => {
         filename: devMode ? '[name].css' : '[name].[hash].css',
         chunkFilename: devMode ? '[id].css' : '[id].[hash].css',
       }),
-      new webpack.ProvidePlugin({
+      new DefinePlugin({
+        STORY_BOOK: JSON.stringify(false),
+      }),
+      new ProvidePlugin({
         React: 'react',
-      })
+      }),
     ],
     devServer: {
       contentBase: buildPath,

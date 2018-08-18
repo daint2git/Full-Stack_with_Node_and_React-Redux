@@ -1,6 +1,7 @@
-import { Route, IndexRoute } from 'react-router'
+import { Route, IndexRoute, Redirect } from 'react-router'
 
 import RootLayout from 'shared/components/templates/RootLayout'
+import Login from 'shared/components/pages/Login'
 import Home from 'shared/components/pages/Home'
 import Job from 'shared/components/pages/Job'
 import JobDetail from 'shared/components/pages/JobDetail'
@@ -17,7 +18,9 @@ import RecomposeTest from 'shared/components/pages/RecomposeTest'
 export default function() {
   return (
     <Route component={RootLayout}>
-      <Route path="/" component={Home} />
+      <Redirect from="/" to="login" />
+      <Route path="/login" component={Login} />
+      <Route path="/home" component={Home} />
       <Route path="/job">
         <IndexRoute component={Job} />
         <Route path=":jobId" component={JobDetail} />

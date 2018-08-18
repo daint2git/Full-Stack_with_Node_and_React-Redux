@@ -1,12 +1,42 @@
 {
-  "phones": [
+  "users": [
     {
       "id": 1,
-      "name": "Iphone X"
+      "username": "admin",
+      "password": "password",
+      "fullname": "admin",
+      "active": "true"
     },
     {
       "id": 2,
-      "name": "Note 9"
+      "username": "editor",
+      "password": "password",
+      "fullname": "editor",
+      "active": "true"
+    },
+    {
+      "id": 3,
+      "username": "viewer",
+      "password": "password",
+      "fullname": "viewer",
+      "active": "true"
+    }
+  ],
+  "phones": [
+    {
+      "id": 1,
+      "name": "Iphone X 64G",
+      "price": "25990000"
+    },
+    {
+      "id": 2,
+      "name": "Samsung Galaxy Note 9 128GB",
+      "price": "22990000"
+    },
+    {
+      "id": 3,
+      "name": "Iphone 8 plus 64G",
+      "price": "21990000"
     }
   ]
 }

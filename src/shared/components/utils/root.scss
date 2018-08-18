@@ -1,4 +1,13 @@
 @import './reset.scss';
+@import './colors.scss';
+@import './variables.scss';
+
+body {
+  width: 100%;
+  font-size: $fsize_medium;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: $teal;
+}
 
 button {
   background-color: transparent;
@@ -14,4 +23,8 @@ a {
 
 input[type='radio'] {
   cursor: pointer;
+}
+
+::placeholder {
+  color: $light_gray;
 }

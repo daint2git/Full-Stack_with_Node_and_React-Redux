@@ -1,11 +1,10 @@
-import React from 'react'
 import { storiesOf } from '@storybook/react'
 
 import RowSeparateLine from 'shared/components/atoms/RowSeparateLine'
 import Button from './'
 
 storiesOf('Button', module)
-  .add('text', () => (
+  .add('default', () => (
     <Button>Hello Button</Button>
   ))
   .add('some emoji', () => (
@@ -16,6 +15,9 @@ storiesOf('Button', module)
   .add('disabled', () => (
     <Button disabled>disabled</Button>
   ))
+  .add('hidden', () => (
+    <Button hidden>hidden</Button>
+  ))
   .add('add className', () => (
     <Button className="test1 test2">add className</Button>
   ))
@@ -24,29 +26,31 @@ storiesOf('Button', module)
   ))
   .add('type', () => (
     <>
-      <Button type="primary">primary</Button>
+      <Button type="primary">primary - Hello Button</Button>
       <RowSeparateLine style={{ margin: '5px auto' }} />
-      <Button type="success">success</Button>
+      <Button type="success">success - Hello Button</Button>
       <RowSeparateLine style={{ margin: '5px auto' }} />
-      <Button type="info">info</Button>
+      <Button type="info">info - Hello Button</Button>
       <RowSeparateLine style={{ margin: '5px auto' }} />
-      <Button type="warning">warning</Button>
+      <Button type="warning">warning - Hello Button</Button>
       <RowSeparateLine style={{ margin: '5px auto' }} />
-      <Button type="danger">danger</Button>
+      <Button type="danger">danger - Hello Button</Button>
       <RowSeparateLine style={{ margin: '5px auto' }} />
-      <Button type="secondary">secondary</Button>
+      <Button type="secondary">secondary - Hello Button</Button>
       <RowSeparateLine style={{ margin: '5px auto' }} />
-      <Button type="dark">dark</Button>
+      <Button type="dark">dark - Hello Button</Button>
       <RowSeparateLine style={{ margin: '5px auto' }} />
-      <Button type="light">light</Button>
+      <Button type="light">light - Hello Button</Button>
+      <RowSeparateLine style={{ margin: '5px auto' }} />
     </>
   ))
   .add('size', () => (
     <>
-      <Button size="small">small</Button>
+      <Button size="small">small - Hello Button</Button>
       <RowSeparateLine style={{ margin: '5px auto' }} />
-      <Button size="medium">medium</Button>
+      <Button size="medium">medium - Hello Button</Button>
       <RowSeparateLine style={{ margin: '5px auto' }} />
-      <Button size="large">large</Button>
+      <Button size="large">large - Hello Button</Button>
+      <RowSeparateLine style={{ margin: '5px auto' }} />
     </>
   ))

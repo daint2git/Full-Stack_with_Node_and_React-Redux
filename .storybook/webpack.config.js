@@ -1,3 +1,4 @@
+const { DefinePlugin, ProvidePlugin } = require('@storybook/core/node_modules/webpack')
 const getDefaultConfig = require('@storybook/react/dist/server/config/defaults/webpack.config.js')
 const getAppConfig = require('../webpack.config.js')
 
@@ -9,6 +10,14 @@ module.exports = (baseConfig, env) => {
     loaders: [require.resolve('@storybook/addon-storysource/loader')],
     enforce: 'pre',
   })
+  config.plugins.push(
+    new DefinePlugin({
+      STORY_BOOK: JSON.stringify(true),
+    }),
+    new ProvidePlugin({
+      React: 'react',
+    })
+  )
 
   return config
 }

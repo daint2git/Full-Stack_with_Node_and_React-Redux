@@ -1,0 +1,71 @@
+@import '../../utils/colors.scss';
+@import '../../utils/variables.scss';
+
+.root {
+  display: inline-block;
+  width: 100%;
+  vertical-align: middle;
+
+  &[data-ellipsis='true'] {
+    width: inherit;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  &[data-active='false'] {
+    color: $silver;
+  }
+
+  &[data-align='center'] {
+    text-align: center;
+  }
+  &[data-align='left'] {
+    text-align: left;
+  }
+  &[data-align='right'] {
+    text-align: right;
+  }
+
+  &[data-weight='bold'] {
+    font-weight: bold;
+  }
+  &[data-weight='lighter'] {
+    font-weight: lighter;
+  }
+
+  &[data-color='primary'] {
+    color: $primary;
+  }
+  &[data-color='secondary'] {
+    color: $secondary;
+  }
+  &[data-color='success'] {
+    color: $success;
+  }
+  &[data-color='info'] {
+    color: $info;
+  }
+  &[data-color='warning'] {
+    color: $warning;
+  }
+  &[data-color='danger'] {
+    color: $danger;
+  }
+  &[data-color='light'] {
+    color: $light;
+  }
+  &[data-color='dark'] {
+    color: $dark;
+  }
+
+  &[data-size='small'] {
+    font-size: $fsize_small;
+  }
+  &[data-size='medium'] {
+    font-size: $fsize_medium;
+  }
+  &[data-size='large'] {
+    font-size: $fsize_large;
+  }
+}
