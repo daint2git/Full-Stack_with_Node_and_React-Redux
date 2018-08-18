@@ -1,19 +1,20 @@
+import PropTypes from 'prop-types'
+import { compose, setPropTypes } from 'recompose'
+
 import cssModuleNameTag from 'shared/components/utils/cssModuleNameTag'
 import styles from './styles.scss'
 
 const loadClass = cssModuleNameTag(styles)
 
-export default function(props) {
-  const {
-    className,
-    summary,
-    children,
-    ...rest
-  } = props
-  return (
-    <details className={loadClass`root ${className}`} {...rest}>
-      <summary>{summary}</summary>
-      {children}
-    </details>
-  )
-}
+const Presentational = compose(
+  setPropTypes({
+    classes: PropTypes.string,
+    summary: PropTypes.string,
+  }),
+)(({ classes, summary, children, ...rest }) => (
+  <details className={loadClass`root ${classes}`} {...rest}>
+    <summary>{summary}</summary>
+    {children}
+  </details>
+))
+export default Presentational

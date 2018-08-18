@@ -1,4 +1,13 @@
+@import '../../utils/colors.scss';
+
 .root {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 100%;
-  padding-top: 5px;
+  height: 40px;
+  background-color: $light_pink;
+  border: 2px solid $danger;
+  border-radius: 4px;
+  box-sizing: border-box;
 }

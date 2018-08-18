@@ -8,29 +8,27 @@ import styles from './styles.scss'
 
 const cssModules = new cssModuleNameTag(styles)
 
-export function Loading(props) {
-  const { loading } = props
-  return (
-    <div>
-      <div className={cssModules`root`} data-loading={loading}>
-        <div className={cssModules`overlay`} />
-        <div className={cssModules`inner position-center`}>
-          <div>
-            <img
-              src={iconLoading}
-              width={50}
-              height={50}
-              className={cssModules`defaultAnimation`}
-            />
-          </div>
+const Presentational = compose(
+  setPropTypes({ loading: PropTypes.bool.isRequired }),
+  onlyUpdateForKeys(['loading']),
+)(({ loading }) => (
+  <div>
+    <div className={cssModules`root`} data-loading={loading}>
+      <div className={cssModules`overlay`} />
+      <div className={cssModules`inner position-center`}>
+        <div>
+          <img
+            src={iconLoading}
+            width={50}
+            height={50}
+            className={cssModules`defaultAnimation`}
+          />
         </div>
       </div>
     </div>
-  )
-}
+  </div>
+))
 
 export default compose(
   connect(state => ({ loading: state.loading.loading })),
-  setPropTypes({ loading: PropTypes.bool.isRequired }),
-  onlyUpdateForKeys(['loading']),
-)(Loading)
+)(Presentational)

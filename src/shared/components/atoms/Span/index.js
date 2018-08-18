@@ -14,7 +14,7 @@ export default compose(
     size: 'medium',
   }),
   setPropTypes({
-    className: PropTypes.string,
+    classes: PropTypes.string,
     ellipsis: PropTypes.string,
     active: PropTypes.bool,
     align: PropTypes.string,
@@ -23,7 +23,7 @@ export default compose(
     size: PropTypes.string,
   }),
 )(({
-  className,
+  classes,
   ellipsis,
   active,
   align,
@@ -33,7 +33,7 @@ export default compose(
   ...rest
 }) => (
   <span
-    className={loadClass`root ${className}`}
+    className={loadClass`root ${classes}`}
     data-ellipsis={ellipsis}
     data-active={active}
     data-align={align}

@@ -11,16 +11,9 @@ import styles from './styles.scss'
 
 const loadClass = cssModuleNameTag(styles)
 
-function injectSrcProps(svg) {
-  return props => ({
-    ...props,
-    src: svg,
-  })
-}
+const injectSrcProps = svg => props => ({ ...props, src: svg })
 
-function Icon(props) {
-  return <img className={loadClass`root`} alt="icon" {...props} />
-}
+const Icon = props => <img className={loadClass`root`} alt="icon" {...props} />
 
 export const IconFilePdf = compose(mapProps(injectSrcProps(iconFilePdf)))(Icon)
 

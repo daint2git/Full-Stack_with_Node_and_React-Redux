@@ -2,11 +2,16 @@
 @import './colors.scss';
 @import './variables.scss';
 
+html {
+  width: 100%;
+  font-size: $fsize_html_base;
+}
+
 body {
   width: 100%;
   font-size: $fsize_medium;
   font-family: Arial, Helvetica, sans-serif;
-  background-color: $teal;
+  background-color: $bg_app;
 }
 
 button {

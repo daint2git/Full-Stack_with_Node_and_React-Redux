@@ -17,6 +17,10 @@ export function login(username, password, location = 'home', request) {
     [
       users => {
         const errors = {}
+        if (username === '' && password === '') {
+          errors.reason = 'Please enter information'
+          return loginFail(errors)
+        }
         const user = users.find(user => user.username === username)
         if (user) {
           if (!(user.password === password)) errors.password = 'Password is invalid'

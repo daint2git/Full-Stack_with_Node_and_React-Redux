@@ -1,0 +1,15 @@
+.root {
+
+  &[data-padding='5'] {
+    padding: 5px;
+  }
+  &[data-padding='10'] {
+    padding: 10px;
+  }
+  &[data-padding='15'] {
+    padding: 15px;
+  }
+  &[data-padding='20'] {
+    padding: 20px;
+  }
+}

@@ -13,7 +13,7 @@ const Presentational = compose(
     size: 'medium',
   }),
   setPropTypes({
-    className: PropTypes.string,
+    classes: PropTypes.string,
     type: PropTypes.string,
     size: PropTypes.string,
     disabled: PropTypes.bool,
@@ -21,7 +21,7 @@ const Presentational = compose(
   }),
   branch(({ hidden }) => hidden, renderNothing),
 )(({
-  className,
+  classes,
   type,
   size,
   disabled,
@@ -29,7 +29,7 @@ const Presentational = compose(
   ...rest
 }) => (
   <button
-    className={loadClass`root ${className}`}
+    className={loadClass`root ${classes}`}
     data-type={type}
     data-size={size}
     disabled={disabled || shouldPreventSubmit}
