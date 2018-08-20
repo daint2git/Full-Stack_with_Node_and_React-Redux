@@ -53,7 +53,7 @@ module.exports = (env = {}, argv = {}) => {
               options: {
                 limit: 10000,
               }
-            }
+            },
           ]
         }
       ]
@@ -83,11 +83,11 @@ module.exports = (env = {}, argv = {}) => {
     ],
     devServer: {
       contentBase: buildPath,
-      port: 9999,
+      port: 6969,
       open: true,
       historyApiFallback: true,
       proxy: {
-        '/api': 'http://localhost:8080',
+        '/api': 'http://localhost:9696',
       },
     }
   }

@@ -1,4 +1,5 @@
 import { count } from './reducer'
+import { createMiddleware } from '../utils'
 
 const countCallApi = ({ dispatch }, next, action) => {
   dispatch(count())
@@ -6,12 +7,5 @@ const countCallApi = ({ dispatch }, next, action) => {
 }
 
 export default function countCallApiMiddleware(targetActions = []) {
-  const handlers = targetActions.reduce((result, targetAction) => {
-    result[targetAction] = countCallApi
-    return result
-  }, {})
-  return store => next => action => {
-    const handler = handlers[action.type]
-    return handler ? handler(store, next, action) : next(action)
-  }
+  return createMiddleware(targetActions, countCallApi)
 }

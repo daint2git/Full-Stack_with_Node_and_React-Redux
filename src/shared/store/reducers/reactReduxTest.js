@@ -1,6 +1,6 @@
 import { steps } from 'redux-effects-steps'
 import { createAction, handleActions } from 'redux-actions'
-import { fetch } from './axios'
+import { fetch } from './utils'
 
 const changeTextSuccess = createAction('CHANGE_TEXT_SUCCESS')
 const readPhonesSuccess = createAction('READ_PHONES_SUCCESS')

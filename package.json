@@ -58,6 +58,6 @@
     "build": "rimraf build && webpack --mode=production",
     "dev": "webpack-dev-server --hot",
     "storybook": "storybook-server -p 1234",
-    "server": "json-server -p 8080 -r src/server/routes.json -w src/server/db.json"
+    "server": "json-server -p 9696 -r src/server/routes.json -w src/server/db.json"
   }
 }

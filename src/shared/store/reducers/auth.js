@@ -1,11 +1,16 @@
 import { steps } from 'redux-effects-steps'
-import { createAction, handleActions } from 'redux-actions'
 import { push } from 'react-router-redux'
 import { size } from 'lodash-es'
-import { fetch } from './axios'
+import {
+  createAction,
+  createErrorAction,
+  handleActions,
+  handleAction,
+  fetch,
+} from './utils'
 
 const loginSuccess = createAction('LOGIN_SUCCESS')
-const loginFail = createAction('LOGIN_FAIL')
+const loginFail = createErrorAction('LOGIN_FAIL')
 
 export function login(username, password, location = 'home', request) {
   return steps(
@@ -43,9 +48,9 @@ export const INITIAL_STATE = () => ({
 })
 
 export default handleActions(
-  {
-    LOGIN_SUCCESS: (state, { payload }) => ({ ...state, user: { ...payload } }),
-    LOGIN_FAIL: (state, { payload }) => ({ ...state, errors: { ...payload } }),
-  },
+  [
+    handleAction(loginSuccess, (state, payload) => ({ ...state, user: { ...payload } })),
+    handleAction(loginFail, (state, payload) => ({ ...state, errors: { ...payload } })),
+  ],
   INITIAL_STATE()
 )

@@ -1,6 +1,6 @@
 import axios from 'axios'
-import { AXIOS } from 'shared/store/middlewares/redux-effects-axios'
-import { createAction  } from 'redux-actions'
+import { AXIOS } from '../redux-effects-axios'
+import { createAction } from './'
 
 const defaultAxios = axios.create({
   baseURL: '/api',

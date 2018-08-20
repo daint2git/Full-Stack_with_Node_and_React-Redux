@@ -1,28 +1,24 @@
 import { preventSubmit, startLoading, stopLoading } from './reducer'
+import { createMiddleware } from '../utils'
 
 const loading = ({ dispatch }, next, action) => {
   dispatch(preventSubmit())
   const timerId = setTimeout(() => dispatch(startLoading()), 100)
   return next(action)
-    .then(({ data }) => {
+    .then(result => {
+      const { data } = result
       clearTimeout(timerId)
       dispatch(stopLoading())
       return data
     })
     .catch(error => {
+      const { response: { data: reason, status } } = error
       clearTimeout(timerId)
       dispatch(stopLoading())
-      return Promise.reject(error)
+      return Promise.reject({ reason, status })
     })
 }
 
 export default function loadingMiddleware(targetActions = []) {
-  const handlers = targetActions.reduce((result, targetAction) => {
-    result[targetAction] = loading
-    return result
-  }, {})
-  return store => next => action => {
-    const handler = handlers[action.type]
-    return handler ? handler(store, next, action) : next(action)
-  }
+  return createMiddleware(targetActions, loading)
 }

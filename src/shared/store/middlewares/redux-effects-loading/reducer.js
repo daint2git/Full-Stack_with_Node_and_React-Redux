@@ -1,4 +1,4 @@
-import { createAction, handleActions } from 'redux-actions'
+import { createAction, handleActions, handleAction } from '../utils'
 
 const ROOT = '@@redux-effects-loading'
 export const preventSubmit = createAction(`${ROOT}/PREVENT_SUBMIT`)
@@ -11,10 +11,10 @@ const INITIAL_STATE = () => ({
 })
 
 export default handleActions(
-  {
-    [`${ROOT}/PREVENT_SUBMIT`]: () => ({ shouldPreventSubmit: true, loading: false }),
-    [`${ROOT}/START_LOADING`]: () => ({ shouldPreventSubmit: true, loading: true }),
-    [`${ROOT}/STOP_LOADING`]: () => ({ shouldPreventSubmit: false, loading: false }),
-  },
-  INITIAL_STATE()
+  [
+    handleAction(preventSubmit, () => ({ shouldPreventSubmit: true, loading: false })),
+    handleAction(startLoading, () => ({ shouldPreventSubmit: true, loading: true })),
+    handleAction(stopLoading, () => ({ shouldPreventSubmit: false, loading: false })),
+  ],
+  INITIAL_STATE(),
 )
