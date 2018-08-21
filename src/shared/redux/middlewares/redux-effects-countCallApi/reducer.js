@@ -1,4 +1,4 @@
-import { createAction, handleAction } from '../utils'
+import { createAction, handleAction } from '../redux-utils'
 
 const ROOT = '@@redux-effects-countCallAPI'
 export const count = createAction(`${ROOT}/COUNT`)

@@ -1,4 +1,4 @@
-import { createAction, handleActions, handleAction } from '../utils'
+import { createAction, handleActions, handleAction } from '../redux-utils'
 
 const ROOT = '@@redux-effects-loading'
 export const preventSubmit = createAction(`${ROOT}/PREVENT_SUBMIT`)

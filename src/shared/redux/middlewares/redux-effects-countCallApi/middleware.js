@@ -1,5 +1,5 @@
+import { createMiddleware } from '../redux-utils'
 import { count } from './reducer'
-import { createMiddleware } from '../utils'
 
 const countCallApi = ({ dispatch }, next, action) => {
   dispatch(count())

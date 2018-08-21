@@ -1,12 +1,12 @@
 import { steps } from 'redux-effects-steps'
 import { push } from 'react-router-redux'
 import { size } from 'lodash-es'
+import { fetch } from './utils/axios'
 import {
   createAction,
   createErrorAction,
   handleActions,
   handleAction,
-  fetch,
 } from './utils'
 
 const loginSuccess = createAction('LOGIN_SUCCESS')
@@ -37,7 +37,8 @@ export function login(username, password, location = 'home', request) {
           loginSuccess({ username, password }),
           push(location),
         )
-      }
+      },
+      error => loginFail(error),
     ]
   )
 }

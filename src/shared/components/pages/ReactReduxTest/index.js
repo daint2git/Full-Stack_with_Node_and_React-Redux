@@ -2,7 +2,7 @@ import { compose, withStateHandlers } from 'recompose'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 
-import { changeText, readPhones } from 'shared/store/reducers/reactReduxTest'
+import { changeText, readPhones } from 'shared/redux/reducers/reactReduxTest'
 
 import PageLayout from 'shared/components/templates/PageLayout'
 import Button from 'shared/components/atoms/Button'

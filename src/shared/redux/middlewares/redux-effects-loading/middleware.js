@@ -1,5 +1,5 @@
+import { createMiddleware } from '../redux-utils'
 import { preventSubmit, startLoading, stopLoading } from './reducer'
-import { createMiddleware } from '../utils'
 
 const loading = ({ dispatch }, next, action) => {
   dispatch(preventSubmit())
