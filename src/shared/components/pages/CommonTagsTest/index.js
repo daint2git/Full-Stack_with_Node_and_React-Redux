@@ -14,6 +14,7 @@ import {
   TemplateTag,
 } from 'common-tags'
 
+import Heading from 'shared/components/atoms/Heading'
 import Details from 'shared/components/atoms/Details'
 import Figure from 'shared/components/atoms/Figure'
 import TextArea from 'shared/components/atoms/TextArea'
@@ -34,7 +35,7 @@ function StaticHtml(props) {
 export default function(props) {
   return (
     <PageLayout currentPath="/common-tags">
-      <div>common-tags module page</div>
+      <Heading HSize="h2">common-tags module page</Heading>
       <Details summary="Available Tags">
         <Figure caption="stripIndent">
           <TextArea

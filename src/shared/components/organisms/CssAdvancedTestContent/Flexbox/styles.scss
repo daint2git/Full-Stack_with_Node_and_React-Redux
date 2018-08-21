@@ -1,0 +1,26 @@
+@import '../../../utils/colors.scss';
+@import '../../../utils/variables.scss';
+
+Details {
+  padding-top: 10px;
+}
+
+figure {
+  padding-top: 20px;
+}
+
+.root {
+  display: flex;
+  background-color: $orange;
+  border: 1px solid $primary;
+  box-sizing: border-box;
+  height: 200px;
+
+  .item {
+    background-color: $pale_white;
+    border: 1px solid $danger;
+    box-sizing: border-box;
+    padding: 20px;
+    font-size: $fsize_x_large;
+  }
+}

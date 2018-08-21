@@ -6,7 +6,7 @@ import styles from './styles.scss'
 
 const loadClass = cssModuleNameTag(styles)
 
-const MENU = [
+const MENUS = [
   {
     id: 'home',
     name: 'Home page',
@@ -67,6 +67,11 @@ const MENU = [
     name: 'recompose',
     path: '/recompose',
   },
+  {
+    id: 'css-advanced',
+    name: 'css-advanced',
+    path: '/css-advanced',
+  },
 ]
 
 function NavigationItem(props) {
@@ -91,7 +96,7 @@ const NavigationItems = reactDiffusioner(NavigationItem)
 export default function NavigationBar(props) {
   return (
     <nav className={loadClass`root`}>
-      <NavigationItems list={MENU} {...props} />
+      <NavigationItems list={MENUS} {...props} />
     </nav>
   )
 }

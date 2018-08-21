@@ -14,6 +14,7 @@ import JavaScriptTest from 'shared/components/pages/JavaScriptTest'
 import ReactTest from 'shared/components/pages/ReactTest'
 import ReactReduxTest from 'shared/components/pages/ReactReduxTest'
 import RecomposeTest from 'shared/components/pages/RecomposeTest'
+import CssAdvancedTest from 'shared/components/pages/CssAdvancedTest'
 
 export default function() {
   return (
@@ -34,6 +35,7 @@ export default function() {
       <Route path="/react" component={ReactTest} />
       <Route path="/react-redux" component={ReactReduxTest} />
       <Route path="/recompose" component={RecomposeTest} />
+      <Route path="/css-advanced" component={CssAdvancedTest} />
     </Route>
   )
 }
