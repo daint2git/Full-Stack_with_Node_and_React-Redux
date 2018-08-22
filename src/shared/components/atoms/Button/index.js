@@ -13,6 +13,7 @@ const Button = ({
   size,
   disabled,
   shouldPreventSubmit,
+  dispatch,
   ...rest
 }) => (
   <button
@@ -34,16 +35,14 @@ const Enhanced = compose(
     type: PropTypes.string,
     size: PropTypes.string,
     disabled: PropTypes.bool,
+    shouldPreventSubmit: PropTypes.bool,
     hidden: PropTypes.bool,
   }),
   branch(({ hidden }) => hidden, renderNothing),
 )(Button)
 
 const EnhancedConnect = compose(
-  connect(
-    state => ({ shouldPreventSubmit: state.loading.shouldPreventSubmit }),
-    _ => ({}),
-  ),
+  connect(state => ({ shouldPreventSubmit: state.loading.shouldPreventSubmit })),
 )(Enhanced)
 
 export default (STORY_BOOK ? Enhanced : EnhancedConnect)

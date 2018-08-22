@@ -1,34 +1,31 @@
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
-import { compose, setPropTypes, onlyUpdateForKeys } from 'recompose'
+import { compose, onlyUpdateForPropTypes, setPropTypes } from 'recompose'
 
 import iconLoading from 'shared/components/atoms/SVGIcon/svg/icon_loading.svg'
 import cssModuleNameTag from 'shared/components/utils/cssModuleNameTag'
 import styles from './styles.scss'
 
-const cssModules = new cssModuleNameTag(styles)
+const cssModules = cssModuleNameTag(styles)
 
 const Loading = ({ loading }) => (
-  <div>
-    <div className={cssModules`root`} data-loading={loading}>
-      <div className={cssModules`overlay`} />
-      <div className={cssModules`inner position-center`}>
-        <div>
-          <img
-            src={iconLoading}
-            width={50}
-            height={50}
-            className={cssModules`defaultAnimation`}
-          />
-        </div>
-      </div>
+  <div className={cssModules`root`} data-loading={loading}>
+    <div className={cssModules`overlay`} />
+    <div className={cssModules`inner position-center`}>
+      <img
+        className={cssModules`defaultAnimation`}
+        src={iconLoading}
+        alt="loading"
+        width={50}
+        height={50}
+      />
     </div>
   </div>
 )
 
 const Enhanced = compose(
+  onlyUpdateForPropTypes,
   setPropTypes({ loading: PropTypes.bool.isRequired }),
-  onlyUpdateForKeys(['loading']),
 )(Loading)
 
 const EnhancedConnect = compose(
