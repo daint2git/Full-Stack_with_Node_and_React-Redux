@@ -16,7 +16,7 @@ export function readPhones(request) {
       url: 'phones',
       ...request,
     }),
-    [readPhonesSuccess]
+    [readPhonesSuccess],
   )
 }
 

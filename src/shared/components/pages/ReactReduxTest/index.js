@@ -1,12 +1,19 @@
-import { compose, withStateHandlers } from 'recompose'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
+import { compose } from 'recompose'
 
 import { changeText, readPhones } from 'shared/redux/reducers/reactReduxTest'
 
 import PageLayout from 'shared/components/templates/PageLayout'
-import Button from 'shared/components/atoms/Button'
-import Text from 'shared/components/atoms/Text'
+import Heading from 'shared/components/atoms/Heading'
+import ReactReduxTestContent from 'shared/components/organisms/ReactReduxTestContent'
+
+const ReactReduxTest = props => (
+  <PageLayout currentPath="/react-redux">
+    <Heading HSize="h2">React-redux page</Heading>
+    <ReactReduxTestContent {...props} />
+  </PageLayout>
+)
 
 export default compose(
   connect(
@@ -14,20 +21,6 @@ export default compose(
       result: state.reactReduxTest.result,
       list: state.reactReduxTest.list,
     }),
-    dispatch => bindActionCreators({ changeText, readPhones }, dispatch)
+    dispatch => bindActionCreators({ changeText, readPhones }, dispatch),
   ),
-  withStateHandlers(
-    { inputText: '' },
-    { onChange: state => e => ({ ...state, [e.target.name]: e.target.value }) }
-  )
-)(({ result, list, inputText, changeText, readPhones, onChange }) => {
-  return (
-    <PageLayout currentPath="/react-redux">
-      <div>React-redux page</div>
-      <Text name="inputText" value={inputText} onChange={onChange} />
-      <Button onClick={() => changeText(inputText)}>Click</Button>
-      <Button onClick={readPhones}>Click</Button>
-      <div>{result}</div>
-    </PageLayout>
-  )
-})
+)(ReactReduxTest)

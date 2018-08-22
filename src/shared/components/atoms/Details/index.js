@@ -6,15 +6,18 @@ import styles from './styles.scss'
 
 const loadClass = cssModuleNameTag(styles)
 
-const Presentational = compose(
-  setPropTypes({
-    classes: PropTypes.string,
-    summary: PropTypes.string,
-  }),
-)(({ classes, summary, children, ...rest }) => (
+const Details = ({ classes, summary, children, ...rest }) => (
   <details className={loadClass`root ${classes}`} {...rest}>
     <summary>{summary}</summary>
     {children}
   </details>
-))
-export default Presentational
+)
+
+const Enhanced = compose(
+  setPropTypes({
+    classes: PropTypes.string,
+    summary: PropTypes.string,
+  }),
+)(Details)
+
+export default Enhanced

@@ -1,43 +1,45 @@
 /**
  * Bootstrap 4 Color
  */
-$primary: #007bff;
-$secondary: #868e96;
-$success: #28a745;
-$info: #17a2b8;
-$warning: #ffc107;
-$danger: #dc3545;
-$light: #f8f9fa;
-$dark: #343a40;
+ $primary: #007bff;
+ $secondary: #868e96;
+ $success: #28a745;
+ $info: #17a2b8;
+ $warning: #ffc107;
+ $danger: #dc3545;
+ $light: #f8f9fa;
+ $dark: #343a40;
 
-/**
- * Accent Color
- */
-$white: #fff;
-$pale_white: #F4F7F9;
-$silver: #CCC;
-$blue_silver: #ABB1B6;
-$ash: #EBEBEB;
-$light_ash: #F2F2F2;
-$gray: #999;
-$pale_gray: #DDE4EA;
-$light_gray: #B0B0B0;
-$deep_gray: #505050;
-$dark_gray: #666;
-$blue_gray: #BBC7D2;
-$pale_blue: #ACBDCB;
-$orange: #F2AA33;
-$light_orange: #FFEACE;
-$pink: #EFAAA7;
-$light_pink: #FBEAE9;
-$black: #222;
+ /**
+  * Accent Color
+  */
+ $white: #fff;
+ $pale_white: #F4F7F9;
+ $silver: #CCC;
+ $blue_silver: #ABB1B6;
+ $ash: #EBEBEB;
+ $light_ash: #F2F2F2;
+ $gray: #999;
+ $pale_gray: #DDE4EA;
+ $light_gray: #B0B0B0;
+ $deep_gray: #505050;
+ $dark_gray: #666;
+ $blue_gray: #BBC7D2;
+ $pale_blue: #ACBDCB;
+ $blue_ash: #D8DCE2;
+ $orange: #F2AA33;
+ $light_orange: #FFEACE;
+ $pink: #EFAAA7;
+ $light_pink: #FBEAE9;
+ $black: #222;
 
-$sky: #CDE7F9;
-$deep_sky: #8CC9EF;
-$sky_blue: #BBDEF3;
+ $sky: #CDE7F9;
+ $deep_sky: #8CC9EF;
+ $sky_blue: #BBDEF3;
 
-/**
- * Background color of app
- */
-$bg_app: #fafafa;
-$bg_form: #eeeeee;
+ /**
+  * Background color of app
+  */
+ $bg_app: #fafafa;
+ $bg_app_header: #8CC9EF;
+ $bg_form: #eeeeee;

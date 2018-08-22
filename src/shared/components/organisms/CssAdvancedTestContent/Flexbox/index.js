@@ -81,7 +81,13 @@ export default function(props) {
           <FlexContainer style={{ alignItems: 'flex-start' }} caption="align-items: flex-start" />
           <FlexContainer style={{ alignItems: 'flex-end' }} caption="align-items: flex-end" />
           <FlexContainer style={{ alignItems: 'stretch' }} caption="align-items: stretch (this is default)" />
-          <FlexContainer style={{ alignItems: 'baseline' }} caption="align-items: baseline" />
+          <FlexContainer style={{ alignItems: 'baseline' }} caption="align-items: baseline">
+            <FlexItem style={{ height: '100px' }}>1</FlexItem>
+            <FlexItem style={{ height: '150px' }}>2</FlexItem>
+            <FlexItem style={{ height: '50px' }}>3</FlexItem>
+            <FlexItem style={{ height: '10px' }}>4</FlexItem>
+            <FlexItem style={{ height: '200px' }}>5</FlexItem>
+          </FlexContainer>
         </Details>
         <Details summary="align-content">
           <FlexContainer style={{ flexWrap: 'wrap', alignContent: 'center' }} caption="align-content: center, flex-wrap: wrap" list={ITEMS_2} />
@@ -92,7 +98,7 @@ export default function(props) {
           <FlexContainer style={{ flexWrap: 'wrap', alignContent: 'stretch' }} caption="align-content: stretch (this is default), flex-wrap: wrap" list={ITEMS_2} />
         </Details>
       </Details>
-      <Details summary="The flex container properties are:">
+      <Details summary="The flex item properties are:">
         <Details summary="order">
           <FlexContainer>
             <FlexItem style={{ order: 3 }}>1 (order: 3)</FlexItem>

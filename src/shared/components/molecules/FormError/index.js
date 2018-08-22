@@ -8,16 +8,18 @@ import styles from './styles.scss'
 
 const loadClass = cssModuleNameTag(styles)
 
-const Presentational = compose(
-  setPropTypes({ errorMessage: PropTypes.string }),
-  branch(({ errorMessage, children }) => !errorMessage && !children, renderNothing),
-)(({ errorMessage, children, ...rest }) => (
+const FormError = ({ errorMessage, children, ...rest }) => (
   <>
     <Spacer />
     <div className={loadClass`root`} {...rest}>
       <Span color="danger" align="center">{errorMessage || children}</Span>
     </div>
   </>
-))
+)
 
-export default Presentational
+const Enhanced = compose(
+  setPropTypes({ errorMessage: PropTypes.string }),
+  branch(({ errorMessage, children }) => !errorMessage && !children, renderNothing),
+)(FormError)
+
+export default Enhanced

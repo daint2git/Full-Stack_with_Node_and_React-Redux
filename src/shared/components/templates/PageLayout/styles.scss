@@ -1,4 +1,19 @@
 .root {
   width: 100%;
   height: 100vh;
+  display: flex;
+  flex-direction: column;
+
+  .main {
+    padding-top: 70px;
+
+    .navigation-bar {
+      position: fixed;
+      height: 100vh;
+    }
+
+    .content {
+      padding-left: 210px;
+    }
+  }
 }

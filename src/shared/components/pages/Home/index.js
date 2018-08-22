@@ -1,9 +1,10 @@
 import PageLayout from 'shared/components/templates/PageLayout'
+import Heading from 'shared/components/atoms/Heading'
 
-export default function(props) {
-  return (
-    <PageLayout currentPath="/">
-      <div>Home page</div>
-    </PageLayout>
-  )
-}
+const Home = props => (
+  <PageLayout currentPath="/home">
+    <Heading HSize="h2">Home page</Heading>
+  </PageLayout>
+)
+
+export default Home

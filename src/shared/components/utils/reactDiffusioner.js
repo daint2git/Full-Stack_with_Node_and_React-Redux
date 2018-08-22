@@ -1,25 +1,30 @@
-import React from 'react'
+import { Component } from 'react'
+import { getDisplayName } from 'recompose'
 import uuidv4 from 'uuid/v4'
 import either from './either'
 
-export default function(
-  Component,
-  propName = 'list',
-) {
-  return props => {
-    const list = props[propName]
-    if (!list) return null
-    const restProps = {}
-    for (let key of Object.keys(props)) {
-      if (key !== propName) restProps[key] = props[key]
+const reactDiffusioner = (BaseComponent, propName = 'list') => {
+  class ReactDiffusioner extends Component {
+    render() {
+      const { props } = this
+      const list = props[propName]
+      if (!list) return null
+      const restProps = { ...props }
+      delete restProps[propName]
+      return (
+        <>
+          {list.map(elementProps => {
+            const newProps = { ...elementProps, ...restProps }
+            return <BaseComponent key={either(elementProps.key)(uuidv4())} {...newProps} />
+          })}
+        </>
+      )
     }
-    return (
-      <>
-        {list.map(elementProps => {
-          const newProps = { ...elementProps, ...restProps }
-          return <Component key={either(elementProps.key)(uuidv4())} {...newProps} />
-        })}
-      </>
-    )
   }
+
+  ReactDiffusioner.displayName = `${getDisplayName(BaseComponent)}s`
+
+  return ReactDiffusioner
 }
+
+export default reactDiffusioner

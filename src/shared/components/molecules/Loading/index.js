@@ -8,10 +8,7 @@ import styles from './styles.scss'
 
 const cssModules = new cssModuleNameTag(styles)
 
-const Presentational = compose(
-  setPropTypes({ loading: PropTypes.bool.isRequired }),
-  onlyUpdateForKeys(['loading']),
-)(({ loading }) => (
+const Loading = ({ loading }) => (
   <div>
     <div className={cssModules`root`} data-loading={loading}>
       <div className={cssModules`overlay`} />
@@ -27,8 +24,15 @@ const Presentational = compose(
       </div>
     </div>
   </div>
-))
+)
 
-export default compose(
+const Enhanced = compose(
+  setPropTypes({ loading: PropTypes.bool.isRequired }),
+  onlyUpdateForKeys(['loading']),
+)(Loading)
+
+const EnhancedConnect = compose(
   connect(state => ({ loading: state.loading.loading })),
-)(Presentational)
+)(Enhanced)
+
+export default (STORY_BOOK ? Enhanced : EnhancedConnect)

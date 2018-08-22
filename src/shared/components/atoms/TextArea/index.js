@@ -6,12 +6,14 @@ import styles from './styles.scss'
 
 const loadClass = cssModuleNameTag(styles)
 
-const Presentational = compose(
+const TextArea = ({ classes, ...rest }) => (
+  <textarea className={loadClass`root ${classes}`} {...rest} />
+)
+
+const Enhanced = compose(
   setPropTypes({
     classes: PropTypes.string,
   }),
-)(({ classes, ...rest }) => (
-  <textarea className={loadClass`root ${classes}`} {...rest} />
-))
+)(TextArea)
 
-export default Presentational
+export default Enhanced

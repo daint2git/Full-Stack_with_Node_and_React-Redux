@@ -1,8 +1,13 @@
 @import '../../../utils/colors.scss';
+@import '../../../utils/variables.scss';
 
 .root {
-  background-color: $bg_form;
-  color: $dark;
-  height: 150px;
-  padding: 10px;
+  position: fixed;
+  width: 100%;
+  background-color: $bg_app_header;
+  color: $white;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

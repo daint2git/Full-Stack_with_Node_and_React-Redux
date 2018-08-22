@@ -17,6 +17,9 @@ figure {
   height: 200px;
 
   .item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background-color: $pale_white;
     border: 1px solid $danger;
     box-sizing: border-box;

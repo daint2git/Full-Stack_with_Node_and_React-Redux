@@ -2,11 +2,11 @@
 
 .root {
   display: flex;
+  padding: 10px;
+  background-color: $bg_form;
 
   .content {
+    min-height: calc(100vh - 200px);
     width: 100%;
-    background-color: $bg_form;
-    margin-left: 10px;
-    padding: 10px;
   }
 }

@@ -5,11 +5,11 @@ import styles from './styles.scss'
 
 const loadClass = cssModuleNameTag(styles)
 
-const Presentational = ({ errorMessage, ...rest }) => (
+const FormText = ({ errorMessage, ...rest }) => (
   <div className={loadClass`root`}>
     <Text {...rest} />
     <InputError errorMessage={errorMessage} />
   </div>
 )
 
-export default Presentational
+export default FormText

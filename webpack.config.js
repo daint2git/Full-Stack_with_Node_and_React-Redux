@@ -1,8 +1,8 @@
 const { DefinePlugin, ProvidePlugin } = require('webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
-
 const path = require('path')
+
 const rootDir = path.resolve(process.cwd())
 const srcPath = path.resolve(rootDir, 'src')
 const assetsPath = path.resolve(rootDir, 'assets')

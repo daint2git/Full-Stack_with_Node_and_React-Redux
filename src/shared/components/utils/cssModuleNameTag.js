@@ -1,9 +1,7 @@
 import { TemplateTag } from 'common-tags'
 
-export default function(styles) {
-  function localClass(key) {
-    return Object.keys(styles).includes(key) ? styles[key] : key
-  }
+const cssModuleNameTag = styles => {
+  const localClass = key => Object.keys(styles).includes(key) ? styles[key] : key
 
   return new TemplateTag({
     onSubstitution(substitution) {
@@ -18,3 +16,5 @@ export default function(styles) {
     }
   })
 }
+
+export default cssModuleNameTag
