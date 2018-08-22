@@ -9,22 +9,22 @@ const loadClass = cssModuleNameTag(styles)
 const MENUS = [
   {
     id: 'home',
-    name: 'Home page',
-    path: '/',
+    name: 'Home',
+    path: '/home',
   },
   {
     id: 'job',
-    name: 'Job page',
+    name: 'Job',
     path: '/job',
   },
   {
     id: 'job detail',
-    name: 'Job detail page',
+    name: 'Job detail',
     path: '/job/abc',
   },
   {
     id: 'about',
-    name: 'About page',
+    name: 'About',
     path: '/about',
   },
   {
@@ -74,29 +74,22 @@ const MENUS = [
   },
 ]
 
-function NavigationItem(props) {
-  const {
-    path,
-    name,
-    currentPath,
-  } = props
-  return (
-    <Link
-      className={loadClass`item`}
-      to={path}
-      data-active={path === currentPath}
-    >
-      <span>{name}</span>
-    </Link>
-  )
-}
+const NavigationItem = ({ path, name, currentPath }) => (
+  <Link
+    className={loadClass`item`}
+    to={path}
+    data-active={path === currentPath}
+  >
+    <span>{name}</span>
+  </Link>
+)
 
 const NavigationItems = reactDiffusioner(NavigationItem)
 
-export default function NavigationBar(props) {
-  return (
-    <nav className={loadClass`root`}>
-      <NavigationItems list={MENUS} {...props} />
-    </nav>
-  )
-}
+const NavigationBar = props => (
+  <nav className={loadClass`root`}>
+    <NavigationItems list={MENUS} {...props} />
+  </nav>
+)
+
+export default NavigationBar

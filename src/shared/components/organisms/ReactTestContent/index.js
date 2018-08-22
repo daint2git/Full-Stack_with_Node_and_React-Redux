@@ -5,10 +5,10 @@ import styles from './styles.scss'
 
 const loadClass = cssModuleNameTag(styles)
 
-export default function(props) {
-  return (
-    <div className={loadClass`root`}>
-      <FileUpload />
-    </div>
-  )
-}
+const ReactTestContent = props => (
+  <div className={loadClass`root`}>
+    <FileUpload />
+  </div>
+)
+
+export default ReactTestContent

@@ -1,6 +1,5 @@
 import { compose, withStateHandlers } from 'recompose'
 
-import { onChange } from 'shared/components/utils/handleEvents'
 import Button from 'shared/components/atoms/Button'
 import Spacer from 'shared/components/atoms/Spacer'
 import FormText from 'shared/components/molecules/FormText'
@@ -10,15 +9,7 @@ import styles from './styles.scss'
 
 const loadClass = cssModuleNameTag(styles)
 
-export default compose(
-  withStateHandlers(
-    { username: '', password: '' },
-    {
-      onChange,
-      onSubmit: ({ username, password }, { login }) => () => login(username, password),
-    },
-  ),
-)(({
+const LoginForm = ({
   username,
   password,
   onChange,
@@ -51,4 +42,14 @@ export default compose(
     <Spacer />
     <Button classes={loadClass`button`} size="large" onClick={onSubmit}>Sign In</Button>
   </div>
-))
+)
+
+export default compose(
+  withStateHandlers(
+    { username: '', password: '' },
+    {
+      onChange: state => e => ({ ...state, [e.target.name]: e.target.value }),
+      onSubmit: ({ username, password }, { login }) => () => login(username, password),
+    },
+  ),
+)(LoginForm)

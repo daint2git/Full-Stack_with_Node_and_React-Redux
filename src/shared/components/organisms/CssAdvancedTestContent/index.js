@@ -4,10 +4,10 @@ import styles from './styles.scss'
 
 const loadClass = cssModuleNameTag(styles)
 
-export default function(props) {
-  return (
-    <div className={loadClass`root`}>
-      <Flexbox />
-    </div>
-  )
-}
+const CssAdvancedTestContent = props => (
+  <div className={loadClass`root`}>
+    <Flexbox />
+  </div>
+)
+
+export default CssAdvancedTestContent

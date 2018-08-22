@@ -68,4 +68,7 @@
   &[data-size='large'] {
     font-size: $fsize_large;
   }
+  &[data-size='x_large'] {
+    font-size: $fsize_x_large
+  }
 }

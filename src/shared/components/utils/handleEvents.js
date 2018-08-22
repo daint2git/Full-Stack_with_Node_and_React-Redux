@@ -1,1 +1,0 @@
-export const onChange = state => e => ({ ...state, [e.target.name]: e.target.value })
