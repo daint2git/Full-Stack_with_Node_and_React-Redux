@@ -1,14 +1,14 @@
 import { compose, withStateHandlers } from 'recompose'
 
-import Text from 'shared/components/atoms/Text'
+import TextInput from 'shared/components/atoms/TextInput'
 import Button from 'shared/components/atoms/Button'
-import Span from 'shared/components/atoms/Span'
+import TextOuput from 'shared/components/atoms/TextOuput'
 import reactDiffusioner from 'shared/components/utils/reactDiffusioner'
 
 const Phone = ({ name, price }) => (
   <div>
-    <Span>{`name: ${name}`}</Span>
-    <Span>{`price: ${price}`}</Span>
+    <TextOuput>{`name: ${name}`}</TextOuput>
+    <TextOuput>{`price: ${price}`}</TextOuput>
   </div>
 )
 
@@ -23,10 +23,10 @@ const ReactReduxTestContent = ({
   onChange,
 }) => (
   <div>
-    <Text name="inputText" value={inputText} onChange={onChange} />
+    <TextInput name="inputText" value={inputText} onChange={onChange} />
     <Button onClick={() => changeText(inputText)}>Click</Button>
     <Button onClick={readPhones}>Click</Button>
-    <Span>{result}</Span>
+    <TextOuput>{result}</TextOuput>
     <Phones list={list} />
   </div>
 )

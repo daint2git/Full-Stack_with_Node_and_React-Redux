@@ -26,12 +26,38 @@
   &[data-align='right'] {
     text-align: right;
   }
+  &[data-align='justify'] {
+    text-align: justify;
+  }
 
   &[data-weight='bold'] {
     font-weight: bold;
   }
   &[data-weight='lighter'] {
     font-weight: lighter;
+  }
+  &[data-weight='bolder'] {
+    font-weight: bolder;
+  }
+
+  &[data-decoration='overline'] {
+    text-decoration: overline;
+  }
+  &[data-decoration='underline'] {
+    text-decoration: underline;
+  }
+  &[data-decoration='line-through'] {
+    text-decoration: line-through;
+  }
+
+  &[data-transform='uppercase'] {
+    text-transform: uppercase;
+  }
+  &[data-transform='lowercase'] {
+    text-transform: lowercase;
+  }
+  &[data-transform='capitalize'] {
+    text-transform: capitalize;
   }
 
   &[data-color='primary'] {
@@ -69,6 +95,6 @@
     font-size: $fsize_large;
   }
   &[data-size='x_large'] {
-    font-size: $fsize_x_large
+    font-size: $fsize_x_large;
   }
 }

@@ -3,7 +3,7 @@ import { withReducer } from 'recompose'
 import Heading from 'shared/components/atoms/Heading'
 import Button from 'shared/components/atoms/Button'
 import Spacer from 'shared/components/atoms/Spacer'
-import Span from 'shared/components/atoms/Span'
+import TextOuput from 'shared/components/atoms/TextOuput'
 import cssModuleNameTag from 'shared/components/utils/cssModuleNameTag'
 import styles from './styles.scss'
 
@@ -20,7 +20,7 @@ const WithReducer = ({ state: { counter }, dispatch }) => (
       <Button type="info" onClick={() => dispatch({ type: DECREAMENT, value: 1 })}>decrement</Button>
     </div>
     <Spacer padding={5} />
-    <Span>{`Counter: ${counter}`}</Span>
+    <TextOuput>{`Counter: ${counter}`}</TextOuput>
   </div>
 )
 

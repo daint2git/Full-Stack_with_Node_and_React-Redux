@@ -26,8 +26,18 @@ a {
   text-decoration: none;
 }
 
-input[type='radio'] {
+input[type='button'],
+input[type='checkbox'],
+input[type='radio'],
+input[type='file'] {
   cursor: pointer;
+}
+
+input[type='text'],
+input[type='password'],
+textarea,
+select {
+  outline: none;
 }
 
 ::placeholder {

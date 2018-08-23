@@ -1,7 +1,5 @@
 import { toRenderProps, withProps } from 'recompose'
-import Button from 'shared/components/atoms/Button'
-import Span from 'shared/components/atoms/Span'
-import Spacer from 'shared/components/atoms/Spacer'
+import TextOuput from 'shared/components/atoms/TextOuput'
 import Heading from 'shared/components/atoms/Heading'
 import cssModuleNameTag from 'shared/components/utils/cssModuleNameTag'
 import styles from './styles.scss'
@@ -19,8 +17,8 @@ export default function(props) {
       <ToRenderProps text="default">
         {({ text, newText }) => (
           <>
-            <Span>{`text: ${text}`}</Span>
-            <Span>{`newText: ${newText}`}</Span>
+            <TextOuput>{`text: ${text}`}</TextOuput>
+            <TextOuput>{`newText: ${newText}`}</TextOuput>
           </>
         )}
       </ToRenderProps>

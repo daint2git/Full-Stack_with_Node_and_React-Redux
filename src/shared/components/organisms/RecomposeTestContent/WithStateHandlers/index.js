@@ -1,9 +1,10 @@
 import { withStateHandlers } from 'recompose'
 
 import Heading from 'shared/components/atoms/Heading'
-import Span from 'shared/components/atoms/Span'
+import TextOuput from 'shared/components/atoms/TextOuput'
 import Spacer from 'shared/components/atoms/Spacer'
-import Text from 'shared/components/atoms/Text'
+import FormTextInput from 'shared/components/molecules/FormTextInput'
+import TextInput from 'shared/components/atoms/TextInput'
 import Button from 'shared/components/atoms/Button'
 import cssModuleNameTag from 'shared/components/utils/cssModuleNameTag'
 import styles from './styles.scss'
@@ -20,9 +21,9 @@ const WithStateHandlers = ({
 }) => (
   <div className={loadClass`root`}>
     <Heading HSize="h3">withStateHandlers</Heading>
-    <Span>Input value: </Span>
+    <TextOuput>Input value: </TextOuput>
     <Spacer padding={5} />
-    <Text value={inputValue} onChange={onChangeInputValue} />
+    <FormTextInput value={inputValue} onChange={onChangeInputValue} />
     <Spacer padding={5} />
     <div className={loadClass`buttons`}>
       <Button onClick={() => increment(inputValue)}>increment</Button>
@@ -30,7 +31,7 @@ const WithStateHandlers = ({
       <Button type="danger" onClick={reset}>reset</Button>
     </div>
     <Spacer padding={5} />
-    <Span>{`Counter: ${counter}`}</Span>
+    <TextOuput>{`Counter: ${counter}`}</TextOuput>
   </div>
 )
 

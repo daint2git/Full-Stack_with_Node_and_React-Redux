@@ -2,7 +2,7 @@ import { compose, withStateHandlers } from 'recompose'
 
 import Button from 'shared/components/atoms/Button'
 import Spacer from 'shared/components/atoms/Spacer'
-import FormText from 'shared/components/molecules/FormText'
+import FormTextInput from 'shared/components/molecules/FormTextInput'
 import FormError from 'shared/components/molecules/FormError'
 import cssModuleNameTag from 'shared/components/utils/cssModuleNameTag'
 import styles from './styles.scss'
@@ -18,7 +18,7 @@ const LoginForm = ({
 }) => (
   <div className={loadClass`root`}>
     <h2 className={loadClass`title`}>Sign In</h2>
-    <FormText
+    <FormTextInput
       classes={loadClass`input`}
       name="username"
       maxLength={20}
@@ -28,7 +28,7 @@ const LoginForm = ({
       onChange={onChange}
     />
     <Spacer />
-    <FormText
+    <FormTextInput
       classes={loadClass`input`}
       name="password"
       maxLength={20}
@@ -40,7 +40,13 @@ const LoginForm = ({
     />
     <FormError errorMessage={errors.reason} />
     <Spacer />
-    <Button classes={loadClass`button`} size="large" onClick={onSubmit}>Sign In</Button>
+    <Button
+      classes={loadClass`button`}
+      size="large"
+      onClick={onSubmit}
+    >
+      Sign In
+    </Button>
   </div>
 )
 

@@ -1,0 +1,20 @@
+@import '../../utils/colors.scss';
+
+.root {
+  display: block;
+  width: 100%;
+  min-height: 40px;
+  padding: 10px;
+  border: 1px solid $blue_gray;
+  border-radius: 3px;
+  box-sizing: border-box;
+  background-color: $pale_white;
+
+  &:focus {
+    box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.2);
+  }
+
+  &[data-attention='true'] {
+    border-color: $danger;
+  }
+}

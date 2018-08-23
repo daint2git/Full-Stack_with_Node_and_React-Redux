@@ -27,30 +27,30 @@ storiesOf('Button', module)
   .add('type', () => (
     <>
       <Button type="primary">primary - Hello Button</Button>
-      <RowSeparateLine style={{ margin: '5px auto' }} />
+      <RowSeparateLine />
       <Button type="success">success - Hello Button</Button>
-      <RowSeparateLine style={{ margin: '5px auto' }} />
+      <RowSeparateLine />
       <Button type="info">info - Hello Button</Button>
-      <RowSeparateLine style={{ margin: '5px auto' }} />
+      <RowSeparateLine />
       <Button type="warning">warning - Hello Button</Button>
-      <RowSeparateLine style={{ margin: '5px auto' }} />
+      <RowSeparateLine />
       <Button type="danger">danger - Hello Button</Button>
-      <RowSeparateLine style={{ margin: '5px auto' }} />
+      <RowSeparateLine />
       <Button type="secondary">secondary - Hello Button</Button>
-      <RowSeparateLine style={{ margin: '5px auto' }} />
+      <RowSeparateLine />
       <Button type="dark">dark - Hello Button</Button>
-      <RowSeparateLine style={{ margin: '5px auto' }} />
+      <RowSeparateLine />
       <Button type="light">light - Hello Button</Button>
-      <RowSeparateLine style={{ margin: '5px auto' }} />
+      <RowSeparateLine />
     </>
   ))
   .add('size', () => (
     <>
       <Button size="small">small - Hello Button</Button>
-      <RowSeparateLine style={{ margin: '5px auto' }} />
+      <RowSeparateLine />
       <Button size="medium">medium - Hello Button</Button>
-      <RowSeparateLine style={{ margin: '5px auto' }} />
+      <RowSeparateLine />
       <Button size="large">large - Hello Button</Button>
-      <RowSeparateLine style={{ margin: '5px auto' }} />
+      <RowSeparateLine />
     </>
   ))

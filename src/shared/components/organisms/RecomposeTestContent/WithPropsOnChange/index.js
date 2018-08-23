@@ -1,6 +1,6 @@
 import { withPropsOnChange, withStateHandlers } from 'recompose'
 import Button from 'shared/components/atoms/Button'
-import Span from 'shared/components/atoms/Span'
+import TextOuput from 'shared/components/atoms/TextOuput'
 import Spacer from 'shared/components/atoms/Spacer'
 import Heading from 'shared/components/atoms/Heading'
 import cssModuleNameTag from 'shared/components/utils/cssModuleNameTag'
@@ -12,8 +12,8 @@ const WithPropsOnChange =  withPropsOnChange(
   ['counter'], props => ({...props}),
 )(({ title, counter }) => (
   <>
-    <Span>{`Title: ${title}`}</Span>
-    <Span>{`Counter: ${counter}`}</Span>
+    <TextOuput>{`Title: ${title}`}</TextOuput>
+    <TextOuput>{`Counter: ${counter}`}</TextOuput>
   </>
 ))
 

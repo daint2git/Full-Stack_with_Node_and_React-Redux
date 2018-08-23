@@ -28,36 +28,85 @@
   &[data-type='success'] {
     background-color: $success;
     color: $white;
+
+    &:disabled {
+      cursor: default;
+      pointer-events: none;
+      background-color: $pale_gray;
+      color: $pale_blue;
+    }
   }
 
   &[data-type='info'] {
     background-color: $info;
     color: $white;
+
+    &:disabled {
+      cursor: default;
+      pointer-events: none;
+      background-color: $pale_gray;
+      color: $pale_blue;
+    }
   }
 
   &[data-type='warning'] {
     background-color: $warning;
     color: $white;
+
+    &:disabled {
+      cursor: default;
+      pointer-events: none;
+      background-color: $pale_gray;
+      color: $pale_blue;
+    }
   }
 
   &[data-type='danger'] {
     background-color: $danger;
     color: $white;
+
+    &:disabled {
+      cursor: default;
+      pointer-events: none;
+      background-color: $pale_gray;
+      color: $pale_blue;
+    }
   }
 
   &[data-type='secondary'] {
     background-color: $secondary;
     color: $white;
+
+    &:disabled {
+      cursor: default;
+      pointer-events: none;
+      background-color: $pale_gray;
+      color: $pale_blue;
+    }
   }
 
   &[data-type='dark'] {
     background-color: $dark;
     color: $white;
+
+    &:disabled {
+      cursor: default;
+      pointer-events: none;
+      background-color: $pale_gray;
+      color: $pale_blue;
+    }
   }
 
   &[data-type='light'] {
     background-color: $light;
     color: $dark;
+
+    &:disabled {
+      cursor: default;
+      pointer-events: none;
+      background-color: $pale_gray;
+      color: $pale_blue;
+    }
   }
 
   &[data-size='small'] {

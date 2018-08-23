@@ -17,7 +17,7 @@ import {
 import Heading from 'shared/components/atoms/Heading'
 import Details from 'shared/components/atoms/Details'
 import Figure from 'shared/components/atoms/Figure'
-import TextArea from 'shared/components/atoms/TextArea'
+import TextInput from 'shared/components/atoms/TextInput'
 import PageLayout from 'shared/components/templates/PageLayout'
 
 const StaticHtml = props => (
@@ -35,7 +35,8 @@ const CommonTagsTest = props => (
     <Heading HSize="h2">common-tags module page</Heading>
     <Details summary="Available Tags">
       <Figure caption="stripIndent">
-        <TextArea
+        <TextInput
+          multiline
           rows="4"
           placeholder={
             stripIndent`
@@ -49,7 +50,8 @@ const CommonTagsTest = props => (
         />
       </Figure>
       <Figure caption="stripIndents">
-        <TextArea
+        <TextInput
+          multiline
           rows="4"
           placeholder={
             stripIndents`
@@ -62,7 +64,8 @@ const CommonTagsTest = props => (
         />
       </Figure>
       <Figure caption="oneLine">
-        <TextArea
+        <TextInput
+          multiline
           rows="4"
           placeholder={
             oneLine`
@@ -74,7 +77,8 @@ const CommonTagsTest = props => (
         />
       </Figure>
       <Figure caption="inlineLists">
-        <TextArea
+        <TextInput
+          multiline
           rows="4"
           placeholder={
             inlineLists`
@@ -85,7 +89,8 @@ const CommonTagsTest = props => (
         />
       </Figure>
       <Figure caption="oneLineInlineLists">
-        <TextArea
+        <TextInput
+          multiline
           rows="4"
           placeholder={
             oneLineInlineLists`
@@ -96,7 +101,8 @@ const CommonTagsTest = props => (
         />
       </Figure>
       <Figure caption="commaLists">
-        <TextArea
+        <TextInput
+          multiline
           rows="4"
           placeholder={
             commaLists`
@@ -107,7 +113,8 @@ const CommonTagsTest = props => (
         />
       </Figure>
       <Figure caption="commaListsOr">
-        <TextArea
+        <TextInput
+          multiline
           rows="4"
           placeholder={
             commaListsOr`
@@ -118,7 +125,8 @@ const CommonTagsTest = props => (
         />
       </Figure>
       <Figure caption="commaListsAnd">
-        <TextArea
+        <TextInput
+          multiline
           rows="4"
           placeholder={
             commaListsAnd`
@@ -129,7 +137,8 @@ const CommonTagsTest = props => (
         />
       </Figure>
       <Figure caption="oneLineCommaLists">
-        <TextArea
+        <TextInput
+          multiline
           rows="4"
           placeholder={
             oneLineCommaLists`
@@ -140,7 +149,8 @@ const CommonTagsTest = props => (
         />
       </Figure>
       <Figure caption="oneLineCommaListsOr">
-        <TextArea
+        <TextInput
+          multiline
           rows="4"
           placeholder={
             oneLineCommaListsOr`
@@ -151,7 +161,8 @@ const CommonTagsTest = props => (
         />
       </Figure>
       <Figure caption="oneLineCommaListsAnd">
-        <TextArea
+        <TextInput
+          multiline
           rows="4"
           placeholder={
             oneLineCommaListsAnd`
@@ -165,7 +176,8 @@ const CommonTagsTest = props => (
     </Details>
     <Details summary="Advanced Usage">
       <Figure caption="Tail Processing">
-        <TextArea
+        <TextInput
+          multiline
           rows="4"
           placeholder={
             oneLine`
@@ -174,7 +186,8 @@ const CommonTagsTest = props => (
             `
           }
         />
-        <TextArea
+        <TextInput
+          multiline
           rows="4"
           placeholder={
             oneLine`
@@ -185,7 +198,8 @@ const CommonTagsTest = props => (
             `
           }
         />
-        <TextArea
+        <TextInput
+          multiline
           rows="4"
           placeholder={
             oneLine(String.raw)`

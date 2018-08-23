@@ -1,15 +1,16 @@
 .root {
+  width: 100%;
 
   &[data-padding='5'] {
-    padding: 5px;
+    padding: 5px 0;
   }
   &[data-padding='10'] {
-    padding: 10px;
+    padding: 10px 0;
   }
   &[data-padding='15'] {
-    padding: 15px;
+    padding: 15px 0;
   }
   &[data-padding='20'] {
-    padding: 20px;
+    padding: 20px 0;
   }
 }
