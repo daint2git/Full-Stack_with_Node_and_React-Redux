@@ -1,13 +1,11 @@
-import Flexbox from './Flexbox'
-import cssModuleNameTag from 'shared/components/utils/cssModuleNameTag'
-import styles from './styles.scss'
+import WrapLayout from 'shared/components/atoms/WrapLayout'
 
-const loadClass = cssModuleNameTag(styles)
+import Flexbox from './Flexbox'
 
 const CssAdvancedTestContent = props => (
-  <div className={loadClass`root`}>
+  <WrapLayout>
     <Flexbox />
-  </div>
+  </WrapLayout>
 )
 
 export default CssAdvancedTestContent

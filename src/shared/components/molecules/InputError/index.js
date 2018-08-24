@@ -1,4 +1,3 @@
-import PropTypes from 'prop-types'
 import { compose, branch, renderNothing } from 'recompose'
 
 import TextOuput from 'shared/components/atoms/TextOuput'
@@ -7,8 +6,8 @@ import styles from './styles.scss'
 
 const loadClass = cssModuleNameTag(styles)
 
-const InputError = ({ errorMessage, children, ...rest }) => (
-  <div className={loadClass`root`} {...rest}>
+const InputError = ({ errorMessage, children, ...other }) => (
+  <div className={loadClass`root`} {...other}>
     <TextOuput color="danger">{errorMessage || children}</TextOuput>
   </div>
 )

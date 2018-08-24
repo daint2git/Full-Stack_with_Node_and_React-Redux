@@ -1,11 +1,11 @@
-import PageLayout from 'shared/components/templates/PageLayout'
 import Heading from 'shared/components/atoms/Heading'
 import CssAdvancedTestContent from 'shared/components/organisms/CssAdvancedTestContent'
+import PageLayout from 'shared/components/templates/PageLayout'
 
 const CssAdvancedTest = props => (
   <PageLayout currentPath="/css-advanced">
-    <Heading HSize="h2">Css Advanced page</Heading>
-    <CssAdvancedTestContent />
+    <Heading component="h2">Css Advanced page</Heading>
+    <CssAdvancedTestContent {...props} />
   </PageLayout>
 )
 export default CssAdvancedTest

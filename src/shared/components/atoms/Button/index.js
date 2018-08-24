@@ -14,14 +14,14 @@ const Button = ({
   disabled,
   shouldPreventSubmit,
   dispatch,
-  ...rest
+  ...other
 }) => (
   <button
     className={loadClass`root ${classes}`}
     data-type={type}
     data-size={size}
     disabled={disabled || shouldPreventSubmit}
-    {...rest}
+    {...other}
   />
 )
 

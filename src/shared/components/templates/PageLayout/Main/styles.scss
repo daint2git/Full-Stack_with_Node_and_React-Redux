@@ -3,10 +3,10 @@
 .root {
   display: flex;
   padding: 10px;
-  background-color: $bg_form;
+  background-color: $bg_app_main;
 
   .content {
-    min-height: calc(100vh - 200px);
     width: 100%;
+    min-height: calc(100vh - 200px);
   }
 }

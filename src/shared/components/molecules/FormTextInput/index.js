@@ -5,9 +5,9 @@ import styles from './styles.scss'
 
 const loadClass = cssModuleNameTag(styles)
 
-const FormTextInput = ({ errorMessage, ...rest }) => (
+const FormTextInput = ({ errorMessage, ...other }) => (
   <div className={loadClass`root`}>
-    <TextInput attention={!!errorMessage} {...rest} />
+    <TextInput attention={!!errorMessage} {...other} />
     <InputError errorMessage={errorMessage} />
   </div>
 )

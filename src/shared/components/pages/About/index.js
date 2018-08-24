@@ -1,9 +1,10 @@
+import Heading from 'shared/components/atoms/Heading'
 import PageLayout from 'shared/components/templates/PageLayout'
 
-export default function(props) {
-  return (
-    <PageLayout currentPath="/about">
-      <div>About page</div>
-    </PageLayout>
-  )
-}
+const About = props => (
+  <PageLayout currentPath="/about">
+    <Heading>Author by DaiNT2</Heading>
+  </PageLayout>
+)
+
+export default About

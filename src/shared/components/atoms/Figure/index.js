@@ -6,8 +6,8 @@ import styles from './styles.scss'
 
 const loadClass = cssModuleNameTag(styles)
 
-const Figure = ({ classes, caption, children, ...rest }) => (
-  <figure className={loadClass`root ${classes}`} {...rest}>
+const Figure = ({ classes, caption, children, ...other }) => (
+  <figure className={loadClass`root ${classes}`} {...other}>
     <figcaption>{caption}</figcaption>
     {children}
   </figure>

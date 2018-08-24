@@ -16,7 +16,7 @@ const TextOuput = ({
   decoration,
   color,
   size,
-  ...rest
+  ...other
 }) => (
   <span
     className={loadClass`root ${classes}`}
@@ -28,7 +28,7 @@ const TextOuput = ({
     data-decoration={decoration}
     data-color={color}
     data-size={size}
-    {...rest}
+    {...other}
   />
 )
 

@@ -1,7 +1,8 @@
 import { createMiddleware } from '../redux-utils'
 import { preventSubmit, startLoading, stopLoading } from './reducer'
 
-const loading = ({ dispatch }, next, action) => {
+const loading = (store, next, action) => {
+  const { dispatch } = store
   dispatch(preventSubmit())
   const timerId = setTimeout(() => dispatch(startLoading()), 100)
   return next(action)
@@ -19,6 +20,6 @@ const loading = ({ dispatch }, next, action) => {
     })
 }
 
-export default function loadingMiddleware(targetActions = []) {
-  return createMiddleware(targetActions, loading)
-}
+const loadingMiddleware = (targetActions = []) => createMiddleware(targetActions, loading)
+
+export default loadingMiddleware

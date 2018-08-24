@@ -32,7 +32,7 @@ const StaticHtml = props => (
 
 const CommonTagsTest = props => (
   <PageLayout currentPath="/common-tags">
-    <Heading HSize="h2">common-tags module page</Heading>
+    <Heading component="h2">common-tags module page</Heading>
     <Details summary="Available Tags">
       <Figure caption="stripIndent">
         <TextInput

@@ -1,39 +1,44 @@
 import { compose, withStateHandlers } from 'recompose'
 
+import WrapLayout from 'shared/components/atoms/WrapLayout'
+import Group from 'shared/components/atoms/Group'
 import TextInput from 'shared/components/atoms/TextInput'
-import Button from 'shared/components/atoms/Button'
 import TextOuput from 'shared/components/atoms/TextOuput'
-import reactDiffusioner from 'shared/components/utils/reactDiffusioner'
+import Button from 'shared/components/atoms/Button'
+import Spacer from 'shared/components/atoms/Spacer'
+import componentIterator from 'shared/components/utils/componentIterator'
+import cssModuleNameTag from 'shared/components/utils/cssModuleNameTag'
+import styles from './styles.scss'
+
+const loadClass = cssModuleNameTag(styles)
 
 const Phone = ({ name, price }) => (
-  <div>
+  <WrapLayout>
     <TextOuput>{`name: ${name}`}</TextOuput>
     <TextOuput>{`price: ${price}`}</TextOuput>
-  </div>
+  </WrapLayout>
 )
 
-const Phones = reactDiffusioner(Phone)
+const Phones = componentIterator(Phone)
 
-const ReactReduxTestContent = ({
-  result,
-  list,
-  inputText,
-  changeText,
-  readPhones,
-  onChange,
-}) => (
-  <div>
-    <TextInput name="inputText" value={inputText} onChange={onChange} />
-    <Button onClick={() => changeText(inputText)}>Click</Button>
-    <Button onClick={readPhones}>Click</Button>
+const ReactReduxTestContent = ({ result, list, input, changeInput, readPhones, onChange }) => (
+  <WrapLayout>
+    <TextInput name="input" value={input} onChange={onChange} />
+    <Spacer padding={5} />
+    <Group classes={loadClass`buttons`}>
+      <Button onClick={() => changeInput(input)}>Click</Button>
+      <Button onClick={readPhones}>Click</Button>
+    </Group>
+    <Spacer padding={5} />
     <TextOuput>{result}</TextOuput>
+    <Spacer padding={5} />
     <Phones list={list} />
-  </div>
+  </WrapLayout>
 )
 
 export default compose(
   withStateHandlers(
-    { inputText: '' },
+    { input: '' },
     { onChange: state => e => ({ ...state, [e.target.name]: e.target.value }) },
   )
 )(ReactReduxTestContent)

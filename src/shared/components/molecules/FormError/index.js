@@ -1,4 +1,3 @@
-import PropTypes from 'prop-types'
 import { compose, branch, renderNothing } from 'recompose'
 
 import TextOuput from 'shared/components/atoms/TextOuput'
@@ -7,8 +6,8 @@ import styles from './styles.scss'
 
 const loadClass = cssModuleNameTag(styles)
 
-const FormError = ({ errorMessage, children, ...rest }) => (
-  <div className={loadClass`root`} {...rest}>
+const FormError = ({ errorMessage, children, ...other }) => (
+  <div className={loadClass`root`} {...other}>
     <TextOuput color="danger" align="center">{errorMessage || children}</TextOuput>
   </div>
 )

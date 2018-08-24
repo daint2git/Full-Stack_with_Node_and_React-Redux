@@ -6,6 +6,7 @@ import iconFileExcel from './svg/icon_file_excel.svg'
 import iconFilePowerPoint from './svg/icon_file_powerpoint.svg'
 import iconFileZip from './svg/icon_file_zip.svg'
 import iconOtherFile from './svg/icon_other_file.svg'
+import iconLoading from './svg/icon_loading.svg'
 import cssModuleNameTag from 'shared/components/utils/cssModuleNameTag'
 import styles from './styles.scss'
 
@@ -26,3 +27,5 @@ export const IconFilePowerPoint = compose(mapProps(injectSrcProps(iconFilePowerP
 export const IconFileZip = compose(mapProps(injectSrcProps(iconFileZip)))(Icon)
 
 export const IconOtherFile = compose(mapProps(injectSrcProps(iconOtherFile)))(Icon)
+
+export const IconLoading = compose(mapProps(injectSrcProps(iconLoading)))(Icon)

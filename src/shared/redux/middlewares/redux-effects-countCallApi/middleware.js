@@ -1,11 +1,12 @@
 import { createMiddleware } from '../redux-utils'
 import { count } from './reducer'
 
-const countCallApi = ({ dispatch }, next, action) => {
+const countCallApi = (store, next, action) => {
+  const { dispatch } = store
   dispatch(count())
   return next(action)
 }
 
-export default function countCallApiMiddleware(targetActions = []) {
-  return createMiddleware(targetActions, countCallApi)
-}
+const countCallApiMiddleware = (targetActions = []) => createMiddleware(targetActions, countCallApi)
+
+export default countCallApiMiddleware

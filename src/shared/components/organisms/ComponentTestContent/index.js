@@ -1,28 +1,26 @@
 import { compose, withStateHandlers } from 'recompose'
 
-import ControlPanel from './ControlPanel'
-import Content from './Content'
+import WrapLayout from 'shared/components/atoms/WrapLayout'
+import Spacer from 'shared/components/atoms/Spacer'
 import cssModuleNameTag from 'shared/components/utils/cssModuleNameTag'
 import styles from './styles.scss'
+
+import ControlPanel from './ControlPanel'
+import Content from './Content'
 
 const loadClass = cssModuleNameTag(styles)
 
 const ComponentTestContent = props => (
-  <div className={loadClass`root`}>
+  <WrapLayout classes={loadClass`root`}>
     <ControlPanel {...props} />
-    <div className={loadClass`spacer`} />
+    <Spacer />
     <Content {...props} />
-  </div>
+  </WrapLayout>
 )
 
 export default compose(
   withStateHandlers(
-    {
-      type: 'primary',
-      size: 'small',
-    },
-    {
-      onChange: state => e => ({ ...state, [e.target.name]: e.target.id }),
-    },
+    { type: 'primary', size: 'small' },
+    { onChange: state => e => ({ ...state, [e.target.name]: e.target.id })},
   )
 )(ComponentTestContent)

@@ -1,5 +1,7 @@
 import { compose, withStateHandlers } from 'recompose'
 
+import WrapLayout from 'shared/components/atoms/WrapLayout'
+import Heading from 'shared/components/atoms/Heading'
 import Button from 'shared/components/atoms/Button'
 import Spacer from 'shared/components/atoms/Spacer'
 import FormTextInput from 'shared/components/molecules/FormTextInput'
@@ -9,15 +11,9 @@ import styles from './styles.scss'
 
 const loadClass = cssModuleNameTag(styles)
 
-const LoginForm = ({
-  username,
-  password,
-  onChange,
-  onSubmit,
-  errors = {},
-}) => (
-  <div className={loadClass`root`}>
-    <h2 className={loadClass`title`}>Sign In</h2>
+const LoginForm = ({ username, password, onChange, onSubmit, errors = {} }) => (
+  <WrapLayout classes={loadClass`root`}>
+    <Heading classes={loadClass`title`}>Sign In</Heading>
     <FormTextInput
       classes={loadClass`input`}
       name="username"
@@ -47,7 +43,7 @@ const LoginForm = ({
     >
       Sign In
     </Button>
-  </div>
+  </WrapLayout>
 )
 
 export default compose(

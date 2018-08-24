@@ -1,3 +1,3 @@
-export default function either(value, tester = value => !!value) {
-  return orElse => tester(value) ? value : orElse
-}
+const either = (value, tester = value => !!value) => orElse => tester(value) ? value : orElse
+
+export default either

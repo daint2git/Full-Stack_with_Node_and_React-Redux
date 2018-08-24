@@ -1,11 +1,11 @@
-import PageLayout from 'shared/components/templates/PageLayout'
 import Heading from 'shared/components/atoms/Heading'
 import ComponentTestContent from 'shared/components/organisms/ComponentTestContent'
+import PageLayout from 'shared/components/templates/PageLayout'
 
 const ComponentTest = props => (
   <PageLayout currentPath="/component">
-    <Heading HSize="h2">Component page</Heading>
-    <ComponentTestContent />
+    <Heading component="h2">Component page</Heading>
+    <ComponentTestContent {...props} />
   </PageLayout>
 )
 

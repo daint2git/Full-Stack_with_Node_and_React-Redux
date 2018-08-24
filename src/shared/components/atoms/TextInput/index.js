@@ -6,13 +6,13 @@ import styles from './styles.scss'
 
 const loadClass = cssModuleNameTag(styles)
 
-const TextInput = ({ classes, attention, multiline, ...rest }) => {
+const TextInput = ({ classes, attention, multiline, type, ...other }) => {
   const props = {
     className: loadClass`root ${classes}`,
     'data-attention': attention,
-    ...rest
+    ...other
   }
-  return !multiline ?  <input type="text" {...props} /> : <textarea {...props}  />
+  return !multiline ? <input type={type} {...props} /> : <textarea {...props} />
 }
 
 const Enhanced = compose(

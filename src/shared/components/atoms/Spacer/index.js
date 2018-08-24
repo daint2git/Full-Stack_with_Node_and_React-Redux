@@ -6,13 +6,13 @@ import styles from './styles.scss'
 
 const loadClass = cssModuleNameTag(styles)
 
-const Spacer = ({ padding, ...rest }) => (
-  <div className={loadClass`root`} data-padding={padding} {...rest} />
+const Spacer = ({ padding, ...other }) => (
+  <div className={loadClass`root`} data-padding={padding} {...other} />
 )
 
-const Presentational = compose(
+const Enhanced = compose(
   defaultProps({ padding: 10 }),
   setPropTypes({ padding: PropTypes.number }),
 )(Spacer)
 
-export default Presentational
+export default Enhanced

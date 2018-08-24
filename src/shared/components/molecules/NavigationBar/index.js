@@ -1,6 +1,6 @@
 import { Link } from 'react-router'
 
-import reactDiffusioner from 'shared/components/utils/reactDiffusioner'
+import componentIterator from 'shared/components/utils/componentIterator'
 import cssModuleNameTag from 'shared/components/utils/cssModuleNameTag'
 import styles from './styles.scss'
 
@@ -9,23 +9,8 @@ const loadClass = cssModuleNameTag(styles)
 const MENUS = [
   {
     id: 'home',
-    name: 'Home',
+    name: 'home',
     path: '/home',
-  },
-  {
-    id: 'job',
-    name: 'Job',
-    path: '/job',
-  },
-  {
-    id: 'job detail',
-    name: 'Job detail',
-    path: '/job/abc',
-  },
-  {
-    id: 'about',
-    name: 'About',
-    path: '/about',
   },
   {
     id: 'date-fns',
@@ -72,6 +57,11 @@ const MENUS = [
     name: 'css-advanced',
     path: '/css-advanced',
   },
+  {
+    id: 'about',
+    name: 'about',
+    path: '/about',
+  },
 ]
 
 const NavigationItem = ({ path, name, currentPath }) => (
@@ -84,7 +74,7 @@ const NavigationItem = ({ path, name, currentPath }) => (
   </Link>
 )
 
-const NavigationItems = reactDiffusioner(NavigationItem)
+const NavigationItems = componentIterator(NavigationItem)
 
 const NavigationBar = props => (
   <nav className={loadClass`root`}>

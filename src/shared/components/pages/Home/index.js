@@ -1,9 +1,9 @@
-import PageLayout from 'shared/components/templates/PageLayout'
 import Heading from 'shared/components/atoms/Heading'
+import PageLayout from 'shared/components/templates/PageLayout'
 
 const Home = props => (
   <PageLayout currentPath="/home">
-    <Heading HSize="h2">Home page</Heading>
+    <Heading component="h2">Home page</Heading>
   </PageLayout>
 )
 

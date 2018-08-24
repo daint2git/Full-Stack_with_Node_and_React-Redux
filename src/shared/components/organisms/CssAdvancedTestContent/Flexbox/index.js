@@ -1,6 +1,6 @@
 import Details from 'shared/components/atoms/Details'
 import Figure from 'shared/components/atoms/Figure'
-import reactDiffusioner from 'shared/components/utils/reactDiffusioner'
+import componentIterator from 'shared/components/utils/componentIterator'
 import cssModuleNameTag from 'shared/components/utils/cssModuleNameTag'
 import styles from './styles.scss'
 
@@ -36,7 +36,7 @@ const FlexItem = ({ label, children, style }) => (
   <div className={loadClass`item`} style={style}>{`Flex item ${children || label}`}</div>
 )
 
-const FlexItems = reactDiffusioner(FlexItem)
+const FlexItems = componentIterator(FlexItem)
 
 const FlexContainer = ({ caption, children, list = ITEMS_1, style }) => (
   <Figure caption={caption}>

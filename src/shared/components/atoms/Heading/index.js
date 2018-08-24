@@ -6,14 +6,14 @@ import styles from './styles.scss'
 
 const loadClass = cssModuleNameTag(styles)
 
-const Heading = ({ HSize, classes, children }) => (
-  <HSize className={loadClass`root ${HSize} ${classes}`}>{children}</HSize>
+const Heading = ({ component: Component, classes, children, ...other }) => (
+  <Component className={loadClass`root ${Component} ${classes}`} {...other}>{children}</Component>
 )
 
 const Enhanced = compose(
-  defaultProps({ HSize: 'h2' }),
+  defaultProps({ component: 'h2' }),
   setPropTypes({
-    HSize: PropTypes.oneOf(['h1', 'h2', 'h3']).isRequired,
+    component: PropTypes.oneOf(['h1', 'h2', 'h3']).isRequired,
     classes: PropTypes.string,
   }),
 )(Heading)

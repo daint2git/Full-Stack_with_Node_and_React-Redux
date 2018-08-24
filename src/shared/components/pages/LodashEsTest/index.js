@@ -1,9 +1,9 @@
-import PageLayout from 'shared/components/templates/PageLayout'
 import Heading from 'shared/components/atoms/Heading'
+import PageLayout from 'shared/components/templates/PageLayout'
 
 const LodashEsTest = props => (
   <PageLayout currentPath="/lodash-es">
-    <Heading HSize="h2">lodash-es module page</Heading>
+    <Heading component="h2">lodash-es module page</Heading>
   </PageLayout>
 )
 

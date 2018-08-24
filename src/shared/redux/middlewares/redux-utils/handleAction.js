@@ -1,7 +1,7 @@
 import produce from 'immer'
 import either from './either'
 
-export default function handleAction(targetAction, updater, initalState = {}) {
+const handleAction = (targetAction, updater, initalState = {}) => {
   return (state = initalState, action) => {
     const { type, payload } = action
     if (type !== either(targetAction.type)(targetAction))
@@ -9,3 +9,5 @@ export default function handleAction(targetAction, updater, initalState = {}) {
     return produce(state, state => updater(state, payload))
   }
 }
+
+export default handleAction

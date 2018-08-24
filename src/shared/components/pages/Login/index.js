@@ -4,8 +4,8 @@ import { bindActionCreators } from 'redux'
 
 import { login } from 'shared/redux/reducers/auth'
 
-import LoginLayout from 'shared/components/templates/LoginLayout'
 import LoginForm from 'shared/components/organisms/LoginForm'
+import LoginLayout from 'shared/components/templates/LoginLayout'
 
 const Login = props => (
   <LoginLayout>

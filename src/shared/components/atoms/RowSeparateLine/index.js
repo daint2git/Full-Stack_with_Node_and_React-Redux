@@ -6,13 +6,13 @@ import styles from './styles.scss'
 
 const loadClass = cssModuleNameTag(styles)
 
-const RowSeparateLine = ({ margin, ...rest }) => (
-  <div className={loadClass`root`} data-margin={margin} {...rest} />
+const RowSeparateLine = ({ margin, ...other }) => (
+  <div className={loadClass`root`} data-margin={margin} {...other} />
 )
 
-const Presentational = compose(
+const Enhanced = compose(
   defaultProps({ margin: 10 }),
   setPropTypes({ margin: PropTypes.number }),
 )(RowSeparateLine)
 
-export default Presentational
+export default Enhanced

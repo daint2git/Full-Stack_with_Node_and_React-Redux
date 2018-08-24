@@ -1,33 +1,21 @@
-import Spacer from 'shared/components/atoms/Spacer'
+import WrapLayout from 'shared/components/atoms/WrapLayout'
 import RowSeparateLine from 'shared/components/atoms/RowSeparateLine'
-import cssModuleNameTag from 'shared/components/utils/cssModuleNameTag'
-import styles from './styles.scss'
 
 import WithStateHandlers from './WithStateHandlers'
 import WithPropsOnChange from './WithPropsOnChange'
 import WithReducer from './WithReducer'
 import ToRenderProps from './ToRenderProps'
 
-const loadClass = cssModuleNameTag(styles)
-
-const SpacerRow = props => (
-  <>
-    <Spacer />
-    <RowSeparateLine />
-    <Spacer />
-  </>
-)
-
 const RecomposeTestContent = props => (
-  <div className={loadClass`root`}>
+  <WrapLayout>
     <WithStateHandlers />
-    <SpacerRow />
+    <RowSeparateLine margin={20} />
     <WithPropsOnChange />
-    <SpacerRow />
+    <RowSeparateLine margin={20} />
     <WithReducer />
-    <SpacerRow />
+    <RowSeparateLine margin={20} />
     <ToRenderProps />
-  </div>
+  </WrapLayout>
 )
 
 export default RecomposeTestContent

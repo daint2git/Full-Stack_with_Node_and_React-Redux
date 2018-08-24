@@ -6,10 +6,10 @@ import styles from './styles.scss'
 
 const loadClass = cssModuleNameTag(styles)
 
-const Radio = ({ classes, id, children, ...rest }) => (
+const Radio = ({ classes, id, children, ...other }) => (
   <div className={loadClass`root ${classes}`}>
     <label className={loadClass`input`} htmlFor={id}>
-      <input type="radio" id={id} {...rest} />
+      <input type="radio" id={id} {...other} />
       <div className={loadClass`children`}>{children}</div>
     </label>
   </div>

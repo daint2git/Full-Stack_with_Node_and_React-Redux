@@ -1,10 +1,11 @@
 import { withStateHandlers } from 'recompose'
 
+import WrapLayout from 'shared/components/atoms/WrapLayout'
+import Group from 'shared/components/atoms/Group'
 import Heading from 'shared/components/atoms/Heading'
 import TextOuput from 'shared/components/atoms/TextOuput'
 import Spacer from 'shared/components/atoms/Spacer'
 import FormTextInput from 'shared/components/molecules/FormTextInput'
-import TextInput from 'shared/components/atoms/TextInput'
 import Button from 'shared/components/atoms/Button'
 import cssModuleNameTag from 'shared/components/utils/cssModuleNameTag'
 import styles from './styles.scss'
@@ -19,20 +20,20 @@ const WithStateHandlers = ({
   inputValue,
   onChangeInputValue,
 }) => (
-  <div className={loadClass`root`}>
-    <Heading HSize="h3">withStateHandlers</Heading>
+  <WrapLayout>
+    <Heading component="h3">withStateHandlers</Heading>
     <TextOuput>Input value: </TextOuput>
     <Spacer padding={5} />
     <FormTextInput value={inputValue} onChange={onChangeInputValue} />
     <Spacer padding={5} />
-    <div className={loadClass`buttons`}>
+    <Group classes={loadClass`buttons`}>
       <Button onClick={() => increment(inputValue)}>increment</Button>
       <Button type="info" onClick={() => decrement(inputValue)}>decrement</Button>
       <Button type="danger" onClick={reset}>reset</Button>
-    </div>
+    </Group>
     <Spacer padding={5} />
     <TextOuput>{`Counter: ${counter}`}</TextOuput>
-  </div>
+  </WrapLayout>
 )
 
 export default withStateHandlers(

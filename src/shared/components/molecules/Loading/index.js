@@ -2,7 +2,7 @@ import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { compose, onlyUpdateForPropTypes, setPropTypes } from 'recompose'
 
-import iconLoading from 'shared/components/atoms/SVGIcon/svg/icon_loading.svg'
+import { IconLoading } from 'shared/components/atoms/SVGIcon'
 import cssModuleNameTag from 'shared/components/utils/cssModuleNameTag'
 import styles from './styles.scss'
 
@@ -12,13 +12,7 @@ const Loading = ({ loading }) => (
   <div className={cssModules`root`} data-loading={loading}>
     <div className={cssModules`overlay`} />
     <div className={cssModules`inner position-center`}>
-      <img
-        className={cssModules`defaultAnimation`}
-        src={iconLoading}
-        alt="loading"
-        width={50}
-        height={50}
-      />
+      <IconLoading className={cssModules`animation`} alt="loading" width={50} height={50} />
     </div>
   </div>
 )

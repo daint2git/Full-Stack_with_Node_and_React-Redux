@@ -1,9 +1,9 @@
-export default function createAction(
+const createAction = (
   type,
   error = false,
   payloadCreator = value => value,
   metaCreator = {},
-) {
+) => {
   const actionCreator = (...args) => ({
     type,
     error,
@@ -13,3 +13,5 @@ export default function createAction(
   actionCreator.type = type
   return actionCreator
 }
+
+export default createAction

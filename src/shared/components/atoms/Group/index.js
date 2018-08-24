@@ -6,18 +6,12 @@ import styles from './styles.scss'
 
 const loadClass = cssModuleNameTag(styles)
 
-const Details = ({ classes, summary, children, ...other }) => (
-  <details className={loadClass`root ${classes}`} {...other}>
-    <summary>{summary}</summary>
-    {children}
-  </details>
+const Group = ({ classes, children, ...other }) => (
+  <div className={loadClass`root ${classes}`} {...other}>{children}</div>
 )
 
 const Enhanced = compose(
-  setPropTypes({
-    classes: PropTypes.string,
-    summary: PropTypes.string,
-  }),
-)(Details)
+  setPropTypes({ classes: PropTypes.string }),
+)(Group)
 
 export default Enhanced

@@ -2,6 +2,6 @@ import createAction from './createAction'
 
 const ERROR = 'ERROR'
 
-export default function createErrorAction(type) {
-  return createAction(`${ERROR}/${type}`, true)
-}
+const createErrorAction = type => createAction(`${ERROR}/${type}`, true)
+
+export default createErrorAction
