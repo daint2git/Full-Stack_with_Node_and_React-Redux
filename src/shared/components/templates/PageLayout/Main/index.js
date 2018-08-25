@@ -5,7 +5,7 @@ const loadClass = cssModuleNameTag(styles)
 
 const Main = ({ children }) => (
   <main className={loadClass`root`}>
-    <section className={loadClass`content`}>{children}</section>
+    <div className={loadClass`content`}>{children}</div>
   </main>
 )
 

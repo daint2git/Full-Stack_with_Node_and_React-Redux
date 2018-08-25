@@ -12,7 +12,7 @@ import {
 const loginSuccess = createAction('LOGIN_SUCCESS')
 const loginFail = createErrorAction('LOGIN_FAIL')
 
-export function login(username, password, location = 'home', request) {
+export const login = (username, password, location = 'home', request) => {
   return steps(
     fetch({
       method: 'get',
@@ -34,13 +34,20 @@ export function login(username, password, location = 'home', request) {
         }
         if (size(errors) > 0) return loginFail(errors)
         return steps(
-          loginSuccess({ username, password }),
+          loginSuccess({ ...user }),
           push(location),
         )
       },
       error => loginFail(error),
     ]
   )
+}
+
+const logoutSuccess = createAction('LOGOUT_SUCCESS')
+
+export const logout = () => {
+  window.location.href = `/login`
+  return logoutSuccess()
 }
 
 export const INITIAL_STATE = () => ({
@@ -52,6 +59,7 @@ export default handleActions(
   [
     handleAction(loginSuccess, (state, payload) => ({ ...state, user: { ...payload } })),
     handleAction(loginFail, (state, payload) => ({ ...state, errors: { ...payload } })),
+    handleAction(logoutSuccess, () => INITIAL_STATE()),
   ],
   INITIAL_STATE()
 )

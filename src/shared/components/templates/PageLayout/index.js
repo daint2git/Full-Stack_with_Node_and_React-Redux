@@ -1,4 +1,9 @@
-import Spacer from 'shared/components/atoms/Spacer'
+import { compose } from 'recompose'
+import { connect } from 'react-redux'
+import { bindActionCreators } from 'redux'
+
+import { logout } from 'shared/redux/reducers/auth'
+
 import NavigationBar from 'shared/components/molecules/NavigationBar'
 import cssModuleNameTag from 'shared/components/utils/cssModuleNameTag'
 import styles from './styles.scss'
@@ -9,20 +14,29 @@ import Footer from './Footer'
 
 const loadClass = cssModuleNameTag(styles)
 
-const PageLayout = ({ currentPath, ...other }) => (
+const PageLayout = ({ fullname, role, logout, currentPath, ...other }) => (
   <div className={loadClass`root`}>
-    <Header {...other} />
+    <Header fullname={fullname} role={role} logout={logout} />
     <div className={loadClass`main`}>
       <div className={loadClass`navigation-bar`}>
         <NavigationBar currentPath={currentPath} />
       </div>
-      <div className={loadClass`content`}>
-        <Main {...other} />
-        <Spacer padding={5} />
-        <Footer {...other} />
+      <div className={loadClass`container`}>
+        <div className={loadClass`content`}>
+          <Main {...other} />
+        </div>
+        <Footer />
       </div>
     </div>
   </div>
 )
 
-export default PageLayout
+export default compose(
+  connect(
+    state => ({
+      fullname: state.auth.user.fullname,
+      role: state.auth.user.role,
+    }),
+    dispacth => bindActionCreators({ logout }, dispacth),
+  ),
+)(PageLayout)

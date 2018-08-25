@@ -1,4 +1,4 @@
-@import './reset.scss';
+@import './_reset.scss';
 @import './colors.scss';
 @import './variables.scss';
 
@@ -10,20 +10,34 @@ html {
 body {
   width: 100%;
   font-size: $fsize_medium;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
   background-color: $bg_app;
 }
 
 button {
   background-color: transparent;
   border: none;
-  cursor: pointer;
   outline: none;
   padding: 0;
+  cursor: pointer;
 }
 
 a {
   text-decoration: none;
+  cursor: pointer;
+}
+
+img {
+  display: inline-block;
+  cursor: pointer;
+}
+
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+  font-size: 100%;
 }
 
 input[type='button'],
@@ -33,8 +47,7 @@ input[type='file'] {
   cursor: pointer;
 }
 
-input[type='text'],
-input[type='password'],
+input,
 textarea,
 select {
   outline: none;
@@ -42,4 +55,8 @@ select {
 
 ::placeholder {
   color: $light_gray;
+}
+
+#root {
+  width: 100%;
 }

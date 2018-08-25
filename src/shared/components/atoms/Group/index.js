@@ -7,7 +7,7 @@ import styles from './styles.scss'
 const loadClass = cssModuleNameTag(styles)
 
 const Group = ({ classes, children, ...other }) => (
-  <div className={loadClass`root ${classes}`} {...other}>{children}</div>
+  <div className={loadClass`${classes}`} {...other}>{children}</div>
 )
 
 const Enhanced = compose(

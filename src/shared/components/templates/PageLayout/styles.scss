@@ -12,8 +12,12 @@
       height: 100vh;
     }
 
-    .content {
+    .container {
       padding-left: 210px;
+
+      .content {
+        padding-bottom: 10px;
+      }
     }
   }
 }

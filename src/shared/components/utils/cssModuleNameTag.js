@@ -9,6 +9,7 @@ const cssModuleNameTag = styles => {
     },
 
     onEndResult(endResult) {
+      if (endResult.length === 0) return null
       return endResult
         .split(' ')
         .reduce((result, key) => `${result} ${localClass(key)}`, '')

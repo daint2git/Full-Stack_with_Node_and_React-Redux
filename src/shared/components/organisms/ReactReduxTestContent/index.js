@@ -3,7 +3,7 @@ import { compose, withStateHandlers } from 'recompose'
 import WrapLayout from 'shared/components/atoms/WrapLayout'
 import Group from 'shared/components/atoms/Group'
 import TextInput from 'shared/components/atoms/TextInput'
-import TextOuput from 'shared/components/atoms/TextOuput'
+import TextOutput from 'shared/components/atoms/TextOutput'
 import Button from 'shared/components/atoms/Button'
 import Spacer from 'shared/components/atoms/Spacer'
 import componentIterator from 'shared/components/utils/componentIterator'
@@ -14,8 +14,8 @@ const loadClass = cssModuleNameTag(styles)
 
 const Phone = ({ name, price }) => (
   <WrapLayout>
-    <TextOuput>{`name: ${name}`}</TextOuput>
-    <TextOuput>{`price: ${price}`}</TextOuput>
+    <TextOutput>{`name: ${name}`}</TextOutput>
+    <TextOutput>{`price: ${price}`}</TextOutput>
   </WrapLayout>
 )
 
@@ -30,7 +30,7 @@ const ReactReduxTestContent = ({ result, list, input, changeInput, readPhones, o
       <Button onClick={readPhones}>Click</Button>
     </Group>
     <Spacer padding={5} />
-    <TextOuput>{result}</TextOuput>
+    <TextOutput>{result}</TextOutput>
     <Spacer padding={5} />
     <Phones list={list} />
   </WrapLayout>

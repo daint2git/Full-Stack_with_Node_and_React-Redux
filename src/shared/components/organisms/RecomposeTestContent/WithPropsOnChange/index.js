@@ -3,7 +3,7 @@ import { withPropsOnChange, withStateHandlers } from 'recompose'
 import WrapLayout from 'shared/components/atoms/WrapLayout'
 import Group from 'shared/components/atoms/Group'
 import Button from 'shared/components/atoms/Button'
-import TextOuput from 'shared/components/atoms/TextOuput'
+import TextOutput from 'shared/components/atoms/TextOutput'
 import Spacer from 'shared/components/atoms/Spacer'
 import Heading from 'shared/components/atoms/Heading'
 import cssModuleNameTag from 'shared/components/utils/cssModuleNameTag'
@@ -15,8 +15,8 @@ const WithPropsOnChange =  withPropsOnChange(
   ['counter'], props => ({ ...props }),
 )(({ title, counter }) => (
   <Group>
-    <TextOuput>{`Title: ${title}`}</TextOuput>
-    <TextOuput>{`Counter: ${counter}`}</TextOuput>
+    <TextOutput>{`Title: ${title}`}</TextOutput>
+    <TextOutput>{`Counter: ${counter}`}</TextOutput>
   </Group>
 ))
 
