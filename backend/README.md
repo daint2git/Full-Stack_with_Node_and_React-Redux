@@ -1,6 +1,6 @@
 # React_Enhancement
 
-- Target: 
+- Technology: 
   - Nodejs
   - Firebase
   - PostgreSql
