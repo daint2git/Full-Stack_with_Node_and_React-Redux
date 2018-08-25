@@ -2,7 +2,7 @@
 @import '../../utils/variables.scss';
 
 .root {
-  color: $info;
+  color: $black;
   padding: 10px 0;
 
   &.h1 {
@@ -15,5 +15,19 @@
 
   &.h3 {
     font-size: $fsize_large;
+  }
+
+  &[data-color='white'] {
+    color: $white;
+  }
+
+  &[data-weight='bold'] {
+    font-weight: bold;
+  }
+  &[data-weight='lighter'] {
+    font-weight: lighter;
+  }
+  &[data-weight='bolder'] {
+    font-weight: bolder;
   }
 }

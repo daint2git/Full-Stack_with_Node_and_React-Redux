@@ -2,7 +2,7 @@ import { toRenderProps, withProps } from 'recompose'
 
 import WrapLayout from 'shared/components/atoms/WrapLayout'
 import Group from 'shared/components/atoms/Group'
-import TextOutput from 'shared/components/atoms/TextOutput'
+import TextValue from 'shared/components/atoms/TextValue'
 import Heading from 'shared/components/atoms/Heading'
 
 const enhance = withProps(({ text }) => ({ newText: `${text} toRenderProps` }))
@@ -16,8 +16,8 @@ export default function(props) {
       <ToRenderProps text="default">
         {({ text, newText }) => (
           <Group>
-            <TextOutput>{`text: ${text}`}</TextOutput>
-            <TextOutput>{`newText: ${newText}`}</TextOutput>
+            <TextValue>{`text: ${text}`}</TextValue>
+            <TextValue>{`newText: ${newText}`}</TextValue>
           </Group>
         )}
       </ToRenderProps>

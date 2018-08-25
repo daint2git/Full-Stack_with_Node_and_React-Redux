@@ -6,7 +6,7 @@ import styles from './styles.scss'
 
 const loadClass = cssModuleNameTag(styles)
 
-const TextOutput = ({
+const TextValue = ({
   classes,
   ellipsis,
   active,
@@ -49,6 +49,6 @@ const Enhanced = compose(
     color: PropTypes.string,
     size: PropTypes.string,
   }),
-)(TextOutput)
+)(TextValue)
 
 export default Enhanced

@@ -6,13 +6,13 @@ import {
   IconFilePowerPoint,
   IconFileZip,
   IconOtherFile,
-} from 'shared/components/atoms/SVGIcon'
+} from 'shared/components/atoms/Icons'
 
 const WIDTH = 22
 const HEIGHT = 22
 
-export default function(props) {
-  switch(fileExtension(props.fileName)) {
+const FileIcon = ({ fileName }) => {
+  switch(fileExtension(fileName)) {
     case 'pdf':
       return <IconFilePdf width={WIDTH} height={HEIGHT} />
     case 'doc':
@@ -39,3 +39,5 @@ export default function(props) {
       return <IconOtherFile width={WIDTH} height={HEIGHT} />
   }
 }
+
+export default FileIcon

@@ -3,7 +3,7 @@ import { withStateHandlers } from 'recompose'
 import WrapLayout from 'shared/components/atoms/WrapLayout'
 import Group from 'shared/components/atoms/Group'
 import Heading from 'shared/components/atoms/Heading'
-import TextOutput from 'shared/components/atoms/TextOutput'
+import TextValue from 'shared/components/atoms/TextValue'
 import Spacer from 'shared/components/atoms/Spacer'
 import FormTextInput from 'shared/components/molecules/FormTextInput'
 import Button from 'shared/components/atoms/Button'
@@ -22,7 +22,7 @@ const WithStateHandlers = ({
 }) => (
   <WrapLayout>
     <Heading component="h3">withStateHandlers</Heading>
-    <TextOutput>Input value: </TextOutput>
+    <TextValue>Input value: </TextValue>
     <Spacer padding={5} />
     <FormTextInput value={inputValue} onChange={onChangeInputValue} />
     <Spacer padding={5} />
@@ -32,7 +32,7 @@ const WithStateHandlers = ({
       <Button type="danger" onClick={reset}>reset</Button>
     </Group>
     <Spacer padding={5} />
-    <TextOutput>{`Counter: ${counter}`}</TextOutput>
+    <TextValue>{`Counter: ${counter}`}</TextValue>
   </WrapLayout>
 )
 

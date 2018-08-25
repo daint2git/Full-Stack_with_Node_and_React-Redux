@@ -8,9 +8,9 @@ import {
   IconFileZip,
   IconOtherFile,
   IconLoading
-} from '../SVGIcon'
+} from '../Icons'
 
-storiesOf('SVGIcon', module)
+storiesOf('Icons', module)
   .add('IconFilePdf', () => <IconFilePdf />)
   .add('IconFileWord', () => <IconFileWord />)
   .add('IconFileExcel', () => <IconFileExcel />)

@@ -2,7 +2,7 @@ import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { compose, onlyUpdateForPropTypes, setPropTypes } from 'recompose'
 
-import { IconLoading } from 'shared/components/atoms/SVGIcon'
+import { IconLoading } from 'shared/components/atoms/Icons'
 import cssModuleNameTag from 'shared/components/utils/cssModuleNameTag'
 import styles from './styles.scss'
 

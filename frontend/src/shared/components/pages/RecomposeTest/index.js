@@ -4,7 +4,7 @@ import RecomposeTestContent from 'shared/components/organisms/RecomposeTestConte
 
  const RecomposeTest = props => (
   <PageLayout currentPath="/recompose">
-    <Heading component="h2">Recompose page</Heading>
+    <Heading component="h2" weight="bold">Recompose page</Heading>
     <RecomposeTestContent {...props} />
   </PageLayout>
 )

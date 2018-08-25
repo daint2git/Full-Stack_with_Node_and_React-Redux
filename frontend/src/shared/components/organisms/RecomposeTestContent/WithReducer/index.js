@@ -5,7 +5,7 @@ import Group from 'shared/components/atoms/Group'
 import Heading from 'shared/components/atoms/Heading'
 import Button from 'shared/components/atoms/Button'
 import Spacer from 'shared/components/atoms/Spacer'
-import TextOutput from 'shared/components/atoms/TextOutput'
+import TextValue from 'shared/components/atoms/TextValue'
 import cssModuleNameTag from 'shared/components/utils/cssModuleNameTag'
 import styles from './styles.scss'
 
@@ -22,7 +22,7 @@ const WithReducer = ({ state: { counter }, dispatch }) => (
       <Button type="info" onClick={() => dispatch({ type: DECREAMENT, value: 1 })}>decrement</Button>
     </Group>
     <Spacer padding={5} />
-    <TextOutput>{`Counter: ${counter}`}</TextOutput>
+    <TextValue>{`Counter: ${counter}`}</TextValue>
   </WrapLayout>
 )
 

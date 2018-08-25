@@ -1,6 +1,6 @@
 import { compose, branch, renderNothing } from 'recompose'
 
-import TextOutput from 'shared/components/atoms/TextOutput'
+import TextValue from 'shared/components/atoms/TextValue'
 import cssModuleNameTag from 'shared/components/utils/cssModuleNameTag'
 import styles from './styles.scss'
 
@@ -8,7 +8,7 @@ const loadClass = cssModuleNameTag(styles)
 
 const InputError = ({ errorMessage, children, ...other }) => (
   <div className={loadClass`root`} {...other}>
-    <TextOutput color="danger">{errorMessage || children}</TextOutput>
+    <TextValue color="danger">{errorMessage || children}</TextValue>
   </div>
 )
 

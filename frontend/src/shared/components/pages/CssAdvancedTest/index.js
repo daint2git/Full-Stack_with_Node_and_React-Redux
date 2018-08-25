@@ -4,7 +4,7 @@ import PageLayout from 'shared/components/templates/PageLayout'
 
 const CssAdvancedTest = props => (
   <PageLayout currentPath="/css-advanced">
-    <Heading component="h2">Css Advanced page</Heading>
+    <Heading component="h2" weight="bold">Css Advanced page</Heading>
     <CssAdvancedTestContent {...props} />
   </PageLayout>
 )

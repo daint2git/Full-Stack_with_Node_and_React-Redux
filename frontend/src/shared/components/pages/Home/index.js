@@ -3,7 +3,7 @@ import PageLayout from 'shared/components/templates/PageLayout'
 
 const Home = props => (
   <PageLayout currentPath="/home">
-    <Heading component="h2">Home page</Heading>
+    <Heading component="h2" weight="bold">Home page</Heading>
   </PageLayout>
 )
 

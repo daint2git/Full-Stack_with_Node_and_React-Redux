@@ -1,3 +1,4 @@
+import Heading from 'shared/components/atoms/Heading'
 import PageLayout from 'shared/components/templates/PageLayout'
 
 export default function(props) {
@@ -21,7 +22,7 @@ export default function(props) {
   console.log(0 <= null)
   return (
     <PageLayout currentPath="/javascript">
-      <div>JavaScript page</div>
+      <Heading component="h2" weight="bold">JavaScript page</Heading>
     </PageLayout>
   )
 }
