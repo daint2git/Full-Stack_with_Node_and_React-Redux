@@ -18,32 +18,32 @@
       display: flex;
       align-items: center;
       justify-content: center;
-    }
 
-    .icon {
-      box-sizing: border-box;
-      display: inline-block;
-      position: relative;
-      min-width: 16px;
-      height: 16px;
-      border: 1px solid $primary;
-      background-color: $white;
-      border-radius: 50%;
-    }
+      .icon {
+        display: inline-block;
+        position: relative;
+        min-width: 16px;
+        height: 16px;
+        background-color: $white;
+        border: 1px solid $primary;
+        border-radius: 50%;
+        box-sizing: border-box;
+      }
 
-    .icon[data-checked='true']:after {
-      background: $primary;
-    }
+      .icon:after {
+        content: '';
+        display: block;
+        width: 10px;
+        height: 10px;
+        top: 0;
+        left: 0;
+        margin: 2px;
+        border-radius: 50%;
+      }
 
-    .icon:after {
-      content: '';
-      display: block;
-      border-radius: 50%;
-      width: 10px;
-      height: 10px;
-      top: 0;
-      left: 0;
-      margin: 2px;
+      .icon[data-checked='true']:after {
+        background-color: $primary;
+      }
     }
 
     .children {
