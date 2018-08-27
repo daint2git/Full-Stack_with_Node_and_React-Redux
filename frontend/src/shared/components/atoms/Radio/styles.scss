@@ -1,11 +1,54 @@
+@import '../../utils/colors.scss';
+
 .root {
   width: 100%;
+  height: 20px;
   display: flex;
   align-items: center;
 
   .input {
     display: flex;
     align-items: center;
+
+    input {
+      display: none;
+    }
+
+    .radio {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .icon {
+      box-sizing: border-box;
+      display: inline-block;
+      position: relative;
+      min-width: 16px;
+      height: 16px;
+      border: 1px solid $primary;
+      background-color: $white;
+      border-radius: 50%;
+    }
+
+    .icon[data-checked='true']:after {
+      background: $primary;
+    }
+
+    .icon:after {
+      content: '';
+      display: block;
+      border-radius: 50%;
+      width: 10px;
+      height: 10px;
+      top: 0;
+      left: 0;
+      margin: 2px;
+    }
+
+    .children {
+      padding-left: 10px;
+    }
 
     &:hover {
       cursor: pointer;
