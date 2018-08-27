@@ -1,4 +1,4 @@
-import { compose } from 'recompose'
+import { compose, mapProps } from 'recompose'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 
@@ -18,4 +18,9 @@ export default compose(
     state => ({ errors: state.auth.errors }),
     dispacth => bindActionCreators({ login }, dispacth),
   ),
+  mapProps(props => ({
+    ...props,
+    login: (username, password) =>
+      props.login(username, password, props.location.query.location || 'home'),
+  }))
 )(Login)

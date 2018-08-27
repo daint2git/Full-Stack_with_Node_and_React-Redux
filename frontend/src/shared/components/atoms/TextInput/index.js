@@ -18,8 +18,8 @@ const TextInput = ({ classes, attention, multiline, type, ...other }) => {
 const Enhanced = compose(
   setPropTypes({
     classes: PropTypes.string,
-    multiline: PropTypes.bool,
     attention: PropTypes.bool,
+    multiline: PropTypes.bool,
   }),
 )(TextInput)
 

@@ -12,7 +12,12 @@ const Loading = ({ loading }) => (
   <div className={cssModules`root`} data-loading={loading}>
     <div className={cssModules`overlay`} />
     <div className={cssModules`inner position-center`}>
-      <IconLoading className={cssModules`animation`} alt="loading" width={50} height={50} />
+      <IconLoading
+        className={cssModules`animation`}
+        alt="loading"
+        width={50}
+        height={50}
+      />
     </div>
   </div>
 )

@@ -1,5 +1,7 @@
 import { Route, Redirect } from 'react-router'
 
+import { verify } from 'shared/redux/reducers/auth'
+
 import RootLayout from 'shared/components/templates/RootLayout'
 import Login from 'shared/components/pages/Login'
 import Home from 'shared/components/pages/Home'
@@ -14,22 +16,36 @@ import ReactReduxTest from 'shared/components/pages/ReactReduxTest'
 import RecomposeTest from 'shared/components/pages/RecomposeTest'
 import CssAdvancedTest from 'shared/components/pages/CssAdvancedTest'
 
-const appRoutes = () => (
-  <Route component={RootLayout}>
-    <Redirect from="/" to="login" />
-    <Route path="/login" component={Login} />
-    <Route path="/home" component={Home} />
-    <Route path="/date-fns" component={DateFnsTest} />
-    <Route path="/lodash-es" component={LodashEsTest} />
-    <Route path="/common-tags" component={CommonTagsTest} />
-    <Route path="/component" component={ComponentTest} />
-    <Route path="/javascript" component={JavaScriptTest} />
-    <Route path="/react" component={ReactTest} />
-    <Route path="/react-redux" component={ReactReduxTest} />
-    <Route path="/recompose" component={RecomposeTest} />
-    <Route path="/css-advanced" component={CssAdvancedTest} />
-    <Route path="/about" component={About} />
-  </Route>
-)
+const appRoutes = store => {
+
+  const requiredLogin = (nextState, replace, callback) =>
+    store.dispatch(verify())
+      .then(
+        () => callback(),
+        err => {
+          replace(`/login?location=${nextState.location.pathname}`)
+          callback()
+        }
+      )
+
+  return (
+    <Route component={RootLayout}>
+      <Redirect from="/" to="login" />
+      <Route path="/login" component={Login} />
+      <Route path="/home" component={Home} onEnter={requiredLogin} />
+      <Route path="/date-fns" component={DateFnsTest} onEnter={requiredLogin} />
+      <Route path="/lodash-es" component={LodashEsTest} onEnter={requiredLogin} />
+      <Route path="/common-tags" component={CommonTagsTest} onEnter={requiredLogin} />
+      <Route path="/component" component={ComponentTest} onEnter={requiredLogin} />
+      <Route path="/javascript" component={JavaScriptTest} onEnter={requiredLogin} />
+      <Route path="/react" component={ReactTest} onEnter={requiredLogin} />
+      <Route path="/react-redux" component={ReactReduxTest} onEnter={requiredLogin} />
+      <Route path="/recompose" component={RecomposeTest} onEnter={requiredLogin} />
+      <Route path="/css-advanced" component={CssAdvancedTest} onEnter={requiredLogin} />
+      <Route path="/about" component={About} onEnter={requiredLogin} />
+      <Redirect from="*" to="login" />
+    </Route>
+  )
+}
 
 export default appRoutes

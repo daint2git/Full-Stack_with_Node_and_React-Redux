@@ -65,8 +65,12 @@ const MENUS = [
 ]
 
 const NavigationItem = ({ path, name, currentPath }) => (
-  <Link className={loadClass`item`} to={path} data-active={path === currentPath}>
-    <span>{name}</span>
+  <Link
+    className={loadClass`item`}
+    to={path}
+    data-active={path === currentPath}
+  >
+    {name}
   </Link>
 )
 

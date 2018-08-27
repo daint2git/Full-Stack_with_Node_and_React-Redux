@@ -10,10 +10,10 @@ import Root from './Root'
 const store = appStore(
   {
     cookie: [],
-    history: browserHistory
+    history: browserHistory,
   }
 )
 const history = syncHistoryWithStore(browserHistory, store)
-const routes = appRoutes()
+const routes = appRoutes(store)
 
 render(<Root store={store} history={history} routes={routes} />, document.getElementById('root'))
