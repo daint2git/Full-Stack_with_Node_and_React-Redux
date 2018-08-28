@@ -6,7 +6,7 @@ import styles from './styles.scss'
 
 const loadClass = cssModuleNameTag(styles)
 
-const Radio = ({ classes, id, checked, disabled, children, ...other }) => (
+const Checkbox = ({ classes, id, checked, disabled, children, ...other }) => (
   <div className={loadClass`root ${classes}`}>
     <label
       className={loadClass`input`}
@@ -14,13 +14,13 @@ const Radio = ({ classes, id, checked, disabled, children, ...other }) => (
       disabled={disabled}
     >
       <input
-        type="radio"
+        type="checkbox"
         id={id}
-        checked={checked}
         disabled={disabled}
+        checked={checked}
         {...other}
       />
-      <div className={loadClass`radio`}>
+      <div className={loadClass`checkbox`}>
         <div
           className={loadClass`icon`}
           data-checked={checked}
@@ -39,6 +39,6 @@ const Enhanced = compose(
     checked: PropTypes.bool,
     disabled: PropTypes.bool,
   }),
-)(Radio)
+)(Checkbox)
 
 export default Enhanced

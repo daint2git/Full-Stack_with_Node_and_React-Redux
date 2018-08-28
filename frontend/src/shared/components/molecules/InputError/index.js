@@ -6,14 +6,14 @@ import styles from './styles.scss'
 
 const loadClass = cssModuleNameTag(styles)
 
-const InputError = ({ message, children, ...other }) => (
+const InputError = ({ errorMessage, children, ...other }) => (
   <div className={loadClass`root`} {...other}>
-    <TextValue color="danger">{message || children}</TextValue>
+    <TextValue color="danger">{errorMessage || children}</TextValue>
   </div>
 )
 
 const Enhanced = compose(
-  branch(({ message, children }) => !message && !children, renderNothing),
+  branch(({ errorMessage, children }) => !errorMessage && !children, renderNothing),
 )(InputError)
 
 export default Enhanced

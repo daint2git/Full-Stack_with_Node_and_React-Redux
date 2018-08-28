@@ -32,8 +32,8 @@ const Enhanced = compose(
   }),
   setPropTypes({
     classes: PropTypes.string,
-    type: PropTypes.string,
-    size: PropTypes.string,
+    type: PropTypes.oneOf(['primary', 'secondary', 'success', 'danger', 'warning', 'info', 'light', 'dark']),
+    size: PropTypes.oneOf(['small', 'medium', 'large']),
     disabled: PropTypes.bool,
     shouldPreventSubmit: PropTypes.bool,
     hidden: PropTypes.bool,

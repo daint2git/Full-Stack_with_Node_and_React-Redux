@@ -16,6 +16,7 @@ const WithPropsOnChange =  withPropsOnChange(
 )(({ title, counter }) => (
   <Group>
     <TextValue>{`Title: ${title}`}</TextValue>
+    <Spacer padding={5} />
     <TextValue>{`Counter: ${counter}`}</TextValue>
   </Group>
 ))

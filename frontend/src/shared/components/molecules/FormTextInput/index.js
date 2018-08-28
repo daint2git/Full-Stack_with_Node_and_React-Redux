@@ -5,10 +5,10 @@ import styles from './styles.scss'
 
 const loadClass = cssModuleNameTag(styles)
 
-const FormTextInput = ({ message, ...other }) => (
+const FormTextInput = ({ errorMessage, ...other }) => (
   <div className={loadClass`root`}>
-    <TextInput attention={!!message} {...other} />
-    <InputError message={message} />
+    <TextInput attention={!!errorMessage} {...other} />
+    <InputError errorMessage={errorMessage} />
   </div>
 )
 

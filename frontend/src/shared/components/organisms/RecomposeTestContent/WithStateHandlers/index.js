@@ -5,7 +5,7 @@ import Group from 'shared/components/atoms/Group'
 import Heading from 'shared/components/atoms/Heading'
 import TextValue from 'shared/components/atoms/TextValue'
 import Spacer from 'shared/components/atoms/Spacer'
-import FormTextInput from 'shared/components/molecules/FormTextInput'
+import TextInput from 'shared/components/atoms/TextInput'
 import Button from 'shared/components/atoms/Button'
 import cssModuleNameTag from 'shared/components/utils/cssModuleNameTag'
 import styles from './styles.scss'
@@ -24,7 +24,7 @@ const WithStateHandlers = ({
     <Heading component="h3">withStateHandlers</Heading>
     <TextValue>Input value: </TextValue>
     <Spacer padding={5} />
-    <FormTextInput value={inputValue} onChange={onChangeInputValue} />
+    <TextInput value={inputValue} onChange={onChangeInputValue} />
     <Spacer padding={5} />
     <Group classes={loadClass`buttons`}>
       <Button onClick={() => increment(inputValue)}>increment</Button>

@@ -20,7 +20,7 @@ const LoginForm = ({ username, password, onChange, onSubmit, errors = {} }) => (
       maxLength={20}
       placeholder="Please enter username"
       value={username}
-      message={errors.username}
+      errorMessage={errors.username}
       onChange={onChange}
     />
     <Spacer />
@@ -31,10 +31,10 @@ const LoginForm = ({ username, password, onChange, onSubmit, errors = {} }) => (
       maxLength={20}
       placeholder="Please enter password"
       value={password}
-      message={errors.password}
+      errorMessage={errors.password}
       onChange={onChange}
     />
-    <FormError message={errors.reason} />
+    <FormError errorMessage={errors.reason} />
     <Spacer />
     <Button
       classes={loadClass`button`}

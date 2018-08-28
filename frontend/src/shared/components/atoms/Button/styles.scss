@@ -2,7 +2,7 @@
 @import '../../utils/variables.scss';
 
 .root {
-  display: flex;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
   border-radius: 4px;
@@ -25,32 +25,20 @@
     }
   }
 
+  &[data-type='secondary'] {
+    background-color: $secondary;
+    color: $white;
+
+    &:disabled {
+      cursor: default;
+      pointer-events: none;
+      background-color: $pale_gray;
+      color: $pale_blue;
+    }
+  }
+
   &[data-type='success'] {
     background-color: $success;
-    color: $white;
-
-    &:disabled {
-      cursor: default;
-      pointer-events: none;
-      background-color: $pale_gray;
-      color: $pale_blue;
-    }
-  }
-
-  &[data-type='info'] {
-    background-color: $info;
-    color: $white;
-
-    &:disabled {
-      cursor: default;
-      pointer-events: none;
-      background-color: $pale_gray;
-      color: $pale_blue;
-    }
-  }
-
-  &[data-type='warning'] {
-    background-color: $warning;
     color: $white;
 
     &:disabled {
@@ -73,9 +61,9 @@
     }
   }
 
-  &[data-type='secondary'] {
-    background-color: $secondary;
-    color: $white;
+  &[data-type='warning'] {
+    background-color: $warning;
+    color: $black;
 
     &:disabled {
       cursor: default;
@@ -85,8 +73,8 @@
     }
   }
 
-  &[data-type='dark'] {
-    background-color: $dark;
+  &[data-type='info'] {
+    background-color: $info;
     color: $white;
 
     &:disabled {
@@ -99,7 +87,19 @@
 
   &[data-type='light'] {
     background-color: $light;
-    color: $dark;
+    color: $black;
+
+    &:disabled {
+      cursor: default;
+      pointer-events: none;
+      background-color: $pale_gray;
+      color: $pale_blue;
+    }
+  }
+
+  &[data-type='dark'] {
+    background-color: $dark;
+    color: $white;
 
     &:disabled {
       cursor: default;

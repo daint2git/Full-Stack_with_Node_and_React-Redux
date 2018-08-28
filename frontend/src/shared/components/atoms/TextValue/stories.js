@@ -12,9 +12,11 @@ storiesOf('TextValue', module)
     <>
       <TextValue align="left">left - TextValue</TextValue>
       <RowSeparateLine />
+      <TextValue align="center">center - TextValue</TextValue>
+      <RowSeparateLine />
       <TextValue align="right">right - TextValue</TextValue>
       <RowSeparateLine />
-      <TextValue align="center">center - TextValue</TextValue>
+      <TextValue align="justify">justify - TextValue</TextValue>
       <RowSeparateLine />
     </>
   ))
@@ -28,16 +30,6 @@ storiesOf('TextValue', module)
       <RowSeparateLine />
     </>
   ))
-  .add('decoration', () => (
-    <>
-      <TextValue decoration="overline">overline - TextValue</TextValue>
-      <RowSeparateLine />
-      <TextValue decoration="underline">underline - TextValue</TextValue>
-      <RowSeparateLine />
-      <TextValue decoration="line-through">line-through - TextValue</TextValue>
-      <RowSeparateLine />
-    </>
-  ))
   .add('transform', () => (
     <>
       <TextValue transform="uppercase">uppercase - TextValue</TextValue>
@@ -45,6 +37,16 @@ storiesOf('TextValue', module)
       <TextValue transform="lowercase">lowercase - TextValue</TextValue>
       <RowSeparateLine />
       <TextValue transform="capitalize">capitalize - TextValue</TextValue>
+      <RowSeparateLine />
+    </>
+  ))
+  .add('decoration', () => (
+    <>
+      <TextValue decoration="overline">overline - TextValue</TextValue>
+      <RowSeparateLine />
+      <TextValue decoration="underline">underline - TextValue</TextValue>
+      <RowSeparateLine />
+      <TextValue decoration="line-through">line-through - TextValue</TextValue>
       <RowSeparateLine />
     </>
   ))
@@ -56,11 +58,11 @@ storiesOf('TextValue', module)
       <RowSeparateLine />
       <TextValue color="success">success - TextValue</TextValue>
       <RowSeparateLine />
-      <TextValue color="info">info - TextValue</TextValue>
+      <TextValue color="danger">danger - TextValue</TextValue>
       <RowSeparateLine />
       <TextValue color="warning">warning - TextValue</TextValue>
       <RowSeparateLine />
-      <TextValue color="danger">danger - TextValue</TextValue>
+      <TextValue color="info">info - TextValue</TextValue>
       <RowSeparateLine />
       <TextValue color="light">light - TextValue</TextValue>
       <RowSeparateLine />
@@ -75,6 +77,8 @@ storiesOf('TextValue', module)
       <TextValue size="medium">medium - TextValue</TextValue>
       <RowSeparateLine />
       <TextValue size="large">large - TextValue</TextValue>
+      <RowSeparateLine />
+      <TextValue size="x_large">x_large - TextValue</TextValue>
       <RowSeparateLine />
     </>
   ))

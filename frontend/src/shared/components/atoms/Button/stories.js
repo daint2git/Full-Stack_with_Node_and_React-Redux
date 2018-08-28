@@ -1,7 +1,7 @@
 import { storiesOf } from '@storybook/react'
 
 import RowSeparateLine from 'shared/components/atoms/RowSeparateLine'
-import Button from './'
+import Button from '../Button'
 
 storiesOf('Button', module)
   .add('default', () => <Button>Button</Button>)
@@ -19,19 +19,19 @@ storiesOf('Button', module)
     <>
       <Button type="primary">primary - Button</Button>
       <RowSeparateLine />
+      <Button type="secondary">secondary - Button</Button>
+      <RowSeparateLine />
       <Button type="success">success - Button</Button>
-      <RowSeparateLine />
-      <Button type="info">info - Button</Button>
-      <RowSeparateLine />
-      <Button type="warning">warning - Button</Button>
       <RowSeparateLine />
       <Button type="danger">danger - Button</Button>
       <RowSeparateLine />
-      <Button type="secondary">secondary - Button</Button>
+      <Button type="warning">warning - Button</Button>
       <RowSeparateLine />
-      <Button type="dark">dark - Button</Button>
+      <Button type="info">info - Button</Button>
       <RowSeparateLine />
       <Button type="light">light - Button</Button>
+      <RowSeparateLine />
+      <Button type="dark">dark - Button</Button>
       <RowSeparateLine />
     </>
   ))

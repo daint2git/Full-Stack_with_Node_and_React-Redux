@@ -42,12 +42,12 @@ const Enhanced = compose(
     classes: PropTypes.string,
     ellipsis: PropTypes.bool,
     active: PropTypes.bool,
-    align: PropTypes.string,
-    weight: PropTypes.string,
-    transform: PropTypes.string,
-    decoration: PropTypes.string,
-    color: PropTypes.string,
-    size: PropTypes.string,
+    align: PropTypes.oneOf(['left', 'center', 'right', 'justify']),
+    weight: PropTypes.oneOf(['bold', 'lighter', 'bolder']),
+    transform: PropTypes.oneOf(['uppercase', 'lowercase', 'capitalize']),
+    decoration: PropTypes.oneOf(['overline', 'underline', 'line-through']),
+    color: PropTypes.oneOf(['primary', 'secondary', 'success', 'danger', 'warning', 'info', 'light', 'dark']),
+    size: PropTypes.oneOf(['small', 'medium', 'large', 'x_large']),
   }),
 )(TextValue)
 
