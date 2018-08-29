@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types'
+import { compose, setPropTypes } from 'recompose'
 import fileExtension from 'file-extension'
 import {
   IconFilePdf,
@@ -40,4 +42,8 @@ const FileIcon = ({ fileName }) => {
   }
 }
 
-export default FileIcon
+const Enhanced = compose(
+  setPropTypes({ fileName: PropTypes.string }),
+)(FileIcon)
+
+export default Enhanced

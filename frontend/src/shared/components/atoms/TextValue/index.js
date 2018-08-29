@@ -1,36 +1,12 @@
 import PropTypes from 'prop-types'
-import { compose, defaultProps, setPropTypes } from 'recompose'
+import { compose, defaultProps, setPropTypes, mapProps } from 'recompose'
 
 import cssModuleNameTag from 'shared/components/utils/cssModuleNameTag'
 import styles from './styles.scss'
 
 const loadClass = cssModuleNameTag(styles)
 
-const TextValue = ({
-  classes,
-  ellipsis,
-  active,
-  align,
-  weight,
-  transform,
-  decoration,
-  color,
-  size,
-  ...other
-}) => (
-  <span
-    className={loadClass`root ${classes}`}
-    data-ellipsis={ellipsis}
-    data-active={active}
-    data-align={align}
-    data-weight={weight}
-    data-transform={transform}
-    data-decoration={decoration}
-    data-color={color}
-    data-size={size}
-    {...other}
-  />
-)
+const TextValue = props => <span {...props} />
 
 const Enhanced = compose(
   defaultProps({
@@ -49,6 +25,29 @@ const Enhanced = compose(
     color: PropTypes.oneOf(['primary', 'secondary', 'success', 'danger', 'warning', 'info', 'light', 'dark']),
     size: PropTypes.oneOf(['small', 'medium', 'large', 'x_large']),
   }),
+  mapProps(({
+    classes,
+    ellipsis,
+    active,
+    align,
+    weight,
+    transform,
+    decoration,
+    color,
+    size,
+    ...other
+  }) => ({
+    ...other,
+    className: loadClass`root ${classes}`,
+    'data-ellipsis': ellipsis,
+    'data-active': active,
+    'data-align': align,
+    'data-weight': weight,
+    'data-transform': transform,
+    'data-decoration': decoration,
+    'data-color': color,
+    'data-size': size,
+  })),
 )(TextValue)
 
 export default Enhanced

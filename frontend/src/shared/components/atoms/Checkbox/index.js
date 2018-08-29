@@ -16,8 +16,8 @@ const Checkbox = ({ classes, id, checked, disabled, children, ...other }) => (
       <input
         type="checkbox"
         id={id}
-        disabled={disabled}
         checked={checked}
+        disabled={disabled}
         {...other}
       />
       <div className={loadClass`checkbox`}>

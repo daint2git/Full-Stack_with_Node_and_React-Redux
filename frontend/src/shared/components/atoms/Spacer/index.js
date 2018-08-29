@@ -1,18 +1,21 @@
 import PropTypes from 'prop-types'
-import { compose, defaultProps, setPropTypes } from 'recompose'
+import { compose, defaultProps, setPropTypes, mapProps } from 'recompose'
 
 import cssModuleNameTag from 'shared/components/utils/cssModuleNameTag'
 import styles from './styles.scss'
 
 const loadClass = cssModuleNameTag(styles)
 
-const Spacer = ({ padding, ...other }) => (
-  <div className={loadClass`root`} data-padding={padding} {...other} />
-)
+const Spacer = props => <div {...props} />
 
 const Enhanced = compose(
   defaultProps({ padding: 10 }),
   setPropTypes({ padding: PropTypes.number }),
+  mapProps(({ padding, ...other }) => ({
+    ...other,
+    className: loadClass`root`,
+    'data-padding': padding,
+  })),
 )(Spacer)
 
 export default Enhanced

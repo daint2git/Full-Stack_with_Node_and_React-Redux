@@ -1,29 +1,13 @@
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
-import { compose, defaultProps, setPropTypes, branch, renderNothing } from 'recompose'
+import { compose, defaultProps, setPropTypes, mapProps, branch, renderNothing } from 'recompose'
 
 import cssModuleNameTag from 'shared/components/utils/cssModuleNameTag'
 import styles from './styles.scss'
 
 const loadClass = cssModuleNameTag(styles)
 
-const Button = ({
-  classes,
-  type,
-  size,
-  disabled,
-  shouldPreventSubmit,
-  dispatch,
-  ...other
-}) => (
-  <button
-    className={loadClass`root ${classes}`}
-    data-type={type}
-    data-size={size}
-    disabled={disabled || shouldPreventSubmit}
-    {...other}
-  />
-)
+const Button = props => <button {...props} />
 
 const Enhanced = compose(
   defaultProps({
@@ -38,6 +22,21 @@ const Enhanced = compose(
     shouldPreventSubmit: PropTypes.bool,
     hidden: PropTypes.bool,
   }),
+  mapProps(({
+    classes,
+    type,
+    size,
+    disabled,
+    shouldPreventSubmit,
+    dispatch,
+    ...other
+  }) => ({
+    ...other,
+    className: loadClass`root ${classes}`,
+    'data-type': type,
+    'data-size': size,
+    disabled: disabled || shouldPreventSubmit,
+  })),
   branch(({ hidden }) => hidden, renderNothing),
 )(Button)
 
