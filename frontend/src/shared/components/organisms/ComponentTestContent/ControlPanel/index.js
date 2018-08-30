@@ -1,4 +1,4 @@
-import componentIterator from 'shared/components/utils/componentIterator'
+import ComponentIterator from 'shared/components/utils/ComponentIterator'
 import Radio from 'shared/components/atoms/Radio'
 import cssModuleNameTag from 'shared/components/utils/cssModuleNameTag'
 import styles from './styles.scss'
@@ -8,7 +8,7 @@ const loadClass = cssModuleNameTag(styles)
 const TYPES = ['primary', 'success', 'info', 'warning', 'danger', 'secondary', 'dark', 'light']
 const SIZES = ['small', 'medium', 'large']
 
-const Radios = componentIterator(Radio)
+const Radios = ComponentIterator(Radio)
 
 const ControlItem = ({ classes, list, kind, value, onChange }) => (
   <div className={loadClass`${classes}`}>

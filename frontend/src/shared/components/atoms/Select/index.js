@@ -2,7 +2,7 @@ import PropTypes from 'prop-types'
 import { compose, setPropTypes } from 'recompose'
 
 import either from 'shared/components/utils/either'
-import componentIterator from 'shared/components/utils/componentIterator'
+import ComponentIterator from 'shared/components/utils/ComponentIterator'
 import cssModuleNameTag from 'shared/components/utils/cssModuleNameTag'
 import styles from './styles.scss'
 
@@ -10,7 +10,7 @@ const loadClass = cssModuleNameTag(styles)
 
 export const Option = props => <option {...props} />
 
-const Options = componentIterator(Option, 'options')
+const Options = ComponentIterator(Option, 'options')
 
 const Select = ({ classes, attention, disabled, options, children, ...other }) => (
   <div

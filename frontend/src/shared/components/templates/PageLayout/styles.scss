@@ -9,7 +9,7 @@
 
     .navigation-bar {
       position: fixed;
-      height: 100vh;
+      height: calc(100vh - 70px);
     }
 
     .container {
