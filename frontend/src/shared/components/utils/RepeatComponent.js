@@ -2,13 +2,15 @@ import { Component } from 'react'
 import { getDisplayName, wrapDisplayName } from 'recompose'
 import uuidv4 from 'uuid/v4'
 
-const ComponentIterator = (
+const RepeatComponent = (
   BaseComponent,
   propName = 'list',
   keyGenerator = (key = uuidv4()) => key,
 ) => {
   return class WrappedComponent extends Component {
-    static displayName = wrapDisplayName(getDisplayName(BaseComponent), 'ComponentIterator')
+
+    static displayName = wrapDisplayName(getDisplayName(BaseComponent), 'RepeatComponent')
+
     render() {
       const { props } = this
       const list = props[propName]
@@ -26,4 +28,4 @@ const ComponentIterator = (
   }
 }
 
-export default ComponentIterator
+export default RepeatComponent

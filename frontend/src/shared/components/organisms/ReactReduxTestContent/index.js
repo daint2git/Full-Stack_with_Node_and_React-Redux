@@ -6,7 +6,7 @@ import TextInput from 'shared/components/atoms/TextInput'
 import TextValue from 'shared/components/atoms/TextValue'
 import Button from 'shared/components/atoms/Button'
 import Spacer from 'shared/components/atoms/Spacer'
-import ComponentIterator from 'shared/components/utils/ComponentIterator'
+import RepeatComponent from 'shared/components/utils/RepeatComponent'
 import cssModuleNameTag from 'shared/components/utils/cssModuleNameTag'
 import styles from './styles.scss'
 
@@ -19,7 +19,7 @@ const Phone = ({ name, price }) => (
   </WrapLayout>
 )
 
-const Phones = ComponentIterator(Phone)
+const Phones = RepeatComponent(Phone)
 
 const ReactReduxTestContent = ({ result, list, input, changeInput, readPhones, onChange }) => (
   <WrapLayout>
