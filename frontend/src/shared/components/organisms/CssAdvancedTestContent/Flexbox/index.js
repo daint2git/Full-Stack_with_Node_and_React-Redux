@@ -1,6 +1,6 @@
 import Details from 'shared/components/atoms/Details'
 import Figure from 'shared/components/atoms/Figure'
-import RepeatComponent from 'shared/components/utils/RepeatComponent'
+import repeatComponent from 'shared/components/utils/repeatComponent'
 import cssModuleNameTag from 'shared/components/utils/cssModuleNameTag'
 import styles from './styles.scss'
 
@@ -36,7 +36,7 @@ const FlexItem = ({ label, children, style }) => (
   <div className={loadClass`item`} style={style}>{`Flex item ${children || label}`}</div>
 )
 
-const FlexItems = RepeatComponent(FlexItem)
+const FlexItems = repeatComponent(FlexItem)
 
 const FlexContainer = ({ caption, children, list = ITEMS_1, style }) => (
   <Figure caption={caption}>

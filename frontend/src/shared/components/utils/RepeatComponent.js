@@ -1,31 +1,23 @@
-import { Component } from 'react'
-import { getDisplayName, wrapDisplayName } from 'recompose'
+import { setDisplayName, wrapDisplayName } from 'recompose'
 import uuidv4 from 'uuid/v4'
+import either from './either'
 
-const RepeatComponent = (
-  BaseComponent,
-  propName = 'list',
-  keyGenerator = (key = uuidv4()) => key,
-) => {
-  return class WrappedComponent extends Component {
+const keyGenerator = key => either(key)(uuidv4())
 
-    static displayName = wrapDisplayName(getDisplayName(BaseComponent), 'RepeatComponent')
-
-    render() {
-      const { props } = this
-      const list = props[propName]
-      if (!list) return null
-      const ownerProps = { ...props }
-      delete ownerProps[propName]
-      return (
-        <>
-          {list.map(elementProps =>
-            <BaseComponent key={keyGenerator(elementProps.key)} {...ownerProps} {...elementProps} />
-          )}
-        </>
-      )
-    }
+const repeatComponent = (BaseComponent, propName = 'list') => {
+  const RepeatComponent = props => {
+    const list = props[propName]
+    const restProps = delete { ...props }[propName]
+    if (!list) return null
+    return (
+      <>
+        {list.map(elementProps =>
+          <BaseComponent key={keyGenerator(elementProps.key)} {...restProps} {...elementProps} />
+        )}
+      </>
+    )
   }
+  return setDisplayName(wrapDisplayName(BaseComponent, 'repeatComponent'))(RepeatComponent)
 }
 
-export default RepeatComponent
+export default repeatComponent

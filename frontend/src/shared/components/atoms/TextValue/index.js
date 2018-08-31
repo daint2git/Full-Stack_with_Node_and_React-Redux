@@ -6,7 +6,7 @@ import styles from './styles.scss'
 
 const loadClass = cssModuleNameTag(styles)
 
-const TextValue = props => <span {...props} />
+const TextValue = props => <div {...props} />
 
 const Enhanced = compose(
   defaultProps({

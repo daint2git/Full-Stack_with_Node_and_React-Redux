@@ -1,4 +1,4 @@
-import RepeatComponent from 'shared/components/utils/RepeatComponent'
+import repeatComponent from 'shared/components/utils/repeatComponent'
 import Radio from 'shared/components/atoms/Radio'
 import cssModuleNameTag from 'shared/components/utils/cssModuleNameTag'
 import styles from './styles.scss'
@@ -8,7 +8,7 @@ const loadClass = cssModuleNameTag(styles)
 const TYPES = ['primary', 'success', 'info', 'warning', 'danger', 'secondary', 'dark', 'light']
 const SIZES = ['small', 'medium', 'large']
 
-const Radios = RepeatComponent(Radio)
+const Radios = repeatComponent(Radio)
 
 const ControlItem = ({ classes, list, kind, value, onChange }) => (
   <div className={loadClass`${classes}`}>

@@ -1,6 +1,6 @@
 import { Link } from 'react-router'
 
-import RepeatComponent from 'shared/components/utils/RepeatComponent'
+import repeatComponent from 'shared/components/utils/repeatComponent'
 import cssModuleNameTag from 'shared/components/utils/cssModuleNameTag'
 import styles from './styles.scss'
 
@@ -74,7 +74,7 @@ const NavigationItem = ({ path, name, currentPath }) => (
   </Link>
 )
 
-const NavigationItems = RepeatComponent(NavigationItem)
+const NavigationItems = repeatComponent(NavigationItem)
 
 const NavigationBar = props => (
   <nav className={loadClass`root`}>
