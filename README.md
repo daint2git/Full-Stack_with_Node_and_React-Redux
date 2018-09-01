@@ -1,4 +1,4 @@
-# Full-Stack with Node and React (Advance)
+# Full-Stack with Node and React-Redux
 
 - Project information: 
   - Backend: 
