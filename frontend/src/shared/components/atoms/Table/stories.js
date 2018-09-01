@@ -9,7 +9,7 @@ storiesOf('Table', module)
         <TableRow>
           <TableCell>head 1</TableCell>
           <TableCell>head 2</TableCell>
-          <TableCell type="numeric">head 3</TableCell>
+          <TableCell align="right">head 3</TableCell>
           <TableCell>head 4</TableCell>
         </TableRow>
       </TableHead>
@@ -17,19 +17,19 @@ storiesOf('Table', module)
         <TableRow>
           <TableCell>data 1</TableCell>
           <TableCell>data 2</TableCell>
-          <TableCell type="numeric">data 3</TableCell>
+          <TableCell align="right">data 3</TableCell>
           <TableCell>data 4</TableCell>
         </TableRow>
         <TableRow>
           <TableCell>data 1</TableCell>
           <TableCell>data 2</TableCell>
-          <TableCell type="numeric">data 3</TableCell>
+          <TableCell align="right">data 3</TableCell>
           <TableCell>data 4</TableCell>
         </TableRow>
         <TableRow>
           <TableCell>data 1</TableCell>
           <TableCell>data 2</TableCell>
-          <TableCell type="numeric">data 3</TableCell>
+          <TableCell align="right">data 3</TableCell>
           <TableCell>data 4</TableCell>
         </TableRow>
       </TableBody>

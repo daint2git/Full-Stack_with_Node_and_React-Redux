@@ -58,6 +58,11 @@ const MENUS = [
     path: '/css-advanced',
   },
   {
+    id: 'phones',
+    name: 'phones',
+    path: '/phones',
+  },
+  {
     id: 'about',
     name: 'about',
     path: '/about',

@@ -29,17 +29,29 @@
     {
       "id": 1,
       "name": "Iphone X 64G",
-      "price": "25990000"
+      "describe": "abc",
+      "price": "25990000",
+      "quantity": 5,
+      "category": "APPLE",
+      "active": true
     },
     {
       "id": 2,
       "name": "Samsung Galaxy Note 9 128GB",
-      "price": "22990000"
+      "describe": "abc",
+      "price": "22990000",
+      "quantity": 10,
+      "category": "SAMSUNG",
+      "active": true
     },
     {
       "id": 3,
       "name": "Iphone 8 plus 64G",
-      "price": "21990000"
+      "describe": "abc",
+      "price": "21990000",
+      "quantity": 15,
+      "category": "APPLE",
+      "active": true
     }
   ]
 }

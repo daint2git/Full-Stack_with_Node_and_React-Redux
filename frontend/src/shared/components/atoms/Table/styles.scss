@@ -22,7 +22,11 @@
         line-height: 1.2;
         vertical-align: middle;
 
-        &[data-type='numeric'] {
+        &[data-align='center'] {
+          text-align: center;
+        }
+
+        &[data-align='right'] {
           text-align: right;
         }
       }
@@ -55,7 +59,11 @@
         line-height: 1.2;
         vertical-align: middle;
 
-        &[data-type='numeric'] {
+        &[data-align='center'] {
+          text-align: center;
+        }
+
+        &[data-align='right'] {
           text-align: right;
         }
       }

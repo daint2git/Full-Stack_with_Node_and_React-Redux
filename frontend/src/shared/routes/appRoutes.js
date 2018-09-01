@@ -15,6 +15,7 @@ import ReactTest from 'shared/components/pages/ReactTest'
 import ReactReduxTest from 'shared/components/pages/ReactReduxTest'
 import RecomposeTest from 'shared/components/pages/RecomposeTest'
 import CssAdvancedTest from 'shared/components/pages/CssAdvancedTest'
+import PhonesPage from 'shared/components/pages/PhonesPage'
 
 const appRoutes = store => {
 
@@ -42,6 +43,7 @@ const appRoutes = store => {
       <Route path="/react-redux" component={ReactReduxTest} onEnter={requiredLogin} />
       <Route path="/recompose" component={RecomposeTest} onEnter={requiredLogin} />
       <Route path="/css-advanced" component={CssAdvancedTest} onEnter={requiredLogin} />
+      <Route path="/phones" component={PhonesPage} onEnter={requiredLogin} />
       <Route path="/about" component={About} onEnter={requiredLogin} />
       <Redirect from="*" to="login" />
     </Route>

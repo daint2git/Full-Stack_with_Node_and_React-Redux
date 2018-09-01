@@ -47,10 +47,10 @@ const TableRow = compose(
 
 const TableCell = compose(
   setPropTypes({ classes: PropTypes.string }),
-  mapProps(({ classes, type, ...other }) => ({
+  mapProps(({ classes, align, ...other }) => ({
     ...other,
     className: loadClass`${classes}`,
-    'data-type': type,
+    'data-align': align,
   })),
 )(props => (
   <TableCellContext.Consumer>
