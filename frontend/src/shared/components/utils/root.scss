@@ -58,6 +58,10 @@ select {
   outline: none;
 }
 
+td {
+  cursor: pointer;
+}
+
 ::placeholder {
   color: $light_gray;
 }

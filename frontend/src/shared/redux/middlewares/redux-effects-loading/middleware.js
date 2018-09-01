@@ -6,8 +6,8 @@ const loading = (store, next, action) => {
   dispatch(preventSubmit())
   const timerId = setTimeout(() => dispatch(startLoading()), 100)
   return next(action)
-    .then(result => {
-      const { data } = result
+    .then(response => {
+      const { data } = response
       clearTimeout(timerId)
       dispatch(stopLoading())
       return data
@@ -20,6 +20,6 @@ const loading = (store, next, action) => {
     })
 }
 
-const loadingMiddleware = (targetActions = []) => createMiddleware(targetActions, loading)
+const loadingMiddleware = targetActions => createMiddleware(targetActions, loading)
 
 export default loadingMiddleware

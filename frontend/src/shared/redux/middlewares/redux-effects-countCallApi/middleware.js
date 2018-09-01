@@ -7,6 +7,6 @@ const countCallApi = (store, next, action) => {
   return next(action)
 }
 
-const countCallApiMiddleware = (targetActions = []) => createMiddleware(targetActions, countCallApi)
+const countCallApiMiddleware = targetActions => createMiddleware(targetActions, countCallApi)
 
 export default countCallApiMiddleware
