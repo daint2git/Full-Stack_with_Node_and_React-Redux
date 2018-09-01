@@ -2,7 +2,7 @@
 
 - Project information: 
   - Backend: 
-    - `Nodejs`
+    - `Node`
     - `PostgreSql`
   - Frontend: 
     - Combination of libraries like `react, redux, router, webpack` in one project only
