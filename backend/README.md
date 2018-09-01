@@ -1,8 +1,7 @@
-# React_Enhancement
+# Back-end
 
 - Technology: 
-  - Nodejs
-  - Firebase
-  - PostgreSql
+  - `Node`
+  - `PostgreSql`
 - Author: `DaiNT2`
 - Email: `daint2@fsoft.com.vn`
