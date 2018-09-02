@@ -20,28 +20,16 @@ const loginSuccess = createAction('LOGIN_SUCCESS')
 const loginFail = createErrorAction('LOGIN_FAIL')
 export const login = (username, password, location) => {
   return steps(
-    fetch({ method: 'get', url: 'users' }),
+    fetch({ method: 'post', url: 'auth', data: { username, password } }),
     [
-      users => {
-        const errors = {}
-        if (username === '' && password === '') {
-          errors.reason = 'Please enter information'
-          return loginFail(errors)
-        }
-        const user = users.find(user => user.username === username)
-        if (user) {
-          if (!(user.password === password)) errors.password = 'Password is invalid'
-        } else {
-          errors.username = 'Username is invalid'
-        }
-        if (size(errors) > 0) return loginFail(errors)
-        simpleLocalStorage.setItem('user', user)
+      account => {
+        simpleLocalStorage.setItem('user', account)
         return steps(
-          loginSuccess({ ...user }),
+          loginSuccess({ ...account }),
           push(location),
         )
       },
-      error => loginFail(error),
+      loginFail,
     ],
   )
 }

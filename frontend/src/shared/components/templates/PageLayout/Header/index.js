@@ -6,7 +6,7 @@ import styles from './styles.scss'
 
 const loadClass = cssModuleNameTag(styles)
 
-const Header = ({ fullname, logout }) => (
+const Header = ({ fullName, logout }) => (
   <header className={loadClass`root`}>
     <Heading
       component="h1"
@@ -15,7 +15,7 @@ const Header = ({ fullname, logout }) => (
       value="Study everything"
     />
     <div className={loadClass`user-info`}>
-      <TextValue>{fullname}</TextValue>
+      <TextValue>{fullName}</TextValue>
       <IconLogout width={30} height={30} onClick={logout} />
     </div>
   </header>

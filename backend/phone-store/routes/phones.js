@@ -13,7 +13,7 @@ const pool = new Pool({
 
 /* GET phones listing. */
 router.get('/', function(req, res, next) {
-  pool.query('SELECT * from phones', (err, response) => {
+  pool.query('SELECT * FROM phones WHERE active = true ORDER BY created_at DESC', (err, response) => {
     res.send(response.rows);
   })
 });

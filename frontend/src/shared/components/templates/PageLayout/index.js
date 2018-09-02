@@ -14,9 +14,9 @@ import Footer from './Footer'
 
 const loadClass = cssModuleNameTag(styles)
 
-const PageLayout = ({ fullname, role, logout, currentPath, ...other }) => (
+const PageLayout = ({ fullName, role, logout, currentPath, ...other }) => (
   <div className={loadClass`root`}>
-    <Header fullname={fullname} role={role} logout={logout} />
+    <Header fullName={fullName} role={role} logout={logout} />
     <div className={loadClass`main`}>
       <div className={loadClass`navigation-bar`}>
         <NavigationBar currentPath={currentPath} />
@@ -34,7 +34,7 @@ const PageLayout = ({ fullname, role, logout, currentPath, ...other }) => (
 export default compose(
   connect(
     state => ({
-      fullname: state.auth.user.fullname,
+      fullName: state.auth.user.fullName,
       role: state.auth.user.role,
     }),
     dispacth => bindActionCreators({ logout }, dispacth),
