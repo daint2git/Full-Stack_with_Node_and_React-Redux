@@ -1,8 +1,8 @@
 const { DefinePlugin, ProvidePlugin } = require('webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
-const path = require('path')
 
+const path = require('path')
 const rootDir = path.resolve(process.cwd())
 const srcPath = path.resolve(rootDir, 'src')
 const assetsPath = path.resolve(rootDir, 'assets')
@@ -13,7 +13,7 @@ const getMode = mode => mode ? mode : 'development'
 module.exports = (env = {}, argv = {}) => {
   const devMode = getMode(argv.mode) === 'development'
   return {
-    context: path.resolve(rootDir, 'src'), // setting for debug
+    context: srcPath, // setting for debug
     mode: getMode(argv.mode),
     entry: {
       app: `${srcPath}/client/app.js`,
@@ -21,6 +21,7 @@ module.exports = (env = {}, argv = {}) => {
     output: {
       path: buildPath,
       filename: devMode ? '[name].js' : '[name].[hash].js',
+      publicPath: '/',
     },
     devtool: 'source-map', // setting for debug
     module: {
@@ -68,7 +69,13 @@ module.exports = (env = {}, argv = {}) => {
       new HtmlWebpackPlugin({
         template: `${assetsPath}/template.html`,
         favicon: `${assetsPath}/favicon.ico`,
-        filename: 'index.html',
+        minify: {
+          collapseWhitespace: true,
+          removeComments: true,
+          removeRedundantAttributes: true,
+          removeEmptyAttributes: true,
+          removeStyleLinkTypeAttributes: true,
+        },
       }),
       new MiniCssExtractPlugin({
         filename: devMode ? '[name].css' : '[name].[hash].css',
@@ -81,14 +88,17 @@ module.exports = (env = {}, argv = {}) => {
         React: 'react',
       }),
     ],
-    devServer: {
-      contentBase: buildPath,
-      port: 6969,
-      open: true,
-      historyApiFallback: true,
-      proxy: {
-        '/api': 'http://localhost:9696',
-      },
-    }
+    devServer:
+      devMode
+        ? {
+            contentBase: buildPath,
+            port: 6969,
+            open: true,
+            historyApiFallback: true,
+            proxy: {
+              '/api': 'http://localhost:9696',
+            },
+          }
+        : {}
   }
 }
