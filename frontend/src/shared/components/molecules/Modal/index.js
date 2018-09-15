@@ -1,5 +1,5 @@
 import { Component } from 'react'
-import ReactDOM from 'react-dom'
+import { createPortal } from 'react-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 import cssModuleNameTag from 'shared/components/utils/cssModuleNameTag'
@@ -7,7 +7,7 @@ import styles from './styles.scss'
 
 const loadClass = cssModuleNameTag(styles)
 
-const parentSelector = document.body
+const getParentSelector = () => document.body
 
 const Header = ({ children, onClose }) => (
   <div className={loadClass`header`}>
@@ -16,10 +16,10 @@ const Header = ({ children, onClose }) => (
   </div>
 )
 
-const ModalComponent = ({ title, width, children, onClose }) => (
+const Presentational = ({ fixedWidth = '50%', title, children, onClose }) => (
   <>
     <div className={loadClass`overlay`} onClick={onClose} />
-    <div className={loadClass`root`} style={{ width: width }}>
+    <div className={loadClass`root`} style={{ width: fixedWidth }}>
       <Header onClose={onClose}>{title}</Header>
       <div className={loadClass`content`}>{children}</div>
     </div>
@@ -38,17 +38,17 @@ class Modal extends Component {
 
   componentDidMount() {
     this.node = document.createElement('div')
-    parentSelector.appendChild(this.node)
+    getParentSelector().appendChild(this.node)
   }
 
   componentWillUnmount() {
-    parentSelector.removeChild(this.node)
+    getParentSelector().removeChild(this.node)
   }
 
+  renderModalPortal = () =>createPortal(<Presentational {...this.props} />, this.node)
+
   render() {
-    return this.state.isOpened
-      ? ReactDOM.createPortal(<ModalComponent {...this.props} />, this.node)
-      : null
+    return !this.state.isOpened ? null : this.renderModalPortal()
   }
 }
 

@@ -18,7 +18,7 @@ storiesOf('Modal', module)
     render={({ isOpened, onClose, ...other }) => (
       <>
         <Button {...other}>Show Modal</Button>
-        <Modal title="Demo modal" width={500} isOpened={isOpened} onClose={onClose}>
+        <Modal title="Demo modal" isOpened={isOpened} onClose={onClose}>
           <Button>AAAAA</Button>
           <Button>BBBBB</Button>
           <Button>CCCCC</Button>

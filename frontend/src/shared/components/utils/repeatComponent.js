@@ -8,8 +8,7 @@ const repeatComponent = (BaseComponent, propName = 'list') => {
   const RepeatComponent = props => {
     const list = props[propName]
     const restProps = delete { ...props }[propName]
-    if (!list) return null
-    return (
+    return !list ? null : (
       <>
         {list.map(elementProps =>
           <BaseComponent key={keyGenerator(elementProps.key)} {...restProps} {...elementProps} />
