@@ -26,9 +26,9 @@
         border: 1px solid $primary;
         border-radius: 4px;
         box-sizing: border-box;
-        background-color: $white;
+        background-color: $light;
 
-        &::before {
+        &:before {
           content: '';
           display: none;
           position: absolute;
@@ -40,7 +40,7 @@
           background-color: $primary;
         }
 
-        &::after {
+        &:after {
           content: '';
           display: none;
           position: absolute;
@@ -52,14 +52,16 @@
           background-color: $primary;
         }
 
-        &[data-checked='true']::before, &[data-checked='true']::after {
+        &[data-checked='true']:before,
+        &[data-checked='true']:after {
           display: block;
         }
 
         &[data-disabled='true'] {
           border-color: $light_gray;
 
-          &[data-checked='true']::before, &[data-checked='true']::after {
+          &[data-checked='true']:before,
+          &[data-checked='true']:after {
             background-color: $light_gray;
           }
         }

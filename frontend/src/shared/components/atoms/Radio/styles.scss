@@ -26,9 +26,9 @@
         border: 1px solid $primary;
         border-radius: 50%;
         box-sizing: border-box;
-        background-color: $white;
+        background-color: $light;
 
-        &::after {
+        &:after {
           content: '';
           display: none;
           width: 10px;
@@ -40,14 +40,14 @@
           background-color: $primary;
         }
 
-        &[data-checked='true']::after {
+        &[data-checked='true']:after {
           display: block;
         }
 
         &[data-disabled='true'] {
           border-color: $light_gray;
 
-          &[data-checked='true']::after {
+          &[data-checked='true']:after {
             background-color: $light_gray;
           }
         }

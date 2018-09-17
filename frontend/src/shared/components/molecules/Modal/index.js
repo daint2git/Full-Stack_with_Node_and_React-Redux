@@ -1,7 +1,9 @@
 import { Component } from 'react'
 import { createPortal } from 'react-dom'
+import PropTypes from 'prop-types'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
+import Overlay from 'shared/components/atoms/Overlay'
 import cssModuleNameTag from 'shared/components/utils/cssModuleNameTag'
 import styles from './styles.scss'
 
@@ -18,7 +20,7 @@ const Header = ({ children, onClose }) => (
 
 const Presentational = ({ fixedWidth = '50%', title, children, onClose }) => (
   <>
-    <div className={loadClass`overlay`} onClick={onClose} />
+    <Overlay type="modal" onClick={onClose} />
     <div className={loadClass`root`} style={{ width: fixedWidth }}>
       <Header onClose={onClose}>{title}</Header>
       <div className={loadClass`content`}>{children}</div>
@@ -49,6 +51,14 @@ class Modal extends Component {
 
   render() {
     return !this.state.isOpened ? null : this.renderModalPortal()
+  }
+
+  static setPropTypes = {
+    isOpened: PropTypes.bool.isRequired
+  }
+
+  static defaultProps = {
+    isOpened: false
   }
 }
 

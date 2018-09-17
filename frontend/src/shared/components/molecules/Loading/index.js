@@ -2,6 +2,7 @@ import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { compose, onlyUpdateForPropTypes, setPropTypes } from 'recompose'
 
+import Overlay from 'shared/components/atoms/Overlay'
 import { IconLoading } from 'shared/components/atoms/Icons'
 import cssModuleNameTag from 'shared/components/utils/cssModuleNameTag'
 import styles from './styles.scss'
@@ -10,8 +11,8 @@ const cssModules = cssModuleNameTag(styles)
 
 const Loading = ({ loading }) => (
   <div className={cssModules`root`} data-loading={loading}>
-    <div className={cssModules`overlay`} />
-    <div className={cssModules`inner position-center`}>
+    <Overlay type="loading" />
+    <div className={cssModules`icon`}>
       <IconLoading
         className={cssModules`animation`}
         alt="loading"

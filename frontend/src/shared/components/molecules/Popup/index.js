@@ -1,4 +1,5 @@
 import { Component } from 'react'
+import PropTypes from 'prop-types'
 import either from 'shared/components/utils/either'
 
 import cssModuleNameTag from 'shared/components/utils/cssModuleNameTag'
@@ -34,6 +35,14 @@ class Popup extends Component {
 
   render() {
     return !this.state.isOpened ? null : <Presentational {...this.props} />
+  }
+
+  static propTypes  = {
+    isOpened: PropTypes.bool.isRequired
+  }
+
+  static defaultProps = {
+    isOpened: false
   }
 }
 

@@ -32,7 +32,7 @@ const Enhanced = compose(
     ...other
   }) => ({
     ...other,
-    className: loadClass`root ${classes}`,
+    className: loadClass`root animation ${classes}`,
     'data-type': type,
     'data-size': size,
     disabled: disabled || shouldPreventSubmit,
