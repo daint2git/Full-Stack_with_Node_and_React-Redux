@@ -9,8 +9,6 @@ import styles from './styles.scss'
 
 const loadClass = cssModuleNameTag(styles)
 
-const getParentSelector = () => document.body
-
 const Header = ({ children, onClose }) => (
   <div className={loadClass`header`}>
     {children}
@@ -31,6 +29,8 @@ const Presentational = ({ fixedWidth = '50%', title, children, onClose }) => (
 class Modal extends Component {
   constructor(props) {
     super(props)
+    this.bodySelector = document.body
+    this.node = document.createElement('div')
     this.state = { isOpened: this.props.isOpened }
   }
 
@@ -39,22 +39,24 @@ class Modal extends Component {
   }
 
   componentDidMount() {
-    this.node = document.createElement('div')
-    getParentSelector().appendChild(this.node)
+    this.bodySelector.appendChild(this.node)
   }
 
   componentWillUnmount() {
-    getParentSelector().removeChild(this.node)
+    this.bodySelector.removeChild(this.node)
   }
 
-  renderModalPortal = () =>createPortal(<Presentational {...this.props} />, this.node)
+  renderModalPortal = () => createPortal(<Presentational {...this.props} />, this.node)
 
   render() {
     return !this.state.isOpened ? null : this.renderModalPortal()
   }
 
-  static setPropTypes = {
-    isOpened: PropTypes.bool.isRequired
+  static propTypes = {
+    isOpened: PropTypes.bool.isRequired,
+    fixedWidth: PropTypes.oneOf([PropTypes.string, PropTypes.number]),
+    title: PropTypes.string,
+    onClose: PropTypes.func
   }
 
   static defaultProps = {

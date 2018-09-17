@@ -38,7 +38,9 @@ class Popup extends Component {
   }
 
   static propTypes  = {
-    isOpened: PropTypes.bool.isRequired
+    isOpened: PropTypes.bool.isRequired,
+    fixedWidth: PropTypes.oneOf([PropTypes.string, PropTypes.number]),
+    onClose: PropTypes.func
   }
 
   static defaultProps = {
