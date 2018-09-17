@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
 @import './_reset.scss';
 @import './colors.scss';
 @import './variables.scss';
@@ -10,8 +11,8 @@ html {
 body {
   width: 100%;
   font-size: $fsize_medium;
-  font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
-  background-color: $bg_app;
+  font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
+  background-color: $bgcolor_app;
 }
 
 button {
