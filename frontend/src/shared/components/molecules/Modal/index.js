@@ -9,37 +9,39 @@ import styles from './styles.scss'
 
 const loadClass = cssModuleNameTag(styles)
 
-export const ModalHeader = ({ children, onClose }) => (
-  <div className={loadClass`header`}>
+export const ModalHeader = ({ classes, children, onClose }) => (
+  <div className={loadClass`header ${classes}`}>
     <div className={loadClass`title`}>{children}</div>
     <FontAwesomeIcon
+      className={loadClass`icon`}
       icon="times"
       size="lg"
-      className={loadClass`icon`}
       onClick={onClose}
     />
   </div>
 )
 
-export const ModalBody = ({ children }) => (
-  <div className={loadClass`body`}>{children}</div>
+export const ModalBody = ({ classes, children }) => (
+  <div className={loadClass`body ${classes}`}>{children}</div>
 )
 
-export const ModalFooter = ({ children }) => (
-  <div className={loadClass`footer`}>{children}</div>
+export const ModalFooter = ({ classes, children }) => (
+  <div className={loadClass`footer ${classes}`}>{children}</div>
 )
 
-const Presentational = ({ children, onClose }) => (
+const Presentational = ({ classes, children, onClose, ...other }) => (
   <>
     <Overlay type="modal" onClick={onClose} />
-    <div className={loadClass`root animation`}>{children}</div>
+    <div className={loadClass`root animation ${classes}`} {...other}>
+      {children}
+    </div>
   </>
 )
 
 class Modal extends Component {
   constructor(props) {
     super(props)
-    this.parentSelector = document.body;
+    this.parentSelector = document.body
     this.node = document.createElement('div')
     this.state = { isOpened: this.props.isOpened }
   }
@@ -56,18 +58,15 @@ class Modal extends Component {
     this.parentSelector.removeChild(this.node)
   }
 
-  renderPortal = () => ReactDOM.createPortal(
-    <Presentational {...this.props} />,
-    this.node,
-  )
-
   render() {
-    return !this.state.isOpened ? null : this.renderPortal()
+    return !this.state.isOpened
+      ? null
+      : ReactDOM.createPortal(<Presentational {...this.props} />, this.node)
   }
 
   static propTypes = {
     isOpened: PropTypes.bool.isRequired,
-    title: PropTypes.string,
+    classes: PropTypes.string,
     onClose: PropTypes.func,
   }
 

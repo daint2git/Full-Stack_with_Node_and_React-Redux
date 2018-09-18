@@ -7,8 +7,8 @@ import styles from './styles.scss'
 
 const loadClass = cssModuleNameTag(styles)
 
-const Presentational = ({ children }) => (
-  <div className={loadClass`root`}>
+const Presentational = ({ classes, children, ...other }) => (
+  <div className={loadClass`root ${classes}`} {...other}>
     <div className={loadClass`content`}>{children}</div>
   </div>
 )
@@ -20,8 +20,10 @@ class Popup extends Component {
   }
 
   static getDerivedStateFromProps(nextProps, prevState) {
-    if (prevState.isOpened !== undefined && !prevState.isOpened) return { isOpened: false }
-    if (nextProps.isOpened) return { isOpened: nextProps.isOpened }
+    if (prevState.isOpened !== undefined && !prevState.isOpened)
+      return { isOpened: false }
+    if (nextProps.isOpened)
+      return { isOpened: nextProps.isOpened }
     return null
   }
 
@@ -39,6 +41,7 @@ class Popup extends Component {
 
   static propTypes  = {
     isOpened: PropTypes.bool.isRequired,
+    classes: PropTypes.string,
     onClose: PropTypes.func,
   }
 
