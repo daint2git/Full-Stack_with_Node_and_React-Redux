@@ -23,7 +23,7 @@
   */
  $white: #fff;
  $pale_white: #F4F7F9;
- $silver: #CCC;
+ $basic_silver: #CCC;
  $blue_silver: #ABB1B6;
  $ash: #EBEBEB;
  $light_ash: #F2F2F2;
@@ -35,7 +35,7 @@
  $blue_gray: #BBC7D2;
  $pale_blue: #ACBDCB;
  $blue_ash: #D8DCE2;
- $orange: #F2AA33;
+ $basic_orange: #F2AA33;
  $soft_orange: #F4CC8A;
  $base_orange: #FFF1DE;
  $light_orange: #FFEACE;
@@ -48,6 +48,30 @@
  $deep_sky: #8CC9EF;
  $sky_blue: #BBDEF3;
 
+/**
+  * Flat UI color
+  */
+$TURQUOISE: #1ABC9C;
+$GREEN_SEA: #16A085;
+$EMERLAND: #2ECC71;
+$NEPHRITIS: #27AE60;
+$PETER_RIVER: #3498DB;
+$BELIZE_HOLE: #2980B9;
+$AMETHYST: #9B59B6;
+$WISTERIA: #8E44AD;
+$WET_ASPHALT: #34495E;
+$MIDNIGHT_BLUE: #2C3E50;
+$SUN_FLOWER: #F1C40F;
+$ORANGE: #F39C12;
+$CARROT: #E67E22;
+$PUMPKIN: #D35400;
+$ALIZARIN: #E74C3C;
+$POMEGRANATE: #C0392B;
+$CLOUDS: #ECF0F1;
+$SILVER: #BDC3C7;
+$CONCRETE: #95A5A6;
+$ASBESTOS: #7F8C8D;
+
  /**
   * Background color of app
   */
@@ -56,3 +80,4 @@
  $bgcolor_app_main: #eee;
  $bgcolor_app_footer: #eee;
  $bgcolor_form: #eee;
+ $bdcolor_input: #dce4ec;

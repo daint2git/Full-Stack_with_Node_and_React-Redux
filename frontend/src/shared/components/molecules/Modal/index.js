@@ -1,5 +1,5 @@
 import { Component } from 'react'
-import { createPortal } from 'react-dom'
+import ReactDOM from 'react-dom'
 import PropTypes from 'prop-types'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
@@ -12,14 +12,19 @@ const loadClass = cssModuleNameTag(styles)
 const Header = ({ children, onClose }) => (
   <div className={loadClass`header`}>
     {children}
-    <FontAwesomeIcon icon="times" size="lg" onClick={onClose} />
+    <FontAwesomeIcon
+      icon="times"
+      size="lg"
+      className={loadClass`icon`}
+      onClick={onClose}
+    />
   </div>
 )
 
-const Presentational = ({ fixedWidth = '50%', title, children, onClose }) => (
+const Presentational = ({ fixedWidth, title, children, onClose }) => (
   <>
     <Overlay type="modal" onClick={onClose} />
-    <div className={loadClass`root`} style={{ width: fixedWidth }}>
+    <div className={loadClass`root animation`} style={{ width: fixedWidth }}>
       <Header onClose={onClose}>{title}</Header>
       <div className={loadClass`content`}>{children}</div>
     </div>
@@ -29,7 +34,7 @@ const Presentational = ({ fixedWidth = '50%', title, children, onClose }) => (
 class Modal extends Component {
   constructor(props) {
     super(props)
-    this.bodySelector = document.body
+    this.parentSelector = document.body;
     this.node = document.createElement('div')
     this.state = { isOpened: this.props.isOpened }
   }
@@ -39,28 +44,32 @@ class Modal extends Component {
   }
 
   componentDidMount() {
-    this.bodySelector.appendChild(this.node)
+    this.parentSelector.appendChild(this.node)
   }
 
   componentWillUnmount() {
-    this.bodySelector.removeChild(this.node)
+    this.parentSelector.removeChild(this.node)
   }
 
-  renderModalPortal = () => createPortal(<Presentational {...this.props} />, this.node)
+  renderPortal = () => ReactDOM.createPortal(
+    <Presentational {...this.props} />,
+    this.node,
+  )
 
   render() {
-    return !this.state.isOpened ? null : this.renderModalPortal()
+    return !this.state.isOpened ? null : this.renderPortal()
   }
 
   static propTypes = {
     isOpened: PropTypes.bool.isRequired,
-    fixedWidth: PropTypes.oneOf([PropTypes.string, PropTypes.number]),
+    fixedWidth: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
     title: PropTypes.string,
-    onClose: PropTypes.func
+    onClose: PropTypes.func,
   }
 
   static defaultProps = {
-    isOpened: false
+    isOpened: false,
+    fixedWidth: 500,
   }
 }
 

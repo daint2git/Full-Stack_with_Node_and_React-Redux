@@ -7,7 +7,7 @@ import styles from './styles.scss'
 
 const loadClass = cssModuleNameTag(styles)
 
-const Presentational = ({ fixedWidth = '50%', children }) => (
+const Presentational = ({ fixedWidth, children }) => (
   <div className={loadClass`root`} style={{ width: fixedWidth }}>
     <div className={loadClass`content`}>{children}</div>
   </div>
@@ -39,12 +39,13 @@ class Popup extends Component {
 
   static propTypes  = {
     isOpened: PropTypes.bool.isRequired,
-    fixedWidth: PropTypes.oneOf([PropTypes.string, PropTypes.number]),
-    onClose: PropTypes.func
+    fixedWidth: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+    onClose: PropTypes.func,
   }
 
   static defaultProps = {
-    isOpened: false
+    isOpened: false,
+    fixedWidth: 500,
   }
 }
 

@@ -5,19 +5,19 @@
   align-items: center;
   position: relative;
 
-  &:hover {
-    box-shadow: 0px 5px 5px -3px rgba(0, 0, 0, 0.2), 0px 8px 10px 1px rgba(0, 0, 0, 0.14), 0px 3px 14px 2px rgba(0, 0, 0, 0.12);
-  }
-
   select {
     width: 100%;
     min-height: 40px;
     padding: 10px 32px 10px 10px;
-    margin: 0;
-    background-color: $light;
-    border: 1px solid $primary;
-    border-radius: 4px;
+    background-color: $white;
+    border: 2px solid $bdcolor_input;
+    border-radius: 3px;
     box-sizing: border-box;
+    transition: border linear .2s;
+
+    &:focus {
+      border-color: $PETER_RIVER;
+    }
   }
 
   &:after  {
@@ -28,7 +28,7 @@
     right: 10px;
     border-left: 6px solid transparent;
     border-right: 6px solid transparent;
-    border-top: 6px solid $primary;
+    border-top: 6px solid $bdcolor_input;
     pointer-events: none;
   }
 

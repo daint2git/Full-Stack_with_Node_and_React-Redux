@@ -5,13 +5,15 @@
   width: 100%;
   min-height: 40px;
   padding: 10px;
+  color: $WET_ASPHALT;
   background-color: $white;
-  border: 1px solid $light_blue;
+  border: 2px solid $bdcolor_input;
   border-radius: 3px;
   box-sizing: border-box;
+  transition: border linear .2s;
 
   &:focus {
-    box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.2);
+    border-color: $PETER_RIVER;
   }
 
   &[data-attention='true'] {

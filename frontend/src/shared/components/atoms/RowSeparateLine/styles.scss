@@ -2,7 +2,7 @@
 
 .root {
   width: 100%;
-  border-bottom: $blue_ash 1px solid;
+  border-bottom: 1px solid $blue_ash;
 
   &[data-margin='5'] {
     margin: 5px 0;
