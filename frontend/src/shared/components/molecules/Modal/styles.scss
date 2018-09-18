@@ -7,7 +7,7 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 800px;
+  width: 500px;
   z-index: $modal_content_layer;
   padding: 25px;
   border-radius: 6px;
@@ -19,29 +19,47 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    font-size: $fsize_xx_large;
-    font-weight: 700;
+    color: $WET_ASPHALT;
+
+    .title {
+      padding-right: 10px;
+      font-size: $fsize_xx_large;
+      font-weight: 700;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
 
     .icon {
       cursor: pointer;
       width: 20px;
       height: 20px;
-      float: left;
 
       &:hover {
-        background-color: $dark;
-        color: $light;
+        background-color: $MIDNIGHT_BLUE;
+        color: $white;
         border-radius: 50%;
+        transition: background-color linear .2s;
       }
     }
   }
 
-  .content {
+  .body {
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    margin-top: 20px;
+    padding: 20px 0;
+  }
+
+  .footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    > :not(:nth-child(1)) {
+      margin-left: 20px;
+    }
   }
 }
 

@@ -3,13 +3,15 @@ import styles from './styles.scss'
 
 const loadClass = cssModuleNameTag(styles)
 
-const FormField = ({ children: [leftChildren, rightChildren] }) => {
-  return (
-    <div className={loadClass`root`}>
-      <div className={loadClass`left`}>{leftChildren}</div>
-      <div className={loadClass`right`}>{rightChildren}</div>
-    </div>
-  )
-}
+export const FieldLabel = ({ children, ...other }) => (
+  <div className={loadClass`field-label`} {...other}>{children}</div>
+)
+
+const FormField = ({ children: [leftChildren, rightChildren], ...other }) => (
+  <div className={loadClass`root`} {...other}>
+    <div className={loadClass`left`}>{leftChildren}</div>
+    <div className={loadClass`right`}>{rightChildren}</div>
+  </div>
+)
 
 export default FormField

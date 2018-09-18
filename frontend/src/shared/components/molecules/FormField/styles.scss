@@ -1,3 +1,6 @@
+@import '../../utils/colors.scss';
+@import '../../utils/variables.scss';
+
 .root {
   display: flex;
   width: 100%;
@@ -5,6 +8,12 @@
   .left {
     flex-basis: 30%;
     padding-top: 5px;
+
+    .field-label {
+      padding-right: 10px;
+      font-size: $fsize_large;
+      color: $WET_ASPHALT;
+    }
   }
 
   .right {

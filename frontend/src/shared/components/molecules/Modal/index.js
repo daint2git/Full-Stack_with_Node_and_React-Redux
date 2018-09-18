@@ -9,9 +9,9 @@ import styles from './styles.scss'
 
 const loadClass = cssModuleNameTag(styles)
 
-const Header = ({ children, onClose }) => (
+export const ModalHeader = ({ children, onClose }) => (
   <div className={loadClass`header`}>
-    {children}
+    <div className={loadClass`title`}>{children}</div>
     <FontAwesomeIcon
       icon="times"
       size="lg"
@@ -21,13 +21,18 @@ const Header = ({ children, onClose }) => (
   </div>
 )
 
-const Presentational = ({ fixedWidth, title, children, onClose }) => (
+export const ModalBody = ({ children }) => (
+  <div className={loadClass`body`}>{children}</div>
+)
+
+export const ModalFooter = ({ children }) => (
+  <div className={loadClass`footer`}>{children}</div>
+)
+
+const Presentational = ({ children, onClose }) => (
   <>
     <Overlay type="modal" onClick={onClose} />
-    <div className={loadClass`root animation`} style={{ width: fixedWidth }}>
-      <Header onClose={onClose}>{title}</Header>
-      <div className={loadClass`content`}>{children}</div>
-    </div>
+    <div className={loadClass`root animation`}>{children}</div>
   </>
 )
 
@@ -62,14 +67,12 @@ class Modal extends Component {
 
   static propTypes = {
     isOpened: PropTypes.bool.isRequired,
-    fixedWidth: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
     title: PropTypes.string,
     onClose: PropTypes.func,
   }
 
   static defaultProps = {
     isOpened: false,
-    fixedWidth: 500,
   }
 }
 
