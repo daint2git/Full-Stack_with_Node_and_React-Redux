@@ -20,7 +20,7 @@
     }
   }
 
-  &:after  {
+  &::after  {
     content: '';
     position: absolute;
     width: 0;
@@ -38,7 +38,7 @@
       border-color: $danger;
     }
 
-    &:after {
+    &::after {
       border-top-color: $danger;
     }
   }
@@ -53,7 +53,7 @@
       border-color: $pale_blue;
     }
 
-    &:after {
+    &::after {
       border-top-color: $pale_blue;
     }
   }

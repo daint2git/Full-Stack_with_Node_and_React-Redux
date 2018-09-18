@@ -28,7 +28,7 @@
         box-sizing: border-box;
         background-color: $white;
 
-        &:after {
+        &::after {
           content: '';
           display: none;
           width: 8px;
@@ -40,14 +40,14 @@
           background-color: $PETER_RIVER;
         }
 
-        &[data-checked='true']:after {
+        &[data-checked='true']::after {
           display: block;
         }
 
         &[data-disabled='true'] {
           border-color: $CONCRETE;
 
-          &[data-checked='true']:after {
+          &[data-checked='true']::after {
             background-color: $CONCRETE;
           }
         }

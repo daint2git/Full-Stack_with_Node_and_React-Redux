@@ -27,7 +27,7 @@
         box-sizing: border-box;
         background-color: $bdcolor_input;
 
-        &:before {
+        &::before {
           content: '';
           display: none;
           position: absolute;
@@ -39,7 +39,7 @@
           background-color: $white;
         }
 
-        &:after {
+        &::after {
           content: '';
           display: none;
           position: absolute;
@@ -54,7 +54,7 @@
         &[data-checked='true'] {
           background-color: $PETER_RIVER;
 
-          &:before, &:after {
+          &::before, &::after {
             display: block;
           }
         }
