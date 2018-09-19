@@ -2,31 +2,48 @@
 @import '../../utils/variables.scss';
 
 .root {
-  color: $black;
-  padding: 10px 0;
+  color: $WET_ASPHALT;
 
   &.h1 {
-    font-size: $fsize_xx_large;
+    font-size: $fsize_xxxx_large;
+    line-height: 40px;
   }
 
   &.h2 {
-    font-size: $fsize_x_large;
+    font-size: $fsize_xxx_large;
+    line-height: 40px;
   }
 
   &.h3 {
+    font-size: $fsize_xx_large;
+    line-height: 40px;
+  }
+
+  &.h4 {
+    font-size: $fsize_x_large;
+    line-height: 20px;
+  }
+
+  &.h5 {
     font-size: $fsize_large;
+    line-height: 20px;
+  }
+
+  &.h6 {
+    font-size: $fsize_medium;
+    line-height: 20px;
   }
 
   &[data-weight='bold'] {
     font-weight: bold;
   }
 
-  &[data-weight='lighter'] {
-    font-weight: lighter;
-  }
-
   &[data-weight='bolder'] {
     font-weight: bolder;
+  }
+
+  &[data-weight='lighter'] {
+    font-weight: lighter;
   }
 
   &[data-color='white'] {

@@ -7,8 +7,8 @@ import styles from './styles.scss'
 
 const loadClass = cssModuleNameTag(styles)
 
-const Presentational = ({ classes, children, ...other }) => (
-  <div className={loadClass`root ${classes}`} {...other}>
+const Presentational = ({ classes, children }) => (
+  <div className={loadClass`root ${classes}`}>
     <div className={loadClass`content`}>{children}</div>
   </div>
 )

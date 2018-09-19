@@ -34,13 +34,6 @@
       cursor: pointer;
       width: 20px;
       height: 20px;
-
-      &:hover {
-        background-color: $MIDNIGHT_BLUE;
-        color: $white;
-        border-radius: 50%;
-        transition: background-color linear .2s;
-      }
     }
   }
 
@@ -66,14 +59,27 @@
 @keyframes dropdown {
   0% {
     top: 0%;
-    transform: translate(-50%, 0%);
   }
   100% {
     top: 50%;
-    transform: translate(-50%, -50%);
   }
 }
 
-.animation {
-  animation: dropdown .4s ease-out;
+.animation-dropdown {
+  animation: dropdown 500ms ease-out;
+}
+
+@keyframes iconHover {
+  0% {
+    transform: rotate(0deg);
+    opacity: 0.5;
+  }
+  100% {
+    transform: rotate(360deg);
+    opacity: 1;
+  }
+}
+
+.animation-icon-hover:hover {
+  animation: iconHover 1s;
 }

@@ -1,7 +1,7 @@
 import { storiesOf } from '@storybook/react'
 import { withStateHandlers } from 'recompose'
 
-import Checkbox from '../Checkbox'
+import Checkbox from './'
 
 const EnhancedCheckbox = withStateHandlers(
   { name: 'example' , checked: ['1'] },

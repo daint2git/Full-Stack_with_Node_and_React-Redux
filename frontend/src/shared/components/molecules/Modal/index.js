@@ -9,11 +9,11 @@ import styles from './styles.scss'
 
 const loadClass = cssModuleNameTag(styles)
 
-export const ModalHeader = ({ classes, children, onClose }) => (
+export const Header = ({ classes, children, onClose }) => (
   <div className={loadClass`header ${classes}`}>
     <div className={loadClass`title`}>{children}</div>
     <FontAwesomeIcon
-      className={loadClass`icon`}
+      className={loadClass`icon animation-icon-hover`}
       icon="times"
       size="lg"
       onClick={onClose}
@@ -21,18 +21,18 @@ export const ModalHeader = ({ classes, children, onClose }) => (
   </div>
 )
 
-export const ModalBody = ({ classes, children }) => (
+export const Body = ({ classes, children }) => (
   <div className={loadClass`body ${classes}`}>{children}</div>
 )
 
-export const ModalFooter = ({ classes, children }) => (
+export const Footer = ({ classes, children }) => (
   <div className={loadClass`footer ${classes}`}>{children}</div>
 )
 
-const Presentational = ({ classes, children, onClose, ...other }) => (
+const Presentational = ({ classes, children, onClose }) => (
   <>
     <Overlay type="modal" onClick={onClose} />
-    <div className={loadClass`root animation ${classes}`} {...other}>
+    <div className={loadClass`root animation-dropdown ${classes}`}>
       {children}
     </div>
   </>

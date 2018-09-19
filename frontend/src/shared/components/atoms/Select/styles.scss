@@ -8,15 +8,15 @@
   select {
     width: 100%;
     min-height: 40px;
-    padding: 10px 32px 10px 10px;
+    padding: 10px 34px 10px 10px;
     background-color: $white;
     border: 2px solid $bdcolor_input;
-    border-radius: 3px;
+    border-radius: 4px;
     box-sizing: border-box;
-    transition: border linear .2s;
+    transition: border linear .25s;
 
     &:focus {
-      border-color: $PETER_RIVER;
+      border-color: $TURQUOISE;
     }
   }
 
@@ -26,10 +26,15 @@
     width: 0;
     height: 0;
     right: 10px;
-    border-left: 6px solid transparent;
-    border-right: 6px solid transparent;
-    border-top: 6px solid $bdcolor_input;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-top: 8px solid $bdcolor_input;
     pointer-events: none;
+    transition: border-top linear .25s;
+  }
+
+  &:focus-within::after {
+    border-top-color: $TURQUOISE;
   }
 
   &[data-attention='true'] {
@@ -38,7 +43,7 @@
       border-color: $danger;
     }
 
-    &::after {
+    &::after, &:focus-within:not(:active)::after {
       border-top-color: $danger;
     }
   }
@@ -48,13 +53,13 @@
     pointer-events: none;
 
     select {
-      background-color: $pale_gray;
-      color: $pale_blue;
-      border-color: $pale_blue;
+      background-color: $bgcolor_input_disabled;
+      color: $color_input_disabled;
+      border-color: $bgcolor_input_disabled;
     }
 
     &::after {
-      border-top-color: $pale_blue;
+      border-top-color: $color_input_disabled;
     }
   }
 }

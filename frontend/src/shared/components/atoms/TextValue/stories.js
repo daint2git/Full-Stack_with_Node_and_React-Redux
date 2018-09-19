@@ -1,7 +1,7 @@
 import { storiesOf } from '@storybook/react'
 
 import RowSeparateLine from 'shared/components/atoms/RowSeparateLine'
-import TextValue from '../TextValue'
+import TextValue from './'
 
 storiesOf('TextValue', module)
   .add('default', () => <TextValue>TextValue</TextValue>)

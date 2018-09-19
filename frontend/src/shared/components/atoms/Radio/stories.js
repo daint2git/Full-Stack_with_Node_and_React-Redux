@@ -1,7 +1,7 @@
 import { storiesOf } from '@storybook/react'
 import { withStateHandlers } from 'recompose'
 
-import Radio from '../Radio'
+import Radio from './'
 
 const EnhancedRadio = withStateHandlers(
   { name: 'example' , checked: '1' },

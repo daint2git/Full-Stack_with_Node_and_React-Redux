@@ -1,7 +1,7 @@
 import { storiesOf } from '@storybook/react'
 import { withStateHandlers } from 'recompose'
 
-import Select, { Option } from '../Select'
+import Select, { Option } from './'
 
 const OPTIONS = [
   { value: '1', children: 'qwe'},

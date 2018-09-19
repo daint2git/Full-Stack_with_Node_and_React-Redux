@@ -1,16 +1,19 @@
 @import '../../utils/colors.scss';
 
 .root {
-  position: fixed;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
+  width: 100vw;
+  height: 100vh;
+  background-color: $TURQUOISE;
 
   .form {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
     width: 360px;
     padding: 20px;
     border-radius: 4px;
-    background-color: $bgcolor_form;
+    background-color: $white;
     box-shadow: 0 2px 4px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);
   }
 }

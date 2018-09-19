@@ -1,6 +1,6 @@
 import { storiesOf } from '@storybook/react'
 
-import TextInput from '../TextInput'
+import TextInput from './'
 
 storiesOf('TextInput', module)
   .add('default', () => <TextInput />)

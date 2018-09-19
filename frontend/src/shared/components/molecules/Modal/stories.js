@@ -6,7 +6,7 @@ import Select from 'shared/components/atoms/Select'
 import Spacer from 'shared/components/atoms/Spacer'
 import Button from 'shared/components/atoms/Button'
 import FormField, { FieldLabel } from 'shared/components/molecules/FormField'
-import Modal, { ModalHeader, ModalBody, ModalFooter } from '../Modal'
+import Modal, { Header, Body, Footer } from './'
 
 import cssModuleNameTag from 'shared/components/utils/cssModuleNameTag'
 import styles from './stories.scss'
@@ -34,8 +34,8 @@ storiesOf('Modal', module)
       <>
         <Button {...other}>Show Modal</Button>
         <Modal isOpened={isOpened} onClose={onClose}>
-          <ModalHeader onClose={onClose}>Demo modal</ModalHeader>
-          <ModalBody>
+          <Header onClose={onClose}>Demo modal</Header>
+          <Body>
             <FormField>
               <FieldLabel size="large">Name</FieldLabel>
               <TextInput
@@ -61,13 +61,13 @@ storiesOf('Modal', module)
             <Spacer />
             <FormField>
               <FieldLabel>Quantity</FieldLabel>
-              <Select options={OPTIONS} classes={loadClass`select`}/>
+              <Select options={OPTIONS} classes={loadClass`select`} />
             </FormField>
-          </ModalBody>
-          <ModalFooter>
+          </Body>
+          <Footer>
             <Button size="large">Submit</Button>
             <Button size="large" type="info">Reset</Button>
-          </ModalFooter>
+          </Footer>
         </Modal>
       </>
     )}

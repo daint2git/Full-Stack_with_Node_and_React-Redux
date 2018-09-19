@@ -21,34 +21,39 @@
       .icon {
         display: inline-block;
         position: relative;
-        width: 16px;
-        height: 16px;
-        border: 2px solid $PETER_RIVER;
+        width: 20px;
+        height: 20px;
+        border: 3px solid $bdcolor_input;
         border-radius: 50%;
         box-sizing: border-box;
         background-color: $white;
+        transition: border-color 250ms;
 
         &::after {
           content: '';
           display: none;
-          width: 8px;
-          height: 8px;
+          width: 10px;
+          height: 10px;
           top: 0;
           left: 0;
           margin: 2px;
           border-radius: 50%;
-          background-color: $PETER_RIVER;
+          background-color: $TURQUOISE;
         }
 
-        &[data-checked='true']::after {
-          display: block;
+        &[data-checked='true'] {
+          border-color: $TURQUOISE;
+
+          &::after {
+            display: block;
+          }
         }
 
         &[data-disabled='true'] {
-          border-color: $CONCRETE;
+          border-color: $bdcolor_input;
 
           &[data-checked='true']::after {
-            background-color: $CONCRETE;
+            background-color: $bdcolor_input;
           }
         }
       }
@@ -56,13 +61,15 @@
 
     .children {
       padding-left: 5px;
-      white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
+      white-space: nowrap;
+      transition: color 250ms;
     }
 
     &:hover {
       cursor: pointer;
+      color: $TURQUOISE;
     }
 
     &[disabled] {
@@ -70,7 +77,7 @@
       pointer-events: none;
 
       > .children {
-        opacity: 0.5;
+        color: $color_input_disabled_checked;
       }
     }
   }

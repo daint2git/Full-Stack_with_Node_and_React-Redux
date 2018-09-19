@@ -1,6 +1,5 @@
 import { steps } from 'redux-effects-steps'
 import { push } from 'react-router-redux'
-import { size } from 'lodash-es'
 import { simpleLocalStorage } from 'simple-storage'
 import { fetch } from './utils/axios'
 import { createAction, createErrorAction, handleActions, handleAction } from './utils'

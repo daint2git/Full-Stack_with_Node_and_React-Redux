@@ -1,6 +1,6 @@
 import { storiesOf } from '@storybook/react'
 
-import Loading from '../Loading'
+import Loading from './'
 
 storiesOf('Loading', module)
   .add('true', () => <Loading loading={true} />)

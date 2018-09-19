@@ -10,13 +10,14 @@
   border: 2px solid $bdcolor_input;
   border-radius: 3px;
   box-sizing: border-box;
-  transition: border linear .2s;
+  text-indent: 1px;
+  transition: border linear .25s;
 
   &:focus {
-    border-color: $PETER_RIVER;
+    border-color: $TURQUOISE;
   }
 
   &[data-attention='true'] {
-    border-color: $danger;
+    border-color: $ALIZARIN;
   }
 }

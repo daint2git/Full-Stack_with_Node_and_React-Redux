@@ -2,25 +2,31 @@ import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import { compose, lifecycle } from 'recompose'
 
-import { readPhones, createPhone } from 'shared/redux/reducers/phones'
+import { readPhones, openCreateModal } from 'shared/redux/reducers/phones'
 
 import Heading from 'shared/components/atoms/Heading'
-import PhonesContent from 'shared/components/organisms/PhonesContent'
+import Button from 'shared/components/atoms/Button'
+import WrapLayout from 'shared/components/atoms/WrapLayout'
+import { PhoneModals, PhoneTable } from 'shared/components/organisms/PhonesContent'
 import PageLayout from 'shared/components/templates/PageLayout'
 
-const PhonesPage = props => (
+const PhonesPage = ({ openCreateModal, ...other }) => (
   <PageLayout currentPath="/phones">
     <Heading component="h2" weight="bold">Phones page</Heading>
-    <PhonesContent {...props} />
+    <WrapLayout>
+      <Button size="large" onClick={openCreateModal}>
+        Create Phone
+      </Button>
+      <PhoneModals {...other} />
+      <PhoneTable {...other} />
+    </WrapLayout>
   </PageLayout>
 )
 
 export default compose(
   connect(
-    state => ({
-      list: state.phones.list,
-    }),
-    dispatch => bindActionCreators({ readPhones, createPhone }, dispatch),
+    state => ({ user: state.auth.user }),
+    dispatch => bindActionCreators({ readPhones, openCreateModal }, dispatch),
   ),
   lifecycle({
     componentDidMount() {

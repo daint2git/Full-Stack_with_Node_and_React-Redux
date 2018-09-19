@@ -1,6 +1,6 @@
 import { storiesOf } from '@storybook/react'
 
-import RowSeparateLine from '../RowSeparateLine'
+import RowSeparateLine from './'
 
 storiesOf('RowSeparateLine', module)
   .add('default', () => <RowSeparateLine />)

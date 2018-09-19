@@ -7,11 +7,12 @@ const keyGenerator = key => either(key)(uuidv4())
 const repeatComponent = (BaseComponent, propName = 'list') => {
   const RepeatComponent = props => {
     const list = props[propName]
-    const restProps = delete { ...props }[propName]
+    const copyProps = { ...props }
+    delete copyProps[propName]
     return !list ? null : (
       <>
         {list.map(elementProps =>
-          <BaseComponent key={keyGenerator(elementProps.key)} {...restProps} {...elementProps} />
+          <BaseComponent key={keyGenerator(elementProps.key)} {...copyProps} {...elementProps} />
         )}
       </>
     )

@@ -21,20 +21,21 @@
       .icon {
         display: inline-block;
         position: relative;
-        width: 16px;
-        height: 16px;
+        width: 20px;
+        height: 20px;
         border-radius: 4px;
         box-sizing: border-box;
         background-color: $bdcolor_input;
+        transition: background-color 250ms;
 
         &::before {
           content: '';
           display: none;
           position: absolute;
           width: 3px;
-          height: 5px;
-          top: 6px;
-          left: 4px;
+          height: 7px;
+          top: 7px;
+          left: 5px;
           transform: rotate(-45deg);
           background-color: $white;
         }
@@ -44,15 +45,15 @@
           display: none;
           position: absolute;
           width: 3px;
-          height: 9px;
-          top: 3px;
-          left: 8px;
+          height: 11px;
+          top: 4px;
+          left: 10px;
           transform: rotate(45deg);
           background-color: $white;
         }
 
         &[data-checked='true'] {
-          background-color: $PETER_RIVER;
+          background-color: $TURQUOISE;
 
           &::before, &::after {
             display: block;
@@ -60,20 +61,22 @@
         }
 
         &[data-disabled='true'] {
-          background-color: $CONCRETE;
+          background-color: $bdcolor_input;
         }
       }
     }
 
     .children {
       padding-left: 5px;
-      white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
+      white-space: nowrap;
+      transition: color 250ms;
     }
 
     &:hover {
       cursor: pointer;
+      color: $TURQUOISE;
     }
 
     &[disabled] {
@@ -81,7 +84,7 @@
       pointer-events: none;
 
       > .children {
-        opacity: 0.5;
+        color: $color_input_disabled_checked;
       }
     }
   }
