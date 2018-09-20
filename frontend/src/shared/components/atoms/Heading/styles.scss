@@ -7,43 +7,37 @@
   &.h1 {
     font-size: $fsize_xxxx_large;
     line-height: 40px;
+    font-weight: 900;
   }
 
   &.h2 {
     font-size: $fsize_xxx_large;
     line-height: 40px;
+    font-weight: 700;
   }
 
   &.h3 {
     font-size: $fsize_xx_large;
     line-height: 40px;
+    font-weight: 700;
   }
 
   &.h4 {
     font-size: $fsize_x_large;
     line-height: 20px;
+    font-weight: 500;
   }
 
   &.h5 {
     font-size: $fsize_large;
     line-height: 20px;
+    font-weight: 500;
   }
 
   &.h6 {
     font-size: $fsize_medium;
     line-height: 20px;
-  }
-
-  &[data-weight='bold'] {
-    font-weight: bold;
-  }
-
-  &[data-weight='bolder'] {
-    font-weight: bolder;
-  }
-
-  &[data-weight='lighter'] {
-    font-weight: lighter;
+    font-weight: 500;
   }
 
   &[data-color='white'] {

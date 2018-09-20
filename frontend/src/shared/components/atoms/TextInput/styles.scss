@@ -11,7 +11,7 @@
   border-radius: 3px;
   box-sizing: border-box;
   text-indent: 1px;
-  transition: border linear .25s;
+  transition: border 250ms linear;
 
   &:focus {
     border-color: $TURQUOISE;
@@ -19,5 +19,21 @@
 
   &[data-attention='true'] {
     border-color: $ALIZARIN;
+  }
+
+  &[data-align='center'] {
+    text-align: center;
+
+    &::placeholder {
+      text-align: left;
+    }
+  }
+
+  &[data-align='right'] {
+    text-align: right;
+
+    &::placeholder {
+      text-align: left;
+    }
   }
 }

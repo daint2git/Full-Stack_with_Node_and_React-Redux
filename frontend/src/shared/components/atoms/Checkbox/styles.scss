@@ -26,7 +26,7 @@
         border-radius: 4px;
         box-sizing: border-box;
         background-color: $bdcolor_input;
-        transition: background-color 250ms;
+        transition: background-color 250ms linear;
 
         &::before {
           content: '';
@@ -67,11 +67,11 @@
     }
 
     .children {
-      padding-left: 5px;
+      padding-left: 10px;
       overflow: hidden;
       text-overflow: ellipsis;
       white-space: nowrap;
-      transition: color 250ms;
+      transition: color 250ms linear;
     }
 
     &:hover {

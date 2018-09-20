@@ -13,24 +13,19 @@ const Enhanced = compose(
   setPropTypes({
     component: PropTypes.oneOf(['h1', 'h2', 'h3', 'h4', 'h5', 'h6']).isRequired,
     classes: PropTypes.string,
-    weight: PropTypes.string,
     color: PropTypes.string,
-    value: PropTypes.string,
   }),
   mapProps(({
     component,
     classes,
     weight,
     color,
-    value,
     children,
     ...other
   }) => ({
     ...other,
     className: loadClass`root ${component} ${classes}`,
-    'data-weight': weight,
     'data-color': color,
-    children: value || children,
     component,
   })),
 )(Heading)

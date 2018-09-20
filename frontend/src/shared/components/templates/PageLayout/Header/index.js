@@ -8,12 +8,9 @@ const loadClass = cssModuleNameTag(styles)
 
 const Header = ({ fullName, logout }) => (
   <header className={loadClass`root`}>
-    <Heading
-      component="h1"
-      color="white"
-      weight="bold"
-      value="Study everything"
-    />
+    <Heading component="h1" color="white">
+      Study everything
+    </Heading>
     <div className={loadClass`user-info`}>
       <TextValue>{fullName}</TextValue>
       <IconLogout width={30} height={30} onClick={logout} />

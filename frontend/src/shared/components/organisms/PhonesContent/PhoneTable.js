@@ -7,8 +7,18 @@ import { openDetailModal } from 'shared/redux/reducers/phones'
 import  { Table, Head, Body, Row, Cell } from 'shared/components/atoms/Table'
 import TextValue from 'shared/components/atoms/TextValue'
 import repeatComponent from 'shared/components/utils/repeatComponent'
+import { showPrice } from 'shared/components/utils/common'
 
-const Phone = ({ id, name, describe, price, quantity, category, active, openDetailModal }) => (
+const Phone = ({
+  id,
+  name,
+  describe,
+  price,
+  quantity,
+  category,
+  active,
+  openDetailModal,
+}) => (
   <Row onClick={() => openDetailModal(id)}>
     <Cell>
       <TextValue ellipsis>{name}</TextValue>
@@ -16,7 +26,7 @@ const Phone = ({ id, name, describe, price, quantity, category, active, openDeta
     <Cell>
       <TextValue ellipsis>{describe}</TextValue>
     </Cell>
-    <Cell align="right">{price}</Cell>
+    <Cell align="right">{`${showPrice(price)} VND`}</Cell>
     <Cell align="right">{quantity}</Cell>
     <Cell>{category}</Cell>
     <Cell>{active}</Cell>

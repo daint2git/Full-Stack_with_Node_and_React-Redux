@@ -9,7 +9,6 @@
   transform: translate(-50%, -50%);
   width: 500px;
   z-index: $modal_content_layer;
-  padding: 25px;
   border-radius: 6px;
   box-sizing: border-box;
   box-shadow: 0px 3px 5px -1px rgba(0, 0, 0, 0.2), 0px 5px 8px 0px rgba(0, 0, 0, 0.14), 0px 1px 14px 0px rgba(0, 0, 0, 0.12);
@@ -20,6 +19,8 @@
     align-items: center;
     justify-content: space-between;
     color: $WET_ASPHALT;
+    border-bottom: 1px solid $bdcolor_input;
+    padding: 20px;
 
     .title {
       padding-right: 10px;
@@ -42,13 +43,15 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    padding: 20px 0;
+    padding: 20px;
   }
 
   .footer {
     display: flex;
     align-items: center;
     justify-content: center;
+    border-top: 1px solid $bdcolor_input;
+    padding: 20px;
 
     > :not(:first-child) {
       margin-left: 20px;

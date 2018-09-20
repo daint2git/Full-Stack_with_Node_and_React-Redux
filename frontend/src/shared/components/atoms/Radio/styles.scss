@@ -27,16 +27,16 @@
         border-radius: 50%;
         box-sizing: border-box;
         background-color: $white;
-        transition: border-color 250ms;
+        transition: border-color 250ms linear;
 
         &::after {
           content: '';
           display: none;
-          width: 10px;
-          height: 10px;
+          width: 8px;
+          height: 8px;
           top: 0;
           left: 0;
-          margin: 2px;
+          margin: 3px;
           border-radius: 50%;
           background-color: $TURQUOISE;
         }
@@ -60,11 +60,11 @@
     }
 
     .children {
-      padding-left: 5px;
+      padding-left: 10px;
       overflow: hidden;
       text-overflow: ellipsis;
       white-space: nowrap;
-      transition: color 250ms;
+      transition: color 250ms linear;
     }
 
     &:hover {

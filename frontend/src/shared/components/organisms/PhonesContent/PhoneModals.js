@@ -2,9 +2,9 @@ import { compose, branch, renderNothing } from 'recompose'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 
-import { closeModal } from 'shared/redux/reducers/phones'
-
+import { createPhone, closeModal } from 'shared/redux/reducers/phones'
 import { CREATE, DETAIL } from 'shared/redux/constants/modalTypes'
+
 import CreatePhoneModal from './CreatePhoneModal'
 
 const PhoneModals = props => {
@@ -22,7 +22,7 @@ const PhoneModals = props => {
 const Enhanced = compose(
   connect(
     state => ({ modal: state.phones.modal }),
-    dispacth => bindActionCreators({ closeModal }, dispacth),
+    dispacth => bindActionCreators({ createPhone, closeModal }, dispacth),
   ),
   branch(({ modal: { type } }) => !type, renderNothing),
 )(PhoneModals)

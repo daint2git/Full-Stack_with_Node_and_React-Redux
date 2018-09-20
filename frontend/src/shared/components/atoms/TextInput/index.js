@@ -12,18 +12,21 @@ const Enhanced = compose(
   setPropTypes({
     classes: PropTypes.string,
     attention: PropTypes.bool,
+    align: PropTypes.oneOf(['center', 'right']),
     multiline: PropTypes.bool,
     type: PropTypes.string,
   }),
   mapProps(({
     classes,
     attention,
+    align,
     multiline,
     ...other
   }) => ({
     ...other,
     className: loadClass`root ${classes}`,
     'data-attention': attention,
+    'data-align': align,
     component: !multiline ? 'input' : 'textarea',
   })),
 )(TextInput)

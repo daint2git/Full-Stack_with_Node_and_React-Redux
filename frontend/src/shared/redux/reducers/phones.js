@@ -11,10 +11,10 @@ export const readPhones = request =>
   )
 
 const createPhoneSuccess = createAction('CREATE_PHONE_SUCCESS')
-export const createPhone = () =>
+export const createPhone = form =>
   steps(
-    // fetch({ method: 'post', url: 'phones', data: 'abc' }),
-    createPhoneSuccess,
+    Promise.resolve(),
+    createPhoneSuccess
   )
 
 const openCreateModalSuccess = createAction('OPEN_CREATE_PHONE_MODAL_SUCCESS')
@@ -43,6 +43,7 @@ export const INITIAL_STATE = () => ({
 export default handleActions(
   [
     handleAction(readPhonesSuccess, (state, payload) => ({ ...state, list: payload })),
+    handleAction(createPhoneSuccess, (state) => ({ ...state, modal: INITIAL_STATE().modal })),
     handleAction(openCreateModalSuccess, state => ({
       ...state,
       modal: {

@@ -19,7 +19,7 @@
 
     &:hover {
       background-color: rgba(0, 0, 0, 0.08);
-      transition: background-color 250ms;
+      transition: background-color 250ms linear;
     }
 
     &[data-active='true'] {

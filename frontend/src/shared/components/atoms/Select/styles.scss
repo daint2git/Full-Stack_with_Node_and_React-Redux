@@ -13,7 +13,7 @@
     border: 2px solid $bdcolor_input;
     border-radius: 4px;
     box-sizing: border-box;
-    transition: border linear .25s;
+    transition: border 250ms linear;
 
     &:focus {
       border-color: $TURQUOISE;
@@ -30,7 +30,7 @@
     border-right: 8px solid transparent;
     border-top: 8px solid $bdcolor_input;
     pointer-events: none;
-    transition: border-top linear .25s;
+    transition: border-top 250ms linear;
   }
 
   &:focus-within::after {

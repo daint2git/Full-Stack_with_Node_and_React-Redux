@@ -6,6 +6,7 @@
   align-items: center;
   justify-content: center;
   border-radius: 4px;
+  transition: background-color 250ms linear, color 250ms linear;
 
   &:disabled {
     cursor: default;
@@ -52,7 +53,7 @@
 
   &[data-type='warning'] {
     background-color: $warning;
-    color: $black;
+    color: $white;
 
     &:hover {
       background-color: $warning_hover;
