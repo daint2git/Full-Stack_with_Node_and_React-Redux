@@ -19,8 +19,8 @@ const Enhanced = compose(
     component,
     classes,
     weight,
+    value,
     color,
-    children,
     ...other
   }) => ({
     ...other,

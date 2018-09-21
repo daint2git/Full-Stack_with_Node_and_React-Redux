@@ -6,6 +6,8 @@ import Group from 'shared/components/atoms/Group'
 import Heading from 'shared/components/atoms/Heading'
 import Button from 'shared/components/atoms/Button'
 import Spacer from 'shared/components/atoms/Spacer'
+import TextValue from 'shared/components/atoms/TextValue'
+import Link from 'shared/components/atoms/Link'
 import FormTextInput from 'shared/components/molecules/FormTextInput'
 import FormError from 'shared/components/molecules/FormError'
 import cssModuleNameTag from 'shared/components/utils/cssModuleNameTag'
@@ -15,7 +17,9 @@ const loadClass = cssModuleNameTag(styles)
 
 const LoginForm = ({ username, password, onChange, onSubmit, errors = {} }) => (
   <WrapLayout classes={loadClass`root`}>
-    <Heading classes={loadClass`title`}>Sign In</Heading>
+    <Heading classes={loadClass`title`} component="h1">
+      Log in to your account
+    </Heading>
     <Group classes={loadClass`form-field`}>
       <FormTextInput
         type="text"
@@ -54,8 +58,13 @@ const LoginForm = ({ username, password, onChange, onSubmit, errors = {} }) => (
       size="large"
       onClick={onSubmit}
     >
-      Sign In
+      Log in
     </Button>
+    <Spacer />
+    <TextValue align="center" size="large">
+      Don't have account?&nbsp;
+      <Link href="#">Sign Up</Link>
+    </TextValue>
   </WrapLayout>
 )
 

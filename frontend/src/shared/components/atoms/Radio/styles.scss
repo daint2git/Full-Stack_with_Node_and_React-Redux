@@ -38,11 +38,11 @@
           left: 0;
           margin: 3px;
           border-radius: 50%;
-          background-color: $TURQUOISE;
+          background-color: $PETER_RIVER;
         }
 
         &[data-checked='true'] {
-          border-color: $TURQUOISE;
+          border-color: $PETER_RIVER;
 
           &::after {
             display: block;
@@ -69,7 +69,7 @@
 
     &:hover {
       cursor: pointer;
-      color: $TURQUOISE;
+      color: $PETER_RIVER;
     }
 
     &[disabled] {

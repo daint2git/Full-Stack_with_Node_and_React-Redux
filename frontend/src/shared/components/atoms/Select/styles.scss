@@ -16,7 +16,7 @@
     transition: border 250ms linear;
 
     &:focus {
-      border-color: $TURQUOISE;
+      border-color: $PETER_RIVER;
     }
   }
 
@@ -34,7 +34,7 @@
   }
 
   &:focus-within::after {
-    border-top-color: $TURQUOISE;
+    border-top-color: $PETER_RIVER;
   }
 
   &[data-attention='true'] {

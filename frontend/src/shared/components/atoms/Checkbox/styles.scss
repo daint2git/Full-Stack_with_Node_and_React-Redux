@@ -53,7 +53,7 @@
         }
 
         &[data-checked='true'] {
-          background-color: $TURQUOISE;
+          background-color: $PETER_RIVER;
 
           &::before, &::after {
             display: block;
@@ -76,7 +76,7 @@
 
     &:hover {
       cursor: pointer;
-      color: $TURQUOISE;
+      color: $PETER_RIVER;
     }
 
     &[disabled] {
