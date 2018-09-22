@@ -2,8 +2,9 @@
 
 - Project information: 
   - Backend: 
-    - `Node`
-    - `PostgreSql`
+    - `node` (Node.js® is a JavaScript runtime built on Chrome's V8 JavaScript engine)
+    - `express` (Fast, unopinionated, minimalist web framework for Node.js)
+    - `PostgreSql` (The world's most advanced open source relational database)
   - Frontend: 
     - Combination of libraries like `react, redux, router, webpack` in one project only
     - Combination of the utility libraries:
@@ -20,5 +21,5 @@
       - html5
       - css3
     - Components are created in my style
-- Author: `DaiNT2`
-- Email: `daint2@fsoft.com.vn`
+  - Author: `DaiNT2`
+  - Email: `daint2@fsoft.com.vn`
