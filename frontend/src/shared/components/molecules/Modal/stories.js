@@ -28,48 +28,179 @@ const EnhancedModal = withStateHandlers(
 )(({ render, ...other }) => render(other))
 
 storiesOf('Modal', module)
-.add('default', () => (
-  <EnhancedModal
-    render={({ isOpened, onClose, ...other }) => (
-      <>
-        <Button {...other}>Show Modal</Button>
-        <Modal isOpened={isOpened} onClose={onClose}>
-          <Header onClose={onClose}>Demo modal</Header>
-          <Body>
-            <FormField>
-              <FieldLabel size="large">Name</FieldLabel>
-              <TextInput
-                placeholder="Please enter username"
-              />
-            </FormField>
-            <Spacer />
-            <FormField>
-              <FieldLabel size="large">Describe</FieldLabel>
-              <TextInput
-                placeholder="Please enter describe"
-                rows={5}
-                multiline
-              />
-            </FormField>
-            <Spacer />
-            <FormField>
-              <FieldLabel>Price</FieldLabel>
-              <TextInput
-                placeholder="Please enter price"
-              />
-            </FormField>
-            <Spacer />
-            <FormField>
-              <FieldLabel>Quantity</FieldLabel>
-              <Select options={OPTIONS} classes={loadClass`select`} />
-            </FormField>
-          </Body>
-          <Footer>
-            <Button size="large">Submit</Button>
-            <Button size="large" type="info">Reset</Button>
-          </Footer>
-        </Modal>
-      </>
-    )}
-  />
-))
+  .add('default', () => (
+    <EnhancedModal
+      render={({ isOpened, onClose, ...other }) => (
+        <>
+          <Button {...other}>Show Modal</Button>
+          {isOpened && (
+            <Modal onClose={onClose}>
+              <Header onClose={onClose}>Demo modal</Header>
+              <Body>
+                <FormField>
+                  <FieldLabel size="large">Name</FieldLabel>
+                  <TextInput
+                    placeholder="Please enter username"
+                  />
+                </FormField>
+                <Spacer />
+                <FormField>
+                  <FieldLabel size="large">Describe</FieldLabel>
+                  <TextInput
+                    placeholder="Please enter describe"
+                    rows={5}
+                    multiline
+                  />
+                </FormField>
+                <Spacer />
+                <FormField>
+                  <FieldLabel>Price</FieldLabel>
+                  <TextInput
+                    placeholder="Please enter price"
+                  />
+                </FormField>
+                <Spacer />
+                <FormField>
+                  <FieldLabel>Quantity</FieldLabel>
+                  <Select options={OPTIONS} classes={loadClass`select`} />
+                </FormField>
+              </Body>
+              <Footer>
+                <Button size="large">Submit</Button>
+                <Button size="large" type="info">Reset</Button>
+              </Footer>
+            </Modal>
+          )}
+        </>
+      )}
+    />
+  ))
+  .add('center', () => (
+    <EnhancedModal
+      render={({ isOpened, onClose, ...other }) => (
+        <>
+          <Button {...other}>Show Modal</Button>
+          {isOpened && (
+            <Modal onClose={onClose} center>
+              <Header onClose={onClose}>Demo modal</Header>
+              <Body>
+                <FormField>
+                  <FieldLabel size="large">Name</FieldLabel>
+                  <TextInput
+                    placeholder="Please enter username"
+                  />
+                </FormField>
+                <Spacer />
+                <FormField>
+                  <FieldLabel size="large">Describe</FieldLabel>
+                  <TextInput
+                    placeholder="Please enter describe"
+                    rows={5}
+                    multiline
+                  />
+                </FormField>
+                <Spacer />
+                <FormField>
+                  <FieldLabel>Price</FieldLabel>
+                  <TextInput
+                    placeholder="Please enter price"
+                  />
+                </FormField>
+                <Spacer />
+                <FormField>
+                  <FieldLabel>Quantity</FieldLabel>
+                  <Select options={OPTIONS} classes={loadClass`select`} />
+                </FormField>
+              </Body>
+              <Footer>
+                <Button size="large">Submit</Button>
+                <Button size="large" type="info">Reset</Button>
+              </Footer>
+            </Modal>
+          )}
+        </>
+      )}
+    />
+  ))
+  .add('overflow', () => (
+    <EnhancedModal
+      render={({ isOpened, onClose, ...other }) => (
+        <>
+          <Button {...other}>Show Modal</Button>
+          {isOpened && (
+            <Modal isOpened={isOpened} onClose={onClose}>
+              <Header onClose={onClose}>Demo modal</Header>
+              <Body>
+                <FormField>
+                  <FieldLabel size="large">Name</FieldLabel>
+                  <TextInput
+                    placeholder="Please enter username"
+                  />
+                </FormField>
+                <Spacer />
+                <FormField>
+                  <FieldLabel size="large">Name</FieldLabel>
+                  <TextInput
+                    placeholder="Please enter username"
+                  />
+                </FormField>
+                <Spacer />
+                <FormField>
+                  <FieldLabel size="large">Name</FieldLabel>
+                  <TextInput
+                    placeholder="Please enter username"
+                  />
+                </FormField>
+                <Spacer />
+                <FormField>
+                  <FieldLabel size="large">Name</FieldLabel>
+                  <TextInput
+                    placeholder="Please enter username"
+                  />
+                </FormField>
+                <Spacer />
+                <FormField>
+                  <FieldLabel size="large">Name</FieldLabel>
+                  <TextInput
+                    placeholder="Please enter username"
+                  />
+                </FormField>
+                <Spacer />
+                <FormField>
+                  <FieldLabel size="large">Name</FieldLabel>
+                  <TextInput
+                    placeholder="Please enter username"
+                  />
+                </FormField>
+                <Spacer />
+                <FormField>
+                  <FieldLabel size="large">Describe</FieldLabel>
+                  <TextInput
+                    placeholder="Please enter describe"
+                    rows={5}
+                    multiline
+                  />
+                </FormField>
+                <Spacer />
+                <FormField>
+                  <FieldLabel>Price</FieldLabel>
+                  <TextInput
+                    placeholder="Please enter price"
+                  />
+                </FormField>
+                <Spacer />
+                <FormField>
+                  <FieldLabel>Quantity</FieldLabel>
+                  <Select options={OPTIONS} classes={loadClass`select`} />
+                </FormField>
+              </Body>
+              <Footer>
+                <Button size="large">Submit</Button>
+                <Button size="large" type="info">Reset</Button>
+              </Footer>
+            </Modal>
+          )}
+        </>
+      )}
+    />
+  ))

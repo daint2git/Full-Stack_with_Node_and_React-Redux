@@ -7,46 +7,31 @@ import styles from './styles.scss'
 
 const loadClass = cssModuleNameTag(styles)
 
-const Presentational = ({ classes, children }) => (
-  <div className={loadClass`root ${classes}`}>
-    <div className={loadClass`content`}>{children}</div>
-  </div>
-)
-
 class Popup extends Component {
   constructor(props) {
     super(props)
-    this.state = { isOpened: this.props.isOpened }
+    this.state = { isOpened: true }
   }
 
-  static getDerivedStateFromProps(nextProps, prevState) {
-    if (prevState.isOpened !== undefined && !prevState.isOpened)
-      return { isOpened: false }
-    if (nextProps.isOpened)
-      return { isOpened: nextProps.isOpened }
-    return null
-  }
-
-  closing = () => {
-    either(this.props.onClose)(() => this.setState({ isOpened: false }))()
-  }
+  closing = () => either(this.props.onClose)(() => this.setState({ isOpened: false }))()
 
   componentDidMount() {
     if (this.props.autoClose) setTimeout(() => this.closing(), 1000)
   }
 
   render() {
-    return !this.state.isOpened ? null : <Presentational {...this.props} />
+    const { classes, children } = this.props
+    return !this.state.isOpened ? null : (
+      <div className={loadClass`root ${classes}`}>
+        <div className={loadClass`content`}>{children}</div>
+      </div>
+    )
   }
 
   static propTypes  = {
-    isOpened: PropTypes.bool.isRequired,
     classes: PropTypes.string,
+    autoClose: PropTypes.bool,
     onClose: PropTypes.func,
-  }
-
-  static defaultProps = {
-    isOpened: false,
   }
 }
 

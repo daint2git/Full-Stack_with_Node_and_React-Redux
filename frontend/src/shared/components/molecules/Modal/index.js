@@ -13,7 +13,7 @@ export const Header = ({ classes, children, onClose }) => (
   <div className={loadClass`header ${classes}`}>
     <div className={loadClass`title`}>{children}</div>
     <FontAwesomeIcon
-      className={loadClass`icon animation-icon-hover`}
+      className={loadClass`icon animation-icon`}
       icon="times"
       size="lg"
       onClick={onClose}
@@ -29,49 +29,50 @@ export const Footer = ({ classes, children }) => (
   <div className={loadClass`footer ${classes}`}>{children}</div>
 )
 
-const Presentational = ({ classes, children, onClose }) => (
-  <>
-    <Overlay type="modal" onClick={onClose} />
-    <div className={loadClass`root animation-dropdown ${classes}`}>
-      {children}
-    </div>
-  </>
-)
-
 class Modal extends Component {
   constructor(props) {
     super(props)
     this.parentSelector = document.body
     this.node = document.createElement('div')
-    this.state = { isOpened: this.props.isOpened }
+    this.state = { prevPageYOffset: 0 }
   }
 
-  static getDerivedStateFromProps(nextProps) {
-    return { isOpened: nextProps.isOpened }
-  }
+  changeScrollYPosition = pageYOffset => window.scrollTo(0, pageYOffset)
 
   componentDidMount() {
     this.parentSelector.appendChild(this.node)
+    const prevPageYOffset = window.pageYOffset
+    if (prevPageYOffset) {
+      this.changeScrollYPosition(0)
+      this.setState({ prevPageYOffset })
+    }
   }
 
   componentWillUnmount() {
     this.parentSelector.removeChild(this.node)
+    const { prevPageYOffset } = this.state
+    if (prevPageYOffset) {
+      this.changeScrollYPosition(prevPageYOffset)
+    }
   }
 
   render() {
-    return !this.state.isOpened
-      ? null
-      : ReactDOM.createPortal(<Presentational {...this.props} />, this.node)
+    const { classes, center, children, onClose } = this.props
+    return ReactDOM.createPortal(
+      <>
+        <Overlay type="modal" onClick={onClose} />
+        <div className={loadClass`root animation-modal ${classes}`} data-center={center}>
+          {children}
+        </div>
+      </>,
+      this.node
+    )
   }
 
   static propTypes = {
-    isOpened: PropTypes.bool.isRequired,
     classes: PropTypes.string,
+    center: PropTypes.bool,
     onClose: PropTypes.func,
-  }
-
-  static defaultProps = {
-    isOpened: false,
   }
 }
 

@@ -89,16 +89,17 @@ const CreatePhoneModal = ({
   </Modal>
 )
 
+const INITIAL_LOCAL_STATE = ({ modal: { form } }) => ({
+  name: form.name || '',
+  describe: form.describe || '',
+  price: form.price || 0,
+  quantity: form.quantity || 1,
+  category: form.category || 'OTHER',
+  active: form.active,
+})
+
 export default compose(
-  withStateHandlers(
-    ({ modal: { form } }) => ({
-      name: form.name || '',
-      describe: form.describe || '',
-      price: form.price || '',
-      quantity: form.quantity || '',
-      category: form.category || '',
-      active: form.active,
-    }),
+  withStateHandlers(props => INITIAL_LOCAL_STATE(props),
     {
       onChange: state => e => ({ ...state, [e.target.name]: e.target.value }),
       onSubmit: (state, props) => e => {
@@ -108,14 +109,7 @@ export default compose(
           ? createPhone({ name, describe, price, quantity, category, active })
           : {}
       },
-      onReset: (_, { modal: { form } }) => () => ({
-        name: form.name || '',
-        describe: form.describe || '',
-        price: form.price || '',
-        quantity: form.quantity || '',
-        category: form.category || '',
-        active: form.active,
-      })
+      onReset: (_, props) => () => INITIAL_LOCAL_STATE(props),
     },
   ),
 )(CreatePhoneModal)
