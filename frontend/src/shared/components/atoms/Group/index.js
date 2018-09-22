@@ -10,7 +10,7 @@ const Group = props => <div {...props} />
 
 const Enhanced = compose(
   setPropTypes({ classes: PropTypes.string }),
-  mapProps(({ classes, ...other }) => ({ ...other, className: loadClass`${classes}` })),
+  mapProps(({ classes, ...other }) => ({ ...other, className: loadClass`root ${classes}` })),
 )(Group)
 
 export default Enhanced

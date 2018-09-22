@@ -15,12 +15,15 @@ import styles from './styles.scss'
 
 const loadClass = cssModuleNameTag(styles)
 
-const LoginForm = ({ username, password, onChange, onSubmit, errors = {} }) => (
+const LoginForm = ({ username, password, errors = {}, onChange, onSubmit }) => (
   <WrapLayout classes={loadClass`root`}>
     <Heading classes={loadClass`title`} component="h1">
       Log in to your account
     </Heading>
     <Group classes={loadClass`form-field`}>
+      <div className={loadClass`icon`}>
+        <FontAwesomeIcon icon="user" size="lg" />
+      </div>
       <FormTextInput
         type="text"
         classes={loadClass`input`}
@@ -31,9 +34,6 @@ const LoginForm = ({ username, password, onChange, onSubmit, errors = {} }) => (
         errorMessage={errors.username}
         onChange={onChange}
       />
-      <div className={loadClass`icon`}>
-        <FontAwesomeIcon icon="user" size="lg" />
-      </div>
     </Group>
     <Spacer />
     <Group classes={loadClass`form-field`}>
