@@ -9,16 +9,14 @@ import FormField, { FieldLabel } from 'shared/components/molecules/FormField'
 import FormTextInput from 'shared/components/molecules/FormTextInput'
 import Modal, { Header, Body, Footer } from 'shared/components/molecules/Modal'
 
-const OPTIONS = [
-  { value: '1', children: '1'},
-  { value: '2', children: '2'},
-  { value: '3', children: '3'},
-]
+import { QUANTITY, CATEGORY } from './constants'
 
 const CreatePhoneModal = ({
   name,
   describe,
   price,
+  quantity,
+  category,
   closeModal,
   onChange,
   onSubmit,
@@ -62,7 +60,22 @@ const CreatePhoneModal = ({
       <Spacer />
       <FormField>
         <FieldLabel>Quantity</FieldLabel>
-        <Select options={OPTIONS} />
+        <Select
+          name="quantity"
+          options={QUANTITY}
+          value={quantity}
+          onChange={onChange}
+        />
+      </FormField>
+      <Spacer />
+      <FormField>
+        <FieldLabel>Category</FieldLabel>
+        <Select
+          name="category"
+          options={CATEGORY}
+          value={category}
+          onChange={onChange}
+        />
       </FormField>
     </Body>
     <Footer>

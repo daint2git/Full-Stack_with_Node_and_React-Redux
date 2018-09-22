@@ -11,11 +11,21 @@ export const readPhones = request =>
   )
 
 const createPhoneSuccess = createAction('CREATE_PHONE_SUCCESS')
-export const createPhone = form =>
-  steps(
-    Promise.resolve(),
-    createPhoneSuccess
+export const createPhone = form => {
+  const body = new FormData()
+  body.append('name', form.name)
+  body.append('describe', form.describe)
+  body.append('price', form.price)
+  body.append('quantity', form.quantity)
+  body.append('category', form.category)
+  body.append('active', form.active || true)
+
+  return steps(
+    fetch({ method: 'post', url: 'phones', data: body }),
+    [createPhoneSuccess],
+    () => readPhones()
   )
+}
 
 const openCreateModalSuccess = createAction('OPEN_CREATE_PHONE_MODAL_SUCCESS')
 const openCreateModalFail = createErrorAction('OPEN_CREATE_PHONE_MODAL_FAIL')
