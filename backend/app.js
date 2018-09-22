@@ -1,8 +1,8 @@
 const express = require('express')
 const multer = require('multer')
 
-const authRouter = require('./routes/auth')
-const phonesRouter = require('./routes/phones')
+const accountsRouter = require('./routes/accounts')
+const productsRouter = require('./routes/products')
 
 const app = express()
 const upload = multer()
@@ -17,8 +17,8 @@ app.use(express.urlencoded({ extended: true }))
 // for parsing multipart/form-data
 app.use(upload.array())
 
-app.use('/api/auth', authRouter)
-app.use('/api/phones', phonesRouter)
+app.use('/api/accounts', accountsRouter)
+app.use('/api/products', productsRouter)
 
 app.get('/', (req, res) => res.send('DaiNT2 - Hello backend!'))
 

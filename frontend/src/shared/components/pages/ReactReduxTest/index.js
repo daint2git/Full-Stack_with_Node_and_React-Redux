@@ -2,7 +2,7 @@ import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import { compose } from 'recompose'
 
-import { changeInput, readPhones } from 'shared/redux/reducers/reactReduxTest'
+import { changeInput, readProducts } from 'shared/redux/reducers/reactReduxTest'
 
 import Heading from 'shared/components/atoms/Heading'
 import ReactReduxTestContent from 'shared/components/organisms/ReactReduxTestContent'
@@ -21,6 +21,6 @@ export default compose(
       result: state.reactReduxTest.result,
       list: state.reactReduxTest.list,
     }),
-    dispatch => bindActionCreators({ changeInput, readPhones }, dispatch),
+    dispatch => bindActionCreators({ changeInput, readProducts }, dispatch),
   ),
 )(ReactReduxTest)

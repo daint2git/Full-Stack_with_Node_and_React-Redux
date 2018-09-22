@@ -12,27 +12,27 @@ import styles from './styles.scss'
 
 const loadClass = cssModuleNameTag(styles)
 
-const Phone = ({ name, price }) => (
+const Products = ({ name, price }) => (
   <WrapLayout>
     <TextValue>{`name: ${name}`}</TextValue>
     <TextValue>{`price: ${price}`}</TextValue>
   </WrapLayout>
 )
 
-const Phones = repeatComponent(Phone)
+const Productss = repeatComponent(Products)
 
-const ReactReduxTestContent = ({ result, list, input, changeInput, readPhones, onChange }) => (
+const ReactReduxTestContent = ({ result, list, input, changeInput, readProducts, onChange }) => (
   <WrapLayout>
     <TextInput name="input" value={input} onChange={onChange} />
     <Spacer padding={5} />
     <Group classes={loadClass`buttons`}>
       <Button onClick={() => changeInput(input)}>Click</Button>
-      <Button onClick={readPhones}>Click</Button>
+      <Button onClick={readProducts}>Click</Button>
     </Group>
     <Spacer padding={5} />
     <TextValue>{result}</TextValue>
     <Spacer padding={5} />
-    <Phones list={list} />
+    <Productss list={list} />
   </WrapLayout>
 )
 

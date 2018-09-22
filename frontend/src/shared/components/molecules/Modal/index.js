@@ -57,11 +57,15 @@ class Modal extends Component {
   }
 
   render() {
-    const { classes, center, children, onClose } = this.props
+    const { classes, center, children, onClose, ...other } = this.props
     return ReactDOM.createPortal(
       <>
         <Overlay type="modal" onClick={onClose} />
-        <div className={loadClass`root animation-modal ${classes}`} data-center={center}>
+        <div
+          className={loadClass`root animation-modal ${classes}`}
+          data-center={center}
+          {...other}
+        >
           {children}
         </div>
       </>,

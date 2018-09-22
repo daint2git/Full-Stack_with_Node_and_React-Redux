@@ -3,7 +3,7 @@ import { routerReducer as routing } from 'react-router-redux'
 import { loadingReducer as loading } from 'shared/redux/middlewares/redux-effects-loading'
 import { countCallApiReducer as countCallApi } from 'shared/redux/middlewares/redux-effects-countCallApi'
 import auth from './auth'
-import phones from './phones'
+import products from './products'
 import reactReduxTest from './reactReduxTest'
 
 export default combineReducers({
@@ -11,6 +11,6 @@ export default combineReducers({
   loading,
   countCallApi,
   auth,
-  phones,
+  products,
   reactReduxTest,
 })

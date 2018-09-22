@@ -2,18 +2,18 @@ import { compose, branch, renderNothing } from 'recompose'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 
-import { createPhone, closeModal } from 'shared/redux/reducers/phones'
+import { createProduct, closeModal } from 'shared/redux/reducers/products'
 import { CREATE, DETAIL } from 'shared/redux/constants/modalTypes'
 
-import CreatePhoneModal from './CreatePhoneModal'
+import CreateProductModal from './CreateProductModal'
 
-const PhoneModals = props => {
+const ProductModals = props => {
   const { modal: { type } } = props
   switch(type) {
     case CREATE:
-      return <CreatePhoneModal {...props} />
+      return <CreateProductModal {...props} />
     case DETAIL:
-      return <CreatePhoneModal {...props} />
+      return <CreateProductModal {...props} />
     default:
       return null
   }
@@ -21,10 +21,10 @@ const PhoneModals = props => {
 
 const Enhanced = compose(
   connect(
-    state => ({ modal: state.phones.modal }),
-    dispacth => bindActionCreators({ createPhone, closeModal }, dispacth),
+    state => ({ modal: state.products.modal }),
+    dispacth => bindActionCreators({ createProduct, closeModal }, dispacth),
   ),
   branch(({ modal: { type } }) => !type, renderNothing),
-)(PhoneModals)
+)(ProductModals)
 
 export default Enhanced

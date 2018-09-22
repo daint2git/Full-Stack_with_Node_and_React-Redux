@@ -15,7 +15,7 @@ import styles from './styles.scss'
 
 const loadClass = cssModuleNameTag(styles)
 
-const LoginForm = ({ username, password, errors = {}, onChange, onSubmit }) => (
+const LoginForm = ({ email, password, errors = {}, onChange, onSubmit }) => (
   <WrapLayout classes={loadClass`root`}>
     <Heading classes={loadClass`title`} component="h1">
       Log in to your account
@@ -27,11 +27,11 @@ const LoginForm = ({ username, password, errors = {}, onChange, onSubmit }) => (
       <FormTextInput
         type="text"
         classes={loadClass`input`}
-        name="username"
-        maxLength={20}
-        placeholder="Please enter username"
-        value={username}
-        errorMessage={errors.username}
+        name="email"
+        maxLength={30}
+        placeholder="Please enter email"
+        value={email}
+        errorMessage={errors.email}
         onChange={onChange}
       />
     </Group>
@@ -44,7 +44,7 @@ const LoginForm = ({ username, password, errors = {}, onChange, onSubmit }) => (
         type="password"
         classes={loadClass`input`}
         name="password"
-        maxLength={20}
+        maxLength={30}
         placeholder="Please enter password"
         value={password}
         errorMessage={errors.password}
@@ -70,10 +70,10 @@ const LoginForm = ({ username, password, errors = {}, onChange, onSubmit }) => (
 
 export default compose(
   withStateHandlers(
-    { username: '', password: '' },
+    { email: '', password: '' },
     {
       onChange: state => e => ({ ...state, [e.target.name]: e.target.value }),
-      onSubmit: ({ username, password }, { login }) => () => login(username, password),
+      onSubmit: ({ email, password }, { login }) => () => login(email, password),
     },
   ),
 )(LoginForm)

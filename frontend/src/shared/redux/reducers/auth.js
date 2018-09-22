@@ -17,9 +17,9 @@ export const verify = () => {
 
 const loginSuccess = createAction('LOGIN_SUCCESS')
 const loginFail = createErrorAction('LOGIN_FAIL')
-export const login = (username, password, location) => {
+export const login = (email, password, location) => {
   return steps(
-    fetch({ method: 'post', url: 'auth', data: { username, password } }),
+    fetch({ method: 'post', url: 'accounts', data: { email, password } }),
     [
       account => {
         simpleLocalStorage.setItem('user', account)

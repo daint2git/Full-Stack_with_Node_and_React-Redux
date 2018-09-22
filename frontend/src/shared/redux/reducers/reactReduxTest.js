@@ -3,14 +3,13 @@ import { fetch } from './utils/axios'
 import { createAction, handleActions } from 'redux-actions'
 
 const changeInputSuccess = createAction('CHANGE_INPUT_SUCCESS')
-const readPhonesSuccess = createAction('READ_PHONES_SUCCESS')
-
 export const changeInput = text => changeInputSuccess({ text })
 
-export const readPhones = request =>
+const readProductsSuccess = createAction('READ_PRODUCTS_SUCCESS')
+export const readProducts = request =>
   steps(
-    fetch({ method: 'get', url: 'phones', ...request }),
-    [readPhonesSuccess],
+    fetch({ method: 'get', url: 'products', ...request }),
+    [readProductsSuccess],
   )
 
 export const INITIAL_STATE = () => ({
@@ -21,7 +20,7 @@ export const INITIAL_STATE = () => ({
 export default handleActions(
   {
     CHANGE_INPUT_SUCCESS: (state, { payload }) => ({ ...state, result: payload.text }),
-    READ_PHONES_SUCCESS: (state, { payload }) => ({ ...state, list: payload }),
+    READ_PRODUCTS_SUCCESS: (state, { payload }) => ({ ...state, list: payload }),
   },
   INITIAL_STATE(),
 )

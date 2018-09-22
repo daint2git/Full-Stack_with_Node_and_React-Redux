@@ -2,17 +2,16 @@ import { compose } from 'recompose'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 
-import { openDetailModal } from 'shared/redux/reducers/phones'
+import { openDetailModal } from 'shared/redux/reducers/products'
 
 import  { Table, Head, Body, Row, Cell } from 'shared/components/atoms/Table'
 import TextValue from 'shared/components/atoms/TextValue'
 import repeatComponent from 'shared/components/utils/repeatComponent'
 import { showPrice } from 'shared/components/utils/common'
 
-const Phone = ({
+const Product = ({
   id,
   name,
-  describe,
   price,
   quantity,
   category,
@@ -23,9 +22,6 @@ const Phone = ({
     <Cell>
       <TextValue ellipsis>{name}</TextValue>
     </Cell>
-    <Cell>
-      <TextValue ellipsis>{describe}</TextValue>
-    </Cell>
     <Cell align="right">{`${showPrice(price)} VND`}</Cell>
     <Cell align="right">{quantity}</Cell>
     <Cell>{category}</Cell>
@@ -33,31 +29,30 @@ const Phone = ({
   </Row>
 )
 
-const Phones = repeatComponent(Phone)
+const Products = repeatComponent(Product)
 
-const PhoneTable = props => (
+const ProductTable = props => (
   <Table>
     <Head>
       <Row>
-        <Cell>name</Cell>
-        <Cell>describe</Cell>
-        <Cell align="right">price</Cell>
-        <Cell align="right">quantity</Cell>
-        <Cell>category</Cell>
-        <Cell>active</Cell>
+        <Cell>Name</Cell>
+        <Cell align="right">Price</Cell>
+        <Cell align="right">Quantity</Cell>
+        <Cell>Category</Cell>
+        <Cell>Active</Cell>
       </Row>
     </Head>
     <Body>
-      <Phones {...props} />
+      <Products {...props} />
     </Body>
   </Table>
 )
 
 const Enhanced = compose(
   connect(
-    state => ({ list: state.phones.list }),
+    state => ({ list: state.products.list }),
     dispacth => bindActionCreators({ openDetailModal }, dispacth),
   ),
-)(PhoneTable)
+)(ProductTable)
 
 export default Enhanced
