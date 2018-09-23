@@ -8,7 +8,7 @@ const loadClass = cssModuleNameTag(styles)
 
 const Overlay = props => <div {...props} />
 
-const Enhanced = compose(
+const EnhancedComponent = compose(
   setPropTypes({ type: PropTypes.oneOf(['modal', 'loading']) }),
   mapProps(({ type, ...other }) => ({
     ...other,
@@ -17,4 +17,4 @@ const Enhanced = compose(
   })),
 )(Overlay)
 
-export default Enhanced
+export default EnhancedComponent

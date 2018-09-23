@@ -8,9 +8,9 @@ const loadClass = cssModuleNameTag(styles)
 
 const WrapLayout = props => <div {...props} />
 
-const Enhanced = compose(
+const EnhancedComponent = compose(
   setPropTypes({ classes: PropTypes.string }),
   mapProps(({ classes, ...other }) => ({ ...other, className: loadClass`${classes}` })),
 )(WrapLayout)
 
-export default Enhanced
+export default EnhancedComponent

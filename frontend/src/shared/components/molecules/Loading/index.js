@@ -23,13 +23,13 @@ const Loading = ({ loading }) => (
   </div>
 )
 
-const Enhanced = compose(
+const EnhancedComponent = compose(
   onlyUpdateForPropTypes,
   setPropTypes({ loading: PropTypes.bool.isRequired }),
 )(Loading)
 
-const EnhancedConnect = compose(
-  connect(state => ({ loading: state.loading.loading })),
-)(Enhanced)
+const ConnectedComponent = connect(
+  state => ({ loading: state.loading.loading }),
+)(EnhancedComponent)
 
-export default (STORY_BOOK ? Enhanced : EnhancedConnect)
+export default (STORY_BOOK ? EnhancedComponent : ConnectedComponent)

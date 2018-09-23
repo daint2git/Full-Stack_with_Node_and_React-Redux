@@ -13,11 +13,11 @@ const Details = ({ classes, summary, children, ...other }) => (
   </details>
 )
 
-const Enhanced = compose(
+const EnhancedComponent = compose(
   setPropTypes({
     classes: PropTypes.string,
     summary: PropTypes.string,
   }),
 )(Details)
 
-export default Enhanced
+export default EnhancedComponent

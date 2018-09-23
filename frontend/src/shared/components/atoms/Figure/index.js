@@ -13,11 +13,11 @@ const Figure = ({ classes, caption, children, ...other }) => (
   </figure>
 )
 
-const Enhanced = compose(
+const EnhancedComponent = compose(
   setPropTypes({
     classes: PropTypes.string,
     caption: PropTypes.string,
   }),
 )(Figure)
 
-export default Enhanced
+export default EnhancedComponent

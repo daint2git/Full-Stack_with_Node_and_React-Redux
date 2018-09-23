@@ -24,7 +24,7 @@ const Select = ({ classes, attention, disabled, options, children, ...other }) =
   </div>
 )
 
-const Enhanced = compose(
+const EnhancedComponent = compose(
   setPropTypes({
     classes: PropTypes.string,
     attention: PropTypes.bool,
@@ -33,4 +33,4 @@ const Enhanced = compose(
   }),
 )(Select)
 
-export default Enhanced
+export default EnhancedComponent

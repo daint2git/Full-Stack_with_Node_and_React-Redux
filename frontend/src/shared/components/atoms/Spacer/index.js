@@ -8,7 +8,7 @@ const loadClass = cssModuleNameTag(styles)
 
 const Spacer = props => <div {...props} />
 
-const Enhanced = compose(
+const EnhancedComponent = compose(
   defaultProps({ padding: 10 }),
   setPropTypes({ padding: PropTypes.number }),
   mapProps(({ padding, ...other }) => ({
@@ -18,4 +18,4 @@ const Enhanced = compose(
   })),
 )(Spacer)
 
-export default Enhanced
+export default EnhancedComponent

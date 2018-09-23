@@ -12,8 +12,8 @@ const InputError = ({ errorMessage, children, ...other }) => (
   </div>
 )
 
-const Enhanced = compose(
+const EnhancedComponent = compose(
   branch(({ errorMessage, children }) => !errorMessage && !children, renderNothing),
 )(InputError)
 
-export default Enhanced
+export default EnhancedComponent

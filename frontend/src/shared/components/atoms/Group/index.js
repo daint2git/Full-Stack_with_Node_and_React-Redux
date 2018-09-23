@@ -8,9 +8,9 @@ const loadClass = cssModuleNameTag(styles)
 
 const Group = props => <div {...props} />
 
-const Enhanced = compose(
+const EnhancedComponent = compose(
   setPropTypes({ classes: PropTypes.string }),
   mapProps(({ classes, ...other }) => ({ ...other, className: loadClass`root ${classes}` })),
 )(Group)
 
-export default Enhanced
+export default EnhancedComponent

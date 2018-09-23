@@ -8,7 +8,7 @@ const loadClass = cssModuleNameTag(styles)
 
 const TextInput = ({ component: Component, ...other }) => <Component {...other} />
 
-const Enhanced = compose(
+const EnhancedComponent = compose(
   setPropTypes({
     classes: PropTypes.string,
     attention: PropTypes.bool,
@@ -31,4 +31,4 @@ const Enhanced = compose(
   })),
 )(TextInput)
 
-export default Enhanced
+export default EnhancedComponent

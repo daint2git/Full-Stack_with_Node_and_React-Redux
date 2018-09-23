@@ -8,7 +8,7 @@ const loadClass = cssModuleNameTag(styles)
 
 const Link = props => <a {...props} />
 
-const Enhanced = compose(
+const EnhancedComponent = compose(
   setPropTypes({ classes: PropTypes.string }),
   mapProps(({ classes, ...other }) => ({
     ...other,
@@ -16,4 +16,4 @@ const Enhanced = compose(
   })),
 )(Link)
 
-export default Enhanced
+export default EnhancedComponent

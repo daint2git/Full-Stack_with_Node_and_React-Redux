@@ -9,7 +9,7 @@ const loadClass = cssModuleNameTag(styles)
 
 const Button = props => <button {...props} />
 
-const Enhanced = compose(
+const EnhancedComponent = compose(
   defaultProps({
     type: 'primary',
     size: 'medium',
@@ -40,8 +40,8 @@ const Enhanced = compose(
   branch(({ hidden }) => hidden, renderNothing),
 )(Button)
 
-const EnhancedConnect = compose(
-  connect(state => ({ shouldPreventSubmit: state.loading.shouldPreventSubmit })),
-)(Enhanced)
+const ConnectedComponent = connect(
+  state => ({ shouldPreventSubmit: state.loading.shouldPreventSubmit }),
+)(EnhancedComponent)
 
-export default (STORY_BOOK ? Enhanced : EnhancedConnect)
+export default (STORY_BOOK ? EnhancedComponent : ConnectedComponent)

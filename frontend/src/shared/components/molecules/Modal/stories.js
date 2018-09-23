@@ -128,7 +128,7 @@ storiesOf('Modal', module)
         <>
           <Button {...other}>Show Modal</Button>
           {isOpened && (
-            <Modal isOpened={isOpened} onClose={onClose}>
+            <Modal onClose={onClose}>
               <Header onClose={onClose}>Demo modal</Header>
               <Body>
                 <FormField>

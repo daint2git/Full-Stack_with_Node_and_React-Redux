@@ -37,6 +37,12 @@ class Modal extends Component {
     this.state = { prevPageYOffset: 0 }
   }
 
+  static propTypes = {
+    classes: PropTypes.string,
+    center: PropTypes.bool,
+    onClose: PropTypes.func,
+  }
+
   changeScrollYPosition = pageYOffset => window.scrollTo(0, pageYOffset)
 
   componentDidMount() {
@@ -71,12 +77,6 @@ class Modal extends Component {
       </>,
       this.node
     )
-  }
-
-  static propTypes = {
-    classes: PropTypes.string,
-    center: PropTypes.bool,
-    onClose: PropTypes.func,
   }
 }
 

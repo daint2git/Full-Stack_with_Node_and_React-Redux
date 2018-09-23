@@ -8,7 +8,7 @@ const loadClass = cssModuleNameTag(styles)
 
 const RowSeparateLine = props => <div {...props} />
 
-const Enhanced = compose(
+const EnhancedComponent = compose(
   defaultProps({ margin: 10 }),
   setPropTypes({ margin: PropTypes.number }),
   mapProps(({ margin, ...other }) => ({
@@ -18,4 +18,4 @@ const Enhanced = compose(
   })),
 )(RowSeparateLine)
 
-export default Enhanced
+export default EnhancedComponent

@@ -32,7 +32,7 @@ const Radio = ({ classes, id, checked, disabled, children, ...other }) => (
   </div>
 )
 
-const Enhanced = compose(
+const EnhancedComponent = compose(
   setPropTypes({
     classes: PropTypes.string,
     id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
@@ -41,4 +41,4 @@ const Enhanced = compose(
   }),
 )(Radio)
 
-export default Enhanced
+export default EnhancedComponent

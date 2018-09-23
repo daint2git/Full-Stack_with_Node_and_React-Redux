@@ -8,7 +8,7 @@ const loadClass = cssModuleNameTag(styles)
 
 const TextValue = props => <div {...props} />
 
-const Enhanced = compose(
+const EnhancedComponent = compose(
   defaultProps({
     align: 'left',
     color: 'dark',
@@ -50,4 +50,4 @@ const Enhanced = compose(
   })),
 )(TextValue)
 
-export default Enhanced
+export default EnhancedComponent

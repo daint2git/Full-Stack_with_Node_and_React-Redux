@@ -8,7 +8,7 @@ const loadClass = cssModuleNameTag(styles)
 
 const Heading = ({ component: Component, ...other }) => <Component {...other} />
 
-const Enhanced = compose(
+const EnhancedComponent = compose(
   defaultProps({ component: 'h2' }),
   setPropTypes({
     component: PropTypes.oneOf(['h1', 'h2', 'h3', 'h4', 'h5', 'h6']).isRequired,
@@ -30,4 +30,4 @@ const Enhanced = compose(
   })),
 )(Heading)
 
-export default Enhanced
+export default EnhancedComponent
