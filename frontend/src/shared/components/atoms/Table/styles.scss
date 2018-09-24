@@ -33,11 +33,16 @@
   }
 
   tbody {
-    background-color: #ecf0f5;
 
     tr {
+      background-color: $white;
       border-bottom: 1px solid $SILVER;
       transition: color 250ms linear, background-color 250ms linear;
+
+      &[data-active='false'] {
+        background-color: $pale_white;
+        opacity: 0.3;
+      }
 
       td {
         padding: 15px 12px;
@@ -62,11 +67,7 @@
     }
 
     tr:hover {
-      background-color: $CONCRETE;
-
-      > td, * {
-        color: $white;
-      }
+      background-color: $CLOUDS;
     }
   }
 }

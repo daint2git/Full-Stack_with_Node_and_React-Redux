@@ -71,6 +71,7 @@
 
   &[data-type='light'] {
     background-color: $light;
+    border: 1px solid $SILVER;
     color: $black;
 
     &:hover {

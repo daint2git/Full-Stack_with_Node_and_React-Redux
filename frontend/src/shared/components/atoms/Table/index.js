@@ -31,7 +31,7 @@ const Foot = props => (
   </CellContext.Provider>
 )
 
-const Row = props => <tr {...props} />
+const Row = ({ active, ...other }) => <tr data-active={active} {...other} />
 
 const Cell = compose(
   setPropTypes({ classes: PropTypes.string }),

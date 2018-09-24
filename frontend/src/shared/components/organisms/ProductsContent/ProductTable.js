@@ -1,8 +1,9 @@
 import { compose } from 'recompose'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
-import { openDetailModal } from 'shared/redux/reducers/products'
+import { openDetailModal, openConfirmDeleteModal } from 'shared/redux/reducers/products'
 
 import  { Table, Head, Body, Row, Cell } from 'shared/components/atoms/Table'
 import TextValue from 'shared/components/atoms/TextValue'
@@ -17,15 +18,24 @@ const Product = ({
   category,
   active,
   openDetailModal,
+  openConfirmDeleteModal,
 }) => (
-  <Row onClick={() => openDetailModal(id)}>
+  <Row active={active} onClick={() => openDetailModal(id)}>
     <Cell>
       <TextValue ellipsis>{name}</TextValue>
     </Cell>
     <Cell align="right">{`${showPrice(price)} VND`}</Cell>
     <Cell align="right">{quantity}</Cell>
     <Cell>{category}</Cell>
-    <Cell>{active}</Cell>
+    <Cell
+      align="center"
+      onClick={e => {
+        e.stopPropagation()
+        openConfirmDeleteModal(id)
+      }}
+    >
+      <FontAwesomeIcon icon="trash" size="lg" />
+    </Cell>
   </Row>
 )
 
@@ -39,7 +49,7 @@ const ProductTable = props => (
         <Cell align="right">Price</Cell>
         <Cell align="right">Quantity</Cell>
         <Cell>Category</Cell>
-        <Cell>Active</Cell>
+        <Cell align="center">Delete</Cell>
       </Row>
     </Head>
     <Body>
@@ -51,7 +61,7 @@ const ProductTable = props => (
 const Enhanced = compose(
   connect(
     state => ({ list: state.products.list }),
-    dispacth => bindActionCreators({ openDetailModal }, dispacth),
+    dispacth => bindActionCreators({ openDetailModal, openConfirmDeleteModal }, dispacth),
   ),
 )(ProductTable)
 

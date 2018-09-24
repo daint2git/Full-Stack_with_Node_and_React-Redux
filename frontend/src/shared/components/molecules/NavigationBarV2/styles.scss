@@ -1,0 +1,58 @@
+@import '../../utils/colors.scss';
+@import '../../utils/variables.scss';
+
+.root {
+  width: 200px;
+
+  ul li {
+    border-top: 1px solid #262626;
+    border-bottom: 1px solid #262626;
+    transition: 500ms;
+  }
+
+  ul li:not(:first-child) {
+    margin: -1px 0;
+  }
+
+  ul li:hover {
+    transform: translateX(25px);
+  }
+
+  ul li a {
+    display: block;
+    border-right: 1px solid #262626;
+  }
+
+  ul li a span {
+    position: relative;
+    display: inline-block;
+  }
+
+  ul li a span:first-child {
+    width: 30px;
+    text-align: center;
+    border-left: 1px solid #262626;
+    border-right: 1px solid #262626;
+    padding: 10px;
+    transition: 500ms;
+    color: #262626;
+  }
+
+  ul li:hover a span:first-child {
+    background-color: #f44336;
+  }
+
+  ul li a span:first-child svg {
+    transition: 500ms;
+  }
+
+  ul li:hover a span:first-child svg {
+    color: white;
+    transform: rotateY(360deg);
+  }
+
+  ul li span:last-child {
+    padding: 10px;
+  }
+}
+

@@ -6,7 +6,7 @@ const postAccount = (req, res, next) => {
 
   if (!email || !password) {
     errors.reason = 'Please enter information!'
-    res.status(404).send(errors)
+    res.status(400).send(errors)
     return next()
   }
 

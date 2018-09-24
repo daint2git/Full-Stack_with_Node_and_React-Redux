@@ -1,8 +1,8 @@
 const express = require('express')
 const router = express.Router()
 
-const controller = require('../controllers/accounts')
+const { postAccount } = require('../controllers/accounts')
 
-router.post('/', controller.postAccount)
+router.post('/', postAccount)
 
 module.exports = router

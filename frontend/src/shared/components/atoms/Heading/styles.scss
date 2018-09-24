@@ -4,6 +4,7 @@
 .root {
   color: $WET_ASPHALT;
   text-shadow: 0.4px 0.4px 5px rgba(0,0,0,0.2);
+  user-select: none;
 
   &.h1 {
     font-size: $fsize_xxxx_large;
