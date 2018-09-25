@@ -8,4 +8,5 @@ const defaultAxios = axios.create({
   withCredentials: true,
 })
 
-export const fetch = (request, instance = defaultAxios) => createAction(AXIOS)({ request, instance })
+export const fetch = (request, instance = defaultAxios) =>
+  createAction(AXIOS)({ request, instance })

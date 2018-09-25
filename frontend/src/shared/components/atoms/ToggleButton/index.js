@@ -20,6 +20,7 @@ const EnhancedComponent = compose(
   setPropTypes({
     classes: PropTypes.string,
     active: PropTypes.bool,
+    onChange: PropTypes.func,
   }),
   defaultProps({
     onChange: noop,

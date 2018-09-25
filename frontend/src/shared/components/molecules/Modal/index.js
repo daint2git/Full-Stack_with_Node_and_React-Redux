@@ -43,13 +43,11 @@ class Modal extends Component {
     onClose: PropTypes.func,
   }
 
-  changeScrollYPosition = pageYOffset => window.scrollTo(0, pageYOffset)
-
   componentDidMount() {
     this.parentSelector.appendChild(this.node)
     const prevPageYOffset = window.pageYOffset
     if (prevPageYOffset) {
-      this.changeScrollYPosition(0)
+      window.scrollTo(0, 0)
       this.setState({ prevPageYOffset })
     }
   }
@@ -58,7 +56,7 @@ class Modal extends Component {
     this.parentSelector.removeChild(this.node)
     const { prevPageYOffset } = this.state
     if (prevPageYOffset) {
-      this.changeScrollYPosition(prevPageYOffset)
+      window.scrollTo(0, prevPageYOffset)
     }
   }
 
