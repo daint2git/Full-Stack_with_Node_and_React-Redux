@@ -19,13 +19,13 @@ import ProductsPage from 'shared/components/pages/ProductsPage'
 
 const appRoutes = store => {
 
-  const requiredLogin = (nextState, replace, callback) =>
+  const requiredLogin = (nextState, replace, cb) =>
     store.dispatch(verify())
       .then(
-        () => callback(),
+        () => cb(),
         err => {
           replace(`/login?location=${nextState.location.pathname}`)
-          callback()
+          cb()
         }
       )
 

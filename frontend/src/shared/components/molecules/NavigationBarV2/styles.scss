@@ -3,56 +3,79 @@
 
 .root {
   width: 200px;
+  height: 100%;
+  background-color: $white;
+  box-shadow: 0 6px 15px rgba(36,37,38,0.08);
+  overflow-y: auto;
 
   ul li {
-    border-top: 1px solid #262626;
-    border-bottom: 1px solid #262626;
+    border: 1px solid $SILVER;
     transition: 500ms;
-  }
 
-  ul li:not(:first-child) {
-    margin: -1px 0;
-  }
+    &:not(:first-child) {
+      margin-top: 1px;
+    }
 
-  ul li:hover {
-    transform: translateX(25px);
-  }
+    & > a {
+      display: flex;
+      align-items: center;
+      background-color: $white;
+      color: $WET_ASPHALT;
+      transition: 500ms;
 
-  ul li a {
-    display: block;
-    border-right: 1px solid #262626;
-  }
+      &[data-active='true'] {
+        background-color: $PETER_RIVER;
+        color: $white;
 
-  ul li a span {
-    position: relative;
-    display: inline-block;
-  }
+        & > span:first-child {
+          background-color: $BELIZE_HOLE;
 
-  ul li a span:first-child {
-    width: 30px;
-    text-align: center;
-    border-left: 1px solid #262626;
-    border-right: 1px solid #262626;
-    padding: 10px;
-    transition: 500ms;
-    color: #262626;
-  }
+          & > svg {
+            color: $white;
+          }
+        }
+      }
 
-  ul li:hover a span:first-child {
-    background-color: #f44336;
-  }
+      & > span:first-child {
+        height: 40px;
+        width: 40px;
+        padding: 10px;
+        box-sizing: border-box;
+        color: #262626;
+        transition: 250ms;
 
-  ul li a span:first-child svg {
-    transition: 500ms;
-  }
+        & > svg {
+          width: 20px;
+          height: 20px;
+          transition: 500ms;
+        }
+      }
 
-  ul li:hover a span:first-child svg {
-    color: white;
-    transform: rotateY(360deg);
-  }
+      & > span:last-child {
+        padding: 10px 5px;
+        line-height: 20px;
+        font-size: $fsize_x_large;
+        text-shadow: 0.4px 0.4px 5px rgba(0,0,0,0.2);
+      }
+    }
 
-  ul li span:last-child {
-    padding: 10px;
+    &:hover {
+      transform: translateX(20px);
+      border-color: $PETER_RIVER;
+
+      & > a {
+        background-color: $PETER_RIVER;
+        color: $white;
+
+        & > span:first-child {
+          background-color: $BELIZE_HOLE;
+
+          & > svg {
+            color: $white;
+            transform: rotateY(360deg);
+          }
+        }
+      }
+    }
   }
 }
-

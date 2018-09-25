@@ -4,7 +4,7 @@ import { bindActionCreators } from 'redux'
 
 import { logout } from 'shared/redux/reducers/auth'
 
-import NavigationBar from 'shared/components/molecules/NavigationBar'
+import NavigationBarV2 from 'shared/components/molecules/NavigationBarV2'
 import cssModuleNameTag from 'shared/components/utils/cssModuleNameTag'
 import styles from './styles.scss'
 
@@ -19,7 +19,7 @@ const PageLayout = ({ fullName, role, logout, currentPath, ...other }) => (
     <Header fullName={fullName} role={role} logout={logout} />
     <div className={loadClass`main`}>
       <div className={loadClass`navigation-bar`}>
-        <NavigationBar currentPath={currentPath} />
+        <NavigationBarV2 currentPath={currentPath} />
       </div>
       <div className={loadClass`container`}>
         <div className={loadClass`content`}>

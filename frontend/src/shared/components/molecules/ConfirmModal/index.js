@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types'
-import { compose, defaultProps, setPropTypes, mapProps } from 'recompose'
+import { compose, setPropTypes } from 'recompose'
 
 import Button from 'shared/components/atoms/Button'
 import Modal, { Header, Body, Footer } from 'shared/components/molecules/Modal'
@@ -8,8 +8,8 @@ import styles from './styles.scss'
 
 const loadClass = cssModuleNameTag(styles)
 
-const ConfirmModal = ({ title, children, onClick, onClose }) => (
-  <Modal onClose={onClose} center>
+const ConfirmModal = ({ classes, title, children, onClick, onClose }) => (
+  <Modal classes={loadClass`root ${classes}`} onClose={onClose} center>
     <Header onClose={onClose}>{title}</Header>
     <Body>{children}</Body>
     <Footer>
@@ -20,11 +20,12 @@ const ConfirmModal = ({ title, children, onClick, onClose }) => (
 )
 
 const EnhancedComponent = compose(
-  defaultProps({ margin: 10 }),
-  setPropTypes({ margin: PropTypes.number }),
-  mapProps(({ margin, ...other }) => ({
-    ...other,
-  })),
+  setPropTypes({
+    classes: PropTypes.string,
+    title: PropTypes.string,
+    onClick: PropTypes.func,
+    onClose: PropTypes.func,
+  }),
 )(ConfirmModal)
 
 export default EnhancedComponent

@@ -12,119 +12,114 @@ const MENUS = [
     id: 'home',
     name: 'home',
     path: '/home',
+    icon: 'home',
+    isVisible: true,
   },
   {
     id: 'date-fns',
     name: 'date-fns',
     path: '/date-fns',
+    icon: 'calendar-alt',
+    isVisible: true,
   },
   {
     id: 'lodash-es',
     name: 'lodash-es',
     path: '/lodash-es',
+    icon: 'code',
+    isVisible: false,
   },
   {
     id: 'common-tags',
     name: 'common-tags',
     path: '/common-tags',
+    icon: 'tags',
+    isVisible: true,
   },
   {
     id: 'component',
     name: 'component',
     path: '/component',
+    icon: 'code',
+    isVisible: true,
   },
   {
     id: 'javascript',
     name: 'javascript',
     path: '/javascript',
+    icon: ['fab', 'js-square'],
+    isVisible: false,
   },
   {
     id: 'react',
     name: 'react',
     path: '/react',
+    icon: ['fab', 'react'],
+    isVisible: true,
   },
   {
     id: 'react-redux',
     name: 'react-redux',
     path: '/react-redux',
+    icon: 'code',
+    isVisible: true,
   },
   {
     id: 'recompose',
     name: 'recompose',
     path: '/recompose',
+    icon: 'code',
+    isVisible: true,
   },
   {
     id: 'css-advanced',
     name: 'css-advanced',
     path: '/css-advanced',
+    icon: ['fab', 'css3-alt'],
+    isVisible: true,
   },
   {
     id: 'products',
     name: 'products',
     path: '/products',
+    icon: 'mobile-alt',
+    isVisible: true,
   },
   {
     id: 'about',
     name: 'about',
     path: '/about',
+    icon: 'info',
+    isVisible: true,
+  },
+  {
+    id: 'setting',
+    name: 'setting',
+    path: '/setting',
+    icon: 'cogs',
+    isVisible: true,
   },
 ]
 
-const NavigationItem = ({ path, name, currentPath }) => (
-  <Link
-    className={loadClass`item`}
-    to={path}
-    data-active={path === currentPath}
-  >
-    {name}
-  </Link>
+const Item = ({ path, name, currentPath, icon }) => (
+  <li>
+    <Link to={path} data-active={path === currentPath}>
+      <span>
+        <FontAwesomeIcon icon={icon} size="lg" />
+      </span>
+      <span>{name}</span>
+    </Link>
+  </li>
 )
 
-const NavigationItems = repeatComponent(NavigationItem)
-
-// const NavigationBar = props => (
-//   <nav className={loadClass`root`}>
-//     <NavigationItems list={MENUS} {...props} />
-//   </nav>
-// )
+const Items = repeatComponent(Item)
 
 const NavigationBar = props => (
-  <div className={loadClass`root`}>
+  <nav className={loadClass`root`}>
     <ul>
-      <li>
-        <a>
-          <span>
-            <FontAwesomeIcon icon="home" size="lg" />
-          </span>
-          <span>Home</span>
-        </a>
-      </li>
-      <li>
-        <a>
-          <span>
-            <FontAwesomeIcon icon="home" size="lg" />
-          </span>
-          <span>Settings</span>
-        </a>
-      </li>
-      <li>
-        <a>
-          <span>
-            <FontAwesomeIcon icon="home" size="lg" />
-          </span>
-          <span>Settings</span>
-        </a>
-      </li>
-      <li>
-        <a>
-          <span>
-            <FontAwesomeIcon icon="home" size="lg" />
-          </span>
-          <span>Settings</span>
-        </a>
-      </li>
+      <Items list={MENUS.filter(menu => menu.isVisible)} {...props} />
     </ul>
-  </div>
+  </nav>
 )
 
 export default NavigationBar
