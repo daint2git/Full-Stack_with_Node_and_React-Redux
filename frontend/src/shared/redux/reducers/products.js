@@ -39,6 +39,8 @@ export const updateProduct = (id, form) =>
     [updateProductSuccess, updateProductFail],
   )
 
+export const deleteProduct = id => {}
+
 const openCreateModalSuccess = createAction('OPEN_CREATE_PRODUCT_MODAL_SUCCESS')
 const openCreateModalFail = createErrorAction('OPEN_CREATE_PRODUCT_MODAL_FAIL')
 export const openCreateModal = () => openCreateModalSuccess()

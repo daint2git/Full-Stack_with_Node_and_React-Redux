@@ -82,6 +82,8 @@ module.exports = (env = {}, argv = {}) => {
         chunkFilename: devMode ? '[id].css' : '[id].[hash].css',
       }),
       new DefinePlugin({
+        _DEVELOPMENT_: JSON.stringify(devMode),
+        _PROXY_API_: devMode ? JSON.stringify('http://localhost:9696') : '',
         STORY_BOOK: JSON.stringify(false),
       }),
       new ProvidePlugin({
@@ -95,9 +97,9 @@ module.exports = (env = {}, argv = {}) => {
             port: 6969,
             open: true,
             historyApiFallback: true,
-            proxy: {
-              '/api': 'http://localhost:9696',
-            },
+            // proxy: {
+            //   '/api': 'http://localhost:9696',
+            // },
           }
         : {}
   }

@@ -3,9 +3,14 @@
 .root {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   width: 100%;
   height: 70px;
   background-color: $bgcolor_app_footer;
   color: $dark;
+
+  .icon {
+    width: 40px;
+    height: 40px;
+  }
 }
