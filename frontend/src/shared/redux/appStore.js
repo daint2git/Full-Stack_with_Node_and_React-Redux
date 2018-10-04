@@ -1,4 +1,4 @@
-import { createStore, compose, applyMiddleware } from 'redux'
+import { compose, applyMiddleware, createStore } from 'redux'
 import { routerMiddleware } from 'react-router-redux'
 import { loadingMiddleware } from 'shared/redux/middlewares/redux-effects-loading'
 import { axiosMiddleware, AXIOS } from 'shared/redux/middlewares/redux-effects-axios'
@@ -12,7 +12,11 @@ const appStore = (initalState = {}, options = {}) => {
     loadingMiddleware([AXIOS]),
     axiosMiddleware,
     stepsMiddleware,
-  ].concat(_DEVELOPMENT_ ? require('kuker-emitters/lib/ReduxEmitter')() : [])
+  ]
+
+  if (DEVELOPMENT) {
+    middlewares.concat(require('kuker-emitters/lib/ReduxEmitter')())
+  }
 
   const enhancer = compose(applyMiddleware(...middlewares))
   const store = createStore(rootReducer, initalState, enhancer)

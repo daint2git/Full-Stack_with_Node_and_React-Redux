@@ -26,6 +26,9 @@ storiesOf('Select', module)
       )}
     />
   ))
+  .add('multiple', () => (
+    <EnhancedSelect render={props => <Select multiple options={OPTIONS} value={['2', '3']} />} />
+  ))
   .add('with options', () => (
     <EnhancedSelect render={props => <Select options={OPTIONS} {...props} />} />
   ))

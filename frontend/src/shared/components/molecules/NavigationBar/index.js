@@ -1,6 +1,6 @@
 import { Link } from 'react-router'
 
-import repeatComponent from 'shared/components/utils/repeatComponent'
+import { repeatComponent } from 'shared/components/utils/HOC'
 import cssModuleNameTag from 'shared/components/utils/cssModuleNameTag'
 import styles from './styles.scss'
 

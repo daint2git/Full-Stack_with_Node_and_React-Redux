@@ -24,6 +24,7 @@ const appRoutes = store => {
       .then(
         () => cb(),
         err => {
+          console.error(err)
           replace(`/login?location=${nextState.location.pathname}`)
           cb()
         }

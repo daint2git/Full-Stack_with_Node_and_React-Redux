@@ -3,7 +3,7 @@ import { AXIOS } from 'shared/redux/middlewares/redux-effects-axios'
 import { createAction } from 'shared/redux/middlewares/redux-utils'
 
 const defaultAxios = axios.create({
-  baseURL: `${_PROXY_API_}/api`,
+  baseURL: `${PROXY_API}/api`,
   timeout: 100000,
   withCredentials: true,
 })

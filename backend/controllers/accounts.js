@@ -1,6 +1,6 @@
 const pool = require('../database/connect.db')
 
-const postAccount = (req, res, next) => {
+module.exports.postAccount = (req, res, next) => {
   const { email, password } = req.body
   const errors = {}
 
@@ -26,6 +26,9 @@ const postAccount = (req, res, next) => {
         role: responseData[0].role,
         fullName: responseData[0].full_name,
         avatar: responseData[0].avatar,
+        isAdministrator: responseData[0].role === 'administrator',
+        isEditor: responseData[0].role === 'editor',
+        isViewer: responseData[0].role === 'viewer'
       }
       if (password !== account.password) {
         errors.password = 'Password is invalid!'
@@ -37,5 +40,3 @@ const postAccount = (req, res, next) => {
     res.send(account)
   })
 }
-
-module.exports = { postAccount }

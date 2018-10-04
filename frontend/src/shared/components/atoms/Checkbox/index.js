@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types'
-import { compose, setPropTypes } from 'recompose'
+import { compose, setPropTypes, defaultProps } from 'recompose'
 
+import noop from 'shared/components/utils/noop'
 import cssModuleNameTag from 'shared/components/utils/cssModuleNameTag'
 import styles from './styles.scss'
 
@@ -38,6 +39,10 @@ const EnhancedComponent = compose(
     id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
     checked: PropTypes.bool,
     disabled: PropTypes.bool,
+    onChange: PropTypes.func,
+  }),
+  defaultProps({
+    onChange: noop,
   }),
 )(Checkbox)
 

@@ -1,12 +1,12 @@
 const { oneLine } = require('common-tags')
 const pool = require('../database/connect.db')
 
-const getProducts = (req, res, next) => {
+module.exports.getProducts = (req, res, next) => {
   const sql = 'SELECT * FROM products ORDER BY created_at DESC'
   pool.query(sql, (err, response) => res.send(response.rows))
 }
 
-const getProduct = (req, res, next) => {
+module.exports.getProduct = (req, res, next) => {
   const { id } = req.params
   const sql = `SELECT * FROM products WHERE id = ${id}`
   pool.query(sql, (err, response) => {
@@ -15,7 +15,7 @@ const getProduct = (req, res, next) => {
   })
 }
 
-const getProductBeforeDelete = (req, res, next) => {
+module.exports.getProductBeforeDelete = (req, res, next) => {
   const { id } = req.params
   const sql = `SELECT name FROM products WHERE id = ${id}`
   pool.query(sql, (err, response) => {
@@ -24,7 +24,7 @@ const getProductBeforeDelete = (req, res, next) => {
   })
 }
 
-const postProduct = (req, res, next) => {
+module.exports.postProduct = (req, res, next) => {
   const { name, description, image, price, quantity, manufacturer, category, active } = req.body
   const sql = oneLine`
     INSERT INTO
@@ -56,7 +56,7 @@ const postProduct = (req, res, next) => {
   })
 }
 
-const patchProduct = (req, res, next) => {
+module.exports.patchProduct = (req, res, next) => {
   const { id } = req.params
   const { name, description, image, price, quantity, manufacturer, category, active } = req.body
   const sql = oneLine`
@@ -81,7 +81,7 @@ const patchProduct = (req, res, next) => {
   })
 }
 
-const deleteProduct = (req, res, next) => {
+module.exports.deleteProduct = (req, res, next) => {
   const { id } = req.params
   const sql = oneLine`
     DELETE FROM
@@ -93,13 +93,4 @@ const deleteProduct = (req, res, next) => {
     if (err) next(err)
     next()
   })
-}
-
-module.exports = {
-  getProducts,
-  getProduct,
-  getProductBeforeDelete,
-  postProduct,
-  patchProduct,
-  deleteProduct,
 }

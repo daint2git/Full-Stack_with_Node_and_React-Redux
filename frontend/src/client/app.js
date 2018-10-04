@@ -4,7 +4,7 @@ import { browserHistory } from 'react-router'
 import { syncHistoryWithStore } from 'react-router-redux'
 
 import 'shared/components/utils/root.scss'
-import 'shared/components/utils/loadFortawesome.js'
+import 'shared/components/utils/fortawesomeLoader.js'
 import appStore from 'shared/redux/appStore'
 import appRoutes from 'shared/routes/appRoutes'
 import Root from './Root'

@@ -1,9 +1,13 @@
 {
-  "name": "react-enhancement",
+  "name": "fullstack-with-node-and-react-redux",
   "version": "1.0.0",
   "main": "index.js",
   "author": "daint2@fsoft.com.vn",
   "license": "MIT",
+  "engines": {
+    "node": ">=8.10.0",
+    "npm": ">=5.6.0"
+  },
   "devDependencies": {
     "@babel/core": "^7.1.0",
     "@babel/plugin-proposal-class-properties": "^7.1.0",
@@ -63,6 +67,6 @@
     "build": "rimraf build && webpack --mode=production",
     "dev": "webpack-dev-server",
     "storybook": "storybook-server -p 1234",
-    "server": "json-server -p 9696 -r src/server/routes.json -w src/server/db.json"
+    "json": "json-server -p 9696 -r src/server/routes.json -w src/server/db.json"
   }
 }

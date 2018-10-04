@@ -1,4 +1,4 @@
-const PLUGINS =[
+const PLUGINS = [
   "postcss-custom-selectors",
   "postcss-nested",
   "postcss-import",

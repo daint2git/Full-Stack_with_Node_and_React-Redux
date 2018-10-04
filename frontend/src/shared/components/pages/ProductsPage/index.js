@@ -1,8 +1,8 @@
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
-import { compose, lifecycle } from 'recompose'
+import { compose } from 'recompose'
 
-import { readProducts, openCreateModal } from 'shared/redux/reducers/products'
+import { openCreateModal } from 'shared/redux/reducers/products'
 
 import Heading from 'shared/components/atoms/Heading'
 import Button from 'shared/components/atoms/Button'
@@ -11,12 +11,12 @@ import WrapLayout from 'shared/components/atoms/WrapLayout'
 import { ProductModals, ProductTable } from 'shared/components/organisms/ProductsContent'
 import PageLayout from 'shared/components/templates/PageLayout'
 
-const ProductsPage = ({ openCreateModal, ...other }) => (
+const ProductsPage = ({ user: { isViewer }, openCreateModal, ...other }) => (
   <PageLayout currentPath="/products">
     <Heading component="h2" weight="bold">Products page</Heading>
     <Spacer />
     <WrapLayout>
-      <Button size="large" onClick={openCreateModal}>
+      <Button size="large" disabled={isViewer} onClick={openCreateModal}>
         Create Product
       </Button>
       <Spacer />
@@ -29,11 +29,6 @@ const ProductsPage = ({ openCreateModal, ...other }) => (
 export default compose(
   connect(
     state => ({ user: state.auth.user }),
-    dispatch => bindActionCreators({ readProducts, openCreateModal }, dispatch),
+    dispatch => bindActionCreators({ openCreateModal }, dispatch),
   ),
-  lifecycle({
-    componentDidMount() {
-      this.props.readProducts()
-    }
-  })
 )(ProductsPage)

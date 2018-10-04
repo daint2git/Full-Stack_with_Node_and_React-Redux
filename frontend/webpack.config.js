@@ -1,4 +1,4 @@
-const { DefinePlugin, ProvidePlugin } = require('webpack')
+const webpack = require('webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
@@ -11,10 +11,12 @@ const buildPath = path.resolve(rootDir, 'build')
 const getMode = mode => mode ? mode : 'development'
 
 module.exports = (env = {}, argv = {}) => {
-  const devMode = getMode(argv.mode) === 'development'
+  const mode = getMode(argv.mode)
+  const devMode = mode === 'development'
   return {
+    mode,
+    devtool: devMode ? 'eval' : 'source-maps', // setting for debug
     context: srcPath, // setting for debug
-    mode: getMode(argv.mode),
     entry: {
       app: `${srcPath}/client/app.js`,
     },
@@ -23,7 +25,6 @@ module.exports = (env = {}, argv = {}) => {
       filename: devMode ? '[name].js' : '[name].[hash].js',
       publicPath: '/',
     },
-    devtool: 'source-map', // setting for debug
     module: {
       rules: [
         {
@@ -63,7 +64,7 @@ module.exports = (env = {}, argv = {}) => {
       splitChunks: {
         name: 'vendor',
         chunks: 'all',
-      }
+      },
     },
     plugins: [
       new HtmlWebpackPlugin({
@@ -81,12 +82,12 @@ module.exports = (env = {}, argv = {}) => {
         filename: devMode ? '[name].css' : '[name].[hash].css',
         chunkFilename: devMode ? '[id].css' : '[id].[hash].css',
       }),
-      new DefinePlugin({
-        _DEVELOPMENT_: JSON.stringify(devMode),
-        _PROXY_API_: devMode ? JSON.stringify('http://localhost:9696') : '',
+      new webpack.DefinePlugin({
+        DEVELOPMENT: JSON.stringify(devMode),
+        PROXY_API: JSON.stringify(devMode ? 'http://localhost:9696' : ''),
         STORY_BOOK: JSON.stringify(false),
       }),
-      new ProvidePlugin({
+      new webpack.ProvidePlugin({
         React: 'react',
       }),
     ],
@@ -97,9 +98,6 @@ module.exports = (env = {}, argv = {}) => {
             port: 6969,
             open: true,
             historyApiFallback: true,
-            // proxy: {
-            //   '/api': 'http://localhost:9696',
-            // },
           }
         : {}
   }
