@@ -16,6 +16,7 @@
     "@babel/polyfill": "^7.0.0",
     "@babel/preset-env": "^7.1.0",
     "@babel/preset-react": "^7.0.0",
+    "@storybook/addon-backgrounds": "^3.4.11",
     "@storybook/addon-options": "^3.4.11",
     "@storybook/addon-storysource": "^3.4.8",
     "@storybook/react": "^3.4.8",
