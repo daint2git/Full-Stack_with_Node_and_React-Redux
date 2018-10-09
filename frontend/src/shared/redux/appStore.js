@@ -15,7 +15,7 @@ const appStore = (initalState = {}, options = {}) => {
   ]
 
   if (DEVELOPMENT) {
-    middlewares.concat(require('kuker-emitters/lib/ReduxEmitter')())
+    middlewares.push(require('kuker-emitters/lib/ReduxEmitter')())
   }
 
   const enhancer = compose(applyMiddleware(...middlewares))

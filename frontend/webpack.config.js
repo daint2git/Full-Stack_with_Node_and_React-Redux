@@ -12,17 +12,16 @@ const getMode = mode => mode ? mode : 'development'
 
 module.exports = (env = {}, argv = {}) => {
   const mode = getMode(argv.mode)
-  const devMode = mode === 'development'
+  const isDevelopment = mode === 'development'
   return {
     mode,
-    devtool: devMode ? 'eval' : 'source-maps', // setting for debug
-    context: srcPath, // setting for debug
+    devtool: isDevelopment ? 'eval-source-map' : 'source-map',
     entry: {
       app: `${srcPath}/client/app.js`,
     },
     output: {
       path: buildPath,
-      filename: devMode ? '[name].js' : '[name].[hash].js',
+      filename: isDevelopment ? '[name].js' : '[name].[hash].js',
       publicPath: '/',
     },
     module: {
@@ -35,7 +34,7 @@ module.exports = (env = {}, argv = {}) => {
         {
           test: /\.(c|sc)ss$/,
           use: [
-            devMode ? 'style-loader' : MiniCssExtractPlugin.loader,
+            isDevelopment ? 'style-loader' : MiniCssExtractPlugin.loader,
             {
               loader: 'css-loader',
               options: {
@@ -67,6 +66,14 @@ module.exports = (env = {}, argv = {}) => {
       },
     },
     plugins: [
+      new webpack.DefinePlugin({
+        DEVELOPMENT: JSON.stringify(isDevelopment),
+        API_PROXY: JSON.stringify(isDevelopment ? 'http://localhost:9696' : ''),
+        STORY_BOOK: JSON.stringify(false),
+      }),
+      new webpack.ProvidePlugin({
+        React: 'react',
+      }),
       new HtmlWebpackPlugin({
         template: `${assetsPath}/template.html`,
         favicon: `${assetsPath}/favicon.ico`,
@@ -79,24 +86,16 @@ module.exports = (env = {}, argv = {}) => {
         },
       }),
       new MiniCssExtractPlugin({
-        filename: devMode ? '[name].css' : '[name].[hash].css',
-        chunkFilename: devMode ? '[id].css' : '[id].[hash].css',
-      }),
-      new webpack.DefinePlugin({
-        DEVELOPMENT: JSON.stringify(devMode),
-        PROXY_API: JSON.stringify(devMode ? 'http://localhost:9696' : ''),
-        STORY_BOOK: JSON.stringify(false),
-      }),
-      new webpack.ProvidePlugin({
-        React: 'react',
+        filename: isDevelopment ? '[name].css' : '[name].[hash].css',
+        chunkFilename: isDevelopment ? '[id].css' : '[id].[hash].css',
       }),
     ],
     devServer:
-      devMode
+      isDevelopment
         ? {
             contentBase: buildPath,
+            host: '0.0.0.0',
             port: 6969,
-            open: true,
             historyApiFallback: true,
           }
         : {}

@@ -1,0 +1,9 @@
+version: "3.3"
+services:
+  fe-proxy:
+    build:
+      context: .
+      dockerfile: frontend/Dockerfile
+    container_name: fe-proxy
+    ports:
+      - 8888:6969
