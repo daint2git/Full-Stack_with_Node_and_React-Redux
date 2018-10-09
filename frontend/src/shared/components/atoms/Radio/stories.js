@@ -8,7 +8,7 @@ const EnhancedRadio = withStateHandlers(
   { onChange:  state => e => ({ ...state, checked:  e.target.id })}
 )(({ render, ...other }) => render(other))
 
-storiesOf('Radio', module)
+storiesOf('ATOMS|Radio', module)
   .add('default', () => (
     <EnhancedRadio
       render={({ checked, ...other }) => (

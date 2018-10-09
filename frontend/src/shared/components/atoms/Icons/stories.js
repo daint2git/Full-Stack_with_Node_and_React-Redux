@@ -10,7 +10,7 @@ import {
   IconLoading
 } from '../Icons'
 
-storiesOf('Icons', module)
+storiesOf('ATOMS|Icons', module)
   .add('IconFilePdf', () => <IconFilePdf />)
   .add('IconFileWord', () => <IconFileWord />)
   .add('IconFileExcel', () => <IconFileExcel />)

@@ -3,7 +3,7 @@ import { storiesOf } from '@storybook/react'
 import RowSeparateLine from 'shared/components/atoms/RowSeparateLine'
 import TextValue from './'
 
-storiesOf('TextValue', module)
+storiesOf('ATOMS|TextValue', module)
   .add('default', () => <TextValue>TextValue</TextValue>)
   .add('ellipsis', () => (
     <TextValue ellipsis style={{ width: '100px' }}>TextValue TextValue TextValue</TextValue>

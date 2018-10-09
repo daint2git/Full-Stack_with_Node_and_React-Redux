@@ -14,7 +14,7 @@ const EnhancedSelect = withStateHandlers(
   { onChange:  state => e => ({ ...state, value:  e.target.value })}
 )(({ render, ...other }) => render(other))
 
-storiesOf('Select', module)
+storiesOf('ATOMS|Select', module)
   .add('default', () => (
     <EnhancedSelect
       render={props => (

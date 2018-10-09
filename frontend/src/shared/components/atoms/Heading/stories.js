@@ -2,7 +2,7 @@ import { storiesOf } from '@storybook/react'
 
 import Heading from './'
 
-storiesOf('Heading', module)
+storiesOf('ATOMS|Heading', module)
   .add('default', () => <Heading>Heading default</Heading>)
   .add('component', () => (
     <>

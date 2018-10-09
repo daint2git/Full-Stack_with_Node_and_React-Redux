@@ -1,4 +1,4 @@
-const pool = require('../database/connect.db')
+const pool = require('../connect.db')
 
 module.exports.postAccount = (req, res, next) => {
   const { email, password } = req.body

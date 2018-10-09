@@ -20,6 +20,8 @@
         text-align: left;
         line-height: 1.2;
         vertical-align: middle;
+        user-select: none;
+        word-break: break-word;
 
         &[data-align='center'] {
           text-align: center;

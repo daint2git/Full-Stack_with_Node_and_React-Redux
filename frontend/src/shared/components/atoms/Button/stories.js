@@ -3,7 +3,7 @@ import { storiesOf } from '@storybook/react'
 import RowSeparateLine from 'shared/components/atoms/RowSeparateLine'
 import Button from './'
 
-storiesOf('Button', module)
+storiesOf('ATOMS|Button', module)
   .add('default', () => <Button>Button</Button>)
   .add('some emoji', () => (
     <Button>

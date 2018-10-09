@@ -2,7 +2,7 @@ import { storiesOf } from '@storybook/react'
 
 import TextInput from './'
 
-storiesOf('TextInput', module)
+storiesOf('ATOMS|TextInput', module)
   .add('default', () => <TextInput />)
   .add('multiline={false}', () => <TextInput multiline={false} />)
   .add('multiline={true}', () => <TextInput multiline />)

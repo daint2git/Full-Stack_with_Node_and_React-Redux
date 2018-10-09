@@ -4,7 +4,7 @@ import TextValue from 'shared/components/atoms/TextValue'
 import TextInput from 'shared/components/atoms/TextInput'
 import FormField from './'
 
-storiesOf('FormField', module)
+storiesOf('MOLECULES|FormField', module)
   .add('default', () => (
     <FormField>
       <TextValue>username</TextValue>

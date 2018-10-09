@@ -23,7 +23,7 @@ const EnhancedModal = withStateHandlers(
   }
 )(({ render, ...other }) => render(other))
 
-storiesOf('Table', module)
+storiesOf('ATOMS|Table', module)
   .add('default', () => (
     <Table>
       <Head>

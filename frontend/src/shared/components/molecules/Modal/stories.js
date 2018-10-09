@@ -27,7 +27,7 @@ const EnhancedModal = withStateHandlers(
   }
 )(({ render, ...other }) => render(other))
 
-storiesOf('Modal', module)
+storiesOf('MOLECULES|Modal', module)
   .add('default', () => (
     <EnhancedModal
       render={({ isOpened, onClose, ...other }) => (

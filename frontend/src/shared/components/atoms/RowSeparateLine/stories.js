@@ -2,7 +2,7 @@ import { storiesOf } from '@storybook/react'
 
 import RowSeparateLine from './'
 
-storiesOf('RowSeparateLine', module)
+storiesOf('ATOMS|RowSeparateLine', module)
   .add('default', () => <RowSeparateLine />)
   .add('margin={5}', () => <RowSeparateLine margin={5} />)
   .add('margin={10}', () => <RowSeparateLine margin={10} />)

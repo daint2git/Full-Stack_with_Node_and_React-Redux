@@ -1,5 +1,5 @@
 const { oneLine } = require('common-tags')
-const pool = require('../database/connect.db')
+const pool = require('../connect.db')
 
 module.exports.getProducts = (req, res, next) => {
   const sql = 'SELECT * FROM products ORDER BY created_at DESC'

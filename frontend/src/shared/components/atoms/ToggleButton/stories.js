@@ -8,7 +8,7 @@ const EnhancedToggleButton = withStateHandlers(
   { onChange:  state => e => ({ ...state, active: e.target.checked })}
 )(({ render, ...other }) => render(other))
 
-storiesOf('ToggleButton', module)
+storiesOf('ATOMS|ToggleButton', module)
   .add('default', () => (
     <EnhancedToggleButton
       render={({ active, onChange }) => (

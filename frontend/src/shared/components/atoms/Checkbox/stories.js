@@ -12,7 +12,7 @@ const EnhancedCheckbox = withStateHandlers(
   }}
 )(({ render, ...other }) => render(other))
 
-storiesOf('Checkbox', module)
+storiesOf('ATOMS|Checkbox', module)
 .add('default', () => (
   <EnhancedCheckbox
     render={({ checked, ...other }) => (
