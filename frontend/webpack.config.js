@@ -8,10 +8,8 @@ const srcPath = path.resolve(rootDir, 'src')
 const assetsPath = path.resolve(rootDir, 'assets')
 const buildPath = path.resolve(rootDir, 'build')
 
-const getMode = mode => mode ? mode : 'development'
-
-module.exports = (env = {}, argv = {}) => {
-  const mode = getMode(argv.mode)
+module.exports = (_, argv = {}) => {
+  const mode = argv.mode || 'development'
   const isDevelopment = mode === 'development'
   return {
     mode,
@@ -47,12 +45,13 @@ module.exports = (env = {}, argv = {}) => {
           ]
         },
         {
-          test: /\.(png|jpg|gif|svg|eot|ttf|woff|woff2|ico)$/,
+          test: /\.(png|jpg|gif|svg|eot|ttf|woff|woff2)$/,
           use: [
             {
               loader: 'url-loader',
               options: {
                 limit: 10000,
+                name: isDevelopment ? '[name].[ext]' : '[name].[hash].[ext]',
               }
             },
           ]
@@ -77,12 +76,15 @@ module.exports = (env = {}, argv = {}) => {
       new HtmlWebpackPlugin({
         template: `${assetsPath}/template.html`,
         favicon: `${assetsPath}/favicon.ico`,
+        hash: true,
         minify: {
           collapseWhitespace: true,
           removeComments: true,
           removeRedundantAttributes: true,
           removeEmptyAttributes: true,
           removeStyleLinkTypeAttributes: true,
+          useShortDoctype: true,
+          keepClosingSlash: true,
         },
       }),
       new MiniCssExtractPlugin({
@@ -90,14 +92,13 @@ module.exports = (env = {}, argv = {}) => {
         chunkFilename: isDevelopment ? '[id].css' : '[id].[hash].css',
       }),
     ],
-    devServer:
-      isDevelopment
-        ? {
-            contentBase: buildPath,
-            host: '0.0.0.0',
-            port: 6969,
-            historyApiFallback: true,
-          }
-        : {}
+    devServer: isDevelopment
+      ? {
+          contentBase: buildPath,
+          host: '0.0.0.0',
+          port: 6969,
+          historyApiFallback: true,
+        }
+      : {},
   }
 }
