@@ -28,8 +28,12 @@ const WithStateHandlers = ({
     <Spacer padding={5} />
     <Group classes={loadClass`buttons`}>
       <Button onClick={() => increment(inputValue)}>increment</Button>
-      <Button type="info" onClick={() => decrement(inputValue)}>decrement</Button>
-      <Button type="danger" onClick={reset}>reset</Button>
+      <Button type="info" onClick={() => decrement(inputValue)}>
+        decrement
+      </Button>
+      <Button type="danger" onClick={reset}>
+        reset
+      </Button>
     </Group>
     <Spacer padding={5} />
     <TextValue>{`Counter: ${counter}`}</TextValue>

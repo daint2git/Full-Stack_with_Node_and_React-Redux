@@ -22,5 +22,5 @@ export default compose(
     ...props,
     login: (username, password) =>
       props.login(username, password, props.location.query.location || 'home'),
-  }))
+  })),
 )(Login)

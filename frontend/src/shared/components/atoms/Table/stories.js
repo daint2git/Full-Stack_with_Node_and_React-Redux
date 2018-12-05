@@ -7,20 +7,20 @@ import Spacer from 'shared/components/atoms/Spacer'
 import Button from 'shared/components/atoms/Button'
 import FormField, { FieldLabel } from 'shared/components/molecules/FormField'
 import Modal, { Header, Body, Footer } from 'shared/components/molecules/Modal'
-import  { Table, Head, Body as TableBody, Row, Cell } from './'
+import { Table, Head, Body as TableBody, Row, Cell } from './'
 
 const OPTIONS = [
-  { value: '1', children: '1'},
-  { value: '2', children: '2'},
-  { value: '3', children: '3'},
+  { value: '1', children: '1' },
+  { value: '2', children: '2' },
+  { value: '3', children: '3' },
 ]
 
 const EnhancedModal = withStateHandlers(
   { isOpened: false },
   {
-    onClick: state => () => ({ ...state, isOpened: true }) ,
-    onClose: state => () => ({ ...state, isOpened: false })
-  }
+    onClick: state => () => ({ ...state, isOpened: true }),
+    onClose: state => () => ({ ...state, isOpened: false }),
+  },
 )(({ render, ...other }) => render(other))
 
 storiesOf('ATOMS|Table', module)
@@ -217,25 +217,17 @@ storiesOf('ATOMS|Table', module)
               <Body>
                 <FormField>
                   <FieldLabel size="large">Name</FieldLabel>
-                  <TextInput
-                    placeholder="Please enter username"
-                  />
+                  <TextInput placeholder="Please enter username" />
                 </FormField>
                 <Spacer />
                 <FormField>
                   <FieldLabel size="large">Describe</FieldLabel>
-                  <TextInput
-                    placeholder="Please enter describe"
-                    rows={5}
-                    multiline
-                  />
+                  <TextInput placeholder="Please enter describe" rows={5} multiline />
                 </FormField>
                 <Spacer />
                 <FormField>
                   <FieldLabel>Price</FieldLabel>
-                  <TextInput
-                    placeholder="Please enter price"
-                  />
+                  <TextInput placeholder="Please enter price" />
                 </FormField>
                 <Spacer />
                 <FormField>
@@ -245,7 +237,9 @@ storiesOf('ATOMS|Table', module)
               </Body>
               <Footer>
                 <Button size="large">Submit</Button>
-                <Button size="large" type="info">Reset</Button>
+                <Button size="large" type="info">
+                  Reset
+                </Button>
               </Footer>
             </Modal>
           )}

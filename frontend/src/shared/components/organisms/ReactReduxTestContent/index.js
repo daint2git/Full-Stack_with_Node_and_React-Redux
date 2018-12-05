@@ -40,5 +40,5 @@ export default compose(
   withStateHandlers(
     { input: '' },
     { onChange: state => e => ({ ...state, [e.target.name]: e.target.value }) },
-  )
+  ),
 )(ReactReduxTestContent)

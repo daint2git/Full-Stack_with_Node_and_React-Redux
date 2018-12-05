@@ -1,6 +1,5 @@
 {
-  "accounts": [
-    {
+  "accounts": [{
       "id": 1,
       "email": "admin@localhost.com",
       "password": "password",
@@ -31,8 +30,7 @@
       "active": "true"
     }
   ],
-  "products": [
-    {
+  "products": [{
       "id": 1,
       "name": "Iphone X 64G",
       "description": "Đã lâu lắm rồi Apple mới ra mắt một sản phẩm với thiết kế đột phá và liều lĩnh. Dù vấp phải khá nhiều ý kiến trái chiều nhưng cũng không thể phủ nhận độ hấp dẫn của chiếc iPhone thế hệ thứ 10 này. Công nghệ bảo mật mới, loại bỏ nút home truyền thống, camera với những tính năng độc quyền, tất cả đã khiến người dùng đứng ngồi không yên cho đến khi được trên tay.",

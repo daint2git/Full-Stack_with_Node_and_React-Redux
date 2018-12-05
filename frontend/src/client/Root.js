@@ -9,8 +9,6 @@ const Root = ({ store, ...other }) => (
   </Provider>
 )
 
-const EnhancedComponent = compose(
-  setPropTypes({ store: PropTypes.object.isRequired }),
-)(Root)
+const EnhancedComponent = compose(setPropTypes({ store: PropTypes.object.isRequired }))(Root)
 
 export default EnhancedComponent

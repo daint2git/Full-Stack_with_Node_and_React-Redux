@@ -1,11 +1,12 @@
 # Full-Stack with Node and React-Redux
 
-## Project information: 
-- Backend: 
+## Project information:
+
+- Backend:
   - `node` (Node.js® is a JavaScript runtime built on Chrome's V8 JavaScript engine)
   - `express` (Fast, unopinionated, minimalist web framework for Node.js)
   - `PostgreSql` (The world's most advanced open source relational database)
-- Frontend: 
+- Frontend:
   - Combination of libraries like `react, redux, router, webpack` in one project only
   - Combination of the utility libraries:
     - `date-fns` (Modern JavaScript date utility library)
@@ -25,10 +26,11 @@
 - Email: `daint2@fsoft.com.vn`
 
 ## Development Mode
+
 ### path
 
-| target | url |
-|--------|------|
-| storybook | http://localhost:1234 |
-| view | http://localhost:6969/login |
-| api | http://localhost:9696/api |
+| target    | url                         |
+| --------- | --------------------------- |
+| storybook | http://localhost:1234       |
+| view      | http://localhost:6969/login |
+| api       | http://localhost:9696/api   |

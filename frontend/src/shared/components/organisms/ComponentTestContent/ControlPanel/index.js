@@ -14,11 +14,11 @@ const ControlItem = ({ classes, list, kind, value, onChange }) => (
   <div className={loadClass`${classes}`}>
     <Radios
       list={list.map(element => ({
-          name: kind,
-          id: element,
-          checked: element === value,
-          onChange: onChange,
-          children: element,
+        name: kind,
+        id: element,
+        checked: element === value,
+        onChange: onChange,
+        children: element,
       }))}
     />
   </div>
@@ -26,20 +26,8 @@ const ControlItem = ({ classes, list, kind, value, onChange }) => (
 
 const ControlPanel = ({ type, size, ...other }) => (
   <div className={loadClass`control`}>
-    <ControlItem
-      classes="control-type"
-      kind="type"
-      list={TYPES}
-      value={type}
-      {...other}
-    />
-    <ControlItem
-      classes="control-size"
-      kind="size"
-      list={SIZES}
-      value={size}
-      {...other}
-    />
+    <ControlItem classes="control-type" kind="type" list={TYPES} value={type} {...other} />
+    <ControlItem classes="control-size" kind="size" list={SIZES} value={size} {...other} />
   </div>
 )
 

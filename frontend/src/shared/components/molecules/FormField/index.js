@@ -4,7 +4,9 @@ import styles from './styles.scss'
 const loadClass = cssModuleNameTag(styles)
 
 export const FieldLabel = ({ children, ...other }) => (
-  <div className={loadClass`field-label`} {...other}>{children}</div>
+  <div className={loadClass`field-label`} {...other}>
+    {children}
+  </div>
 )
 
 const FormField = ({ children: [leftChildren, rightChildren], ...other }) => (

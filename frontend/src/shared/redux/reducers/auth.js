@@ -6,31 +6,22 @@ import { createAction, createErrorAction, handleActions, handleAction } from './
 
 const verifySuccess = createAction('VERIFY_SUCCESS')
 const verifyFail = createAction('VERIFY_FAIL')
-const checkUser = user => !user ? Promise.reject() : Promise.resolve()
+const checkUser = user => (!user ? Promise.reject() : Promise.resolve())
 export const verify = () => {
   const user = simpleLocalStorage.getItem('user')
-  return steps(
-    checkUser(user),
-    verifySuccess,
-  )
+  return steps(checkUser(user), verifySuccess)
 }
 
 const loginSuccess = createAction('LOGIN_SUCCESS')
 const loginFail = createErrorAction('LOGIN_FAIL')
 export const login = (email, password, location) => {
-  return steps(
-    fetch({ method: 'post', url: 'accounts', data: { email, password } }),
-    [
-      account => {
-        simpleLocalStorage.setItem('user', account)
-        return steps(
-          loginSuccess({ ...account }),
-          push(location),
-        )
-      },
-      loginFail,
-    ],
-  )
+  return steps(fetch({ method: 'post', url: 'accounts', data: { email, password } }), [
+    account => {
+      simpleLocalStorage.setItem('user', account)
+      return steps(loginSuccess({ ...account }), push(location))
+    },
+    loginFail,
+  ])
 }
 
 const logoutSuccess = createAction('LOGOUT_SUCCESS')

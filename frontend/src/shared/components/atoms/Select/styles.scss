@@ -20,7 +20,7 @@
     }
   }
 
-  &::after  {
+  &::after {
     content: '';
     position: absolute;
     width: 0;
@@ -43,7 +43,8 @@
       border-color: $danger;
     }
 
-    &::after, &:focus-within:not(:active)::after {
+    &::after,
+    &:focus-within:not(:active)::after {
       border-top-color: $danger;
     }
   }

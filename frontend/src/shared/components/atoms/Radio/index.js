@@ -9,24 +9,10 @@ const loadClass = cssModuleNameTag(styles)
 
 const Radio = ({ classes, id, checked, disabled, children, ...other }) => (
   <div className={loadClass`root ${classes}`}>
-    <label
-      className={loadClass`input`}
-      htmlFor={id}
-      disabled={disabled}
-    >
-      <input
-        type="radio"
-        id={id}
-        checked={checked}
-        disabled={disabled}
-        {...other}
-      />
+    <label className={loadClass`input`} htmlFor={id} disabled={disabled}>
+      <input type="radio" id={id} checked={checked} disabled={disabled} {...other} />
       <div className={loadClass`radio`}>
-        <div
-          className={loadClass`icon`}
-          data-checked={checked}
-          data-disabled={disabled}
-        />
+        <div className={loadClass`icon`} data-checked={checked} data-disabled={disabled} />
       </div>
       {children && <div className={loadClass`children`}>{children}</div>}
     </label>

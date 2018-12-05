@@ -15,14 +15,7 @@ const EnhancedComponent = compose(
     classes: PropTypes.string,
     color: PropTypes.string,
   }),
-  mapProps(({
-    component,
-    classes,
-    weight,
-    value,
-    color,
-    ...other
-  }) => ({
+  mapProps(({ component, classes, weight, value, color, ...other }) => ({
     ...other,
     className: loadClass`root ${component} ${classes}`,
     'data-color': color,

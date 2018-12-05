@@ -1,9 +1,4 @@
-const createAction = (
-  type,
-  error = false,
-  payloadCreator = value => value,
-  metaCreator = {},
-) => {
+const createAction = (type, error = false, payloadCreator = value => value, metaCreator = {}) => {
   const actionCreator = (...args) => ({
     type,
     error,

@@ -11,12 +11,14 @@ const repeatComponent = (Component, propName = 'list') => {
     const list = props[propName]
     const restProps = { ...props }
     delete restProps[propName]
-    return list && (
-      <>
-        {list.map(elementProps =>
-          <Component key={keyGenerator(elementProps.key)} {...restProps} {...elementProps} />
-        )}
-      </>
+    return (
+      list && (
+        <>
+          {list.map(elementProps => (
+            <Component key={keyGenerator(elementProps.key)} {...restProps} {...elementProps} />
+          ))}
+        </>
+      )
     )
   }
   RepeatComponent.displayName = `repeatComponent(${getDisplayName(Component)})`

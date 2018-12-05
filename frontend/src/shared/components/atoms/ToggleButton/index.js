@@ -8,12 +8,7 @@ import styles from './styles.scss'
 const loadClass = cssModuleNameTag(styles)
 
 const ToggleButton = ({ classes, active, ...other }) => (
-  <input
-    type="checkbox"
-    className={loadClass`root ${classes}`}
-    checked={active}
-    {...other}
-  />
+  <input type="checkbox" className={loadClass`root ${classes}`} checked={active} {...other} />
 )
 
 const EnhancedComponent = compose(

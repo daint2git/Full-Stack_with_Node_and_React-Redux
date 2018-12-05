@@ -21,6 +21,6 @@ const ComponentTestContent = props => (
 export default compose(
   withStateHandlers(
     { type: 'primary', size: 'small' },
-    { onChange: state => e => ({ ...state, [e.target.name]: e.target.id })},
-  )
+    { onChange: state => e => ({ ...state, [e.target.name]: e.target.id }) },
+  ),
 )(ComponentTestContent)

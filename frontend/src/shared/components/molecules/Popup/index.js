@@ -10,7 +10,7 @@ const loadClass = cssModuleNameTag(styles)
 class Popup extends Component {
   state = { isOpened: true }
 
-  static propTypes  = {
+  static propTypes = {
     classes: PropTypes.string,
     autoClose: PropTypes.bool,
     onClose: PropTypes.func,
@@ -24,10 +24,12 @@ class Popup extends Component {
 
   render() {
     const { classes, children } = this.props
-    return this.state.isOpened && (
-      <div className={loadClass`root ${classes}`}>
-        <div className={loadClass`content`}>{children}</div>
-      </div>
+    return (
+      this.state.isOpened && (
+        <div className={loadClass`root ${classes}`}>
+          <div className={loadClass`content`}>{children}</div>
+        </div>
+      )
     )
   }
 }

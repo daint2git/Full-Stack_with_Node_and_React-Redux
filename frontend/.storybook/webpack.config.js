@@ -16,7 +16,7 @@ module.exports = (baseConfig, env) => {
     }),
     new ProvidePlugin({
       React: 'react',
-    })
+    }),
   )
 
   return config

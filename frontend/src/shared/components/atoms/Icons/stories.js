@@ -7,7 +7,7 @@ import {
   IconFilePowerPoint,
   IconFileZip,
   IconOtherFile,
-  IconLoading
+  IconLoading,
 } from '../Icons'
 
 storiesOf('ATOMS|Icons', module)

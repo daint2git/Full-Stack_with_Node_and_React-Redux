@@ -8,7 +8,9 @@ class AsyncLoaderProvider extends React.Component {
     this.props
       .task()
       .then(() => this.setState({ loaded: true }))
-      .catch(err => { throw err })
+      .catch(err => {
+        throw err
+      })
   }
 
   shouldComponentUpdate(_, nextState) {
@@ -29,9 +31,7 @@ const asyncLoader = task => Component => {
   const { Provider, Consumer } = React.createContext()
   const AsyncLoader = props => (
     <AsyncLoaderProvider task={() => task(props)} Provider={Provider}>
-      <Consumer>
-        {({ loaded }) => loaded && <Component {...props} />}
-      </Consumer>
+      <Consumer>{({ loaded }) => loaded && <Component {...props} />}</Consumer>
     </AsyncLoaderProvider>
   )
   AsyncLoader.displayName = `asyncLoader(${getDisplayName(Component)})`

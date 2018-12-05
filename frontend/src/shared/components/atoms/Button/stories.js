@@ -7,14 +7,14 @@ storiesOf('ATOMS|Button', module)
   .add('default', () => <Button>Button</Button>)
   .add('some emoji', () => (
     <Button>
-      <span role="img" aria-label="so cool">😀 😎 👍 💯</span>
+      <span role="img" aria-label="so cool">
+        😀 😎 👍 💯
+      </span>
     </Button>
   ))
   .add('disabled', () => <Button disabled>disabled</Button>)
   .add('hidden', () => <Button hidden>hidden</Button>)
-  .add('click', () => (
-    <Button onClick={() => alert('Clicked')}>Clicked</Button>
-  ))
+  .add('click', () => <Button onClick={() => alert('Clicked')}>Clicked</Button>)
   .add('type', () => (
     <>
       <Button type="primary">primary - Button</Button>

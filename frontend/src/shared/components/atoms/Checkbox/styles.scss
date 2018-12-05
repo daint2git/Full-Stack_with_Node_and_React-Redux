@@ -55,7 +55,8 @@
         &[data-checked='true'] {
           background-color: $PETER_RIVER;
 
-          &::before, &::after {
+          &::before,
+          &::after {
             display: block;
           }
         }
@@ -83,7 +84,7 @@
       cursor: default;
       pointer-events: none;
 
-      > .children {
+      >.children {
         color: $color_input_disabled_checked;
       }
     }

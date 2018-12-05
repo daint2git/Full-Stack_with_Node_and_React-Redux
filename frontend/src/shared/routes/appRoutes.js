@@ -18,17 +18,15 @@ import CssAdvancedTest from 'shared/components/pages/CssAdvancedTest'
 import ProductsPage from 'shared/components/pages/ProductsPage'
 
 const appRoutes = store => {
-
   const requiredLogin = (nextState, replace, cb) =>
-    store.dispatch(verify())
-      .then(
-        () => cb(),
-        err => {
-          console.error(err)
-          replace(`/login?location=${nextState.location.pathname}`)
-          cb()
-        }
-      )
+    store.dispatch(verify()).then(
+      () => cb(),
+      err => {
+        console.error(err)
+        replace(`/login?location=${nextState.location.pathname}`)
+        cb()
+      },
+    )
 
   return (
     <Route component={RootLayout}>

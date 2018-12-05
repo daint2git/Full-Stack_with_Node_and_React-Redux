@@ -39,10 +39,10 @@ module.exports = (_, argv = {}) => {
                 modules: true,
                 importLoaders: 1,
                 localIdentName: '[path][name]__[local]--[hash:base64:5]',
-              }
+              },
             },
             'postcss-loader',
-          ]
+          ],
         },
         {
           test: /\.(png|jpg|gif|svg|eot|ttf|woff|woff2)$/,
@@ -52,11 +52,11 @@ module.exports = (_, argv = {}) => {
               options: {
                 limit: 10000,
                 name: isDevelopment ? '[name].[ext]' : '[name].[hash].[ext]',
-              }
+              },
             },
-          ]
-        }
-      ]
+          ],
+        },
+      ],
     },
     optimization: {
       splitChunks: {

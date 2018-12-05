@@ -6,13 +6,7 @@ import styles from './styles.scss'
 
 const loadClass = cssModuleNameTag(styles)
 
-const ITEMS_1 = [
-  { label: 1 },
-  { label: 2 },
-  { label: 3 },
-  { label: 4 },
-  { label: 5 },
-]
+const ITEMS_1 = [{ label: 1 }, { label: 2 }, { label: 3 }, { label: 4 }, { label: 5 }]
 
 const ITEMS_2 = [
   { label: 1 },
@@ -51,35 +45,82 @@ const Flexbox = props => (
     <Details summary="The flex container properties are:">
       <Details summary="flex">
         <FlexContainer caption="display: flex" />
-        <FlexContainer style={{ justifyContent: 'center', alignItems: 'center' }} caption="justify-content: center, align-items: center" />
+        <FlexContainer
+          style={{ justifyContent: 'center', alignItems: 'center' }}
+          caption="justify-content: center, align-items: center"
+        />
       </Details>
       <Details summary="flex-direction">
-        <FlexContainer style={{ flexDirection: 'row' }} caption="flex-direction: row (this is default)" />
-        <FlexContainer style={{ flexDirection: 'row-reverse' }} caption="flex-direction: row-reverse" />
-        <FlexContainer style={{ height: '100%', flexDirection: 'column' }} caption="flex-direction: column" />
-        <FlexContainer style={{ height: '100%', flexDirection: 'column-reverse' }} caption="flex-direction: column-reverse" />
+        <FlexContainer
+          style={{ flexDirection: 'row' }}
+          caption="flex-direction: row (this is default)"
+        />
+        <FlexContainer
+          style={{ flexDirection: 'row-reverse' }}
+          caption="flex-direction: row-reverse"
+        />
+        <FlexContainer
+          style={{ height: '100%', flexDirection: 'column' }}
+          caption="flex-direction: column"
+        />
+        <FlexContainer
+          style={{ height: '100%', flexDirection: 'column-reverse' }}
+          caption="flex-direction: column-reverse"
+        />
       </Details>
       <Details summary="flex-wrap">
-        <FlexContainer style={{ height: '100%', flexWrap: 'wrap' }} caption="flex-wrap: wrap" list={ITEMS_2} />
-        <FlexContainer style={{ height: '100%', flexWrap: 'nowrap' }} caption="flex-wrap: nowrap (this is default)" list={ITEMS_2} />
-        <FlexContainer style={{ height: '100%', flexWrap: 'wrap-reverse' }} caption="flex-wrap: wrap-reverse" list={ITEMS_2} />
+        <FlexContainer
+          style={{ height: '100%', flexWrap: 'wrap' }}
+          caption="flex-wrap: wrap"
+          list={ITEMS_2}
+        />
+        <FlexContainer
+          style={{ height: '100%', flexWrap: 'nowrap' }}
+          caption="flex-wrap: nowrap (this is default)"
+          list={ITEMS_2}
+        />
+        <FlexContainer
+          style={{ height: '100%', flexWrap: 'wrap-reverse' }}
+          caption="flex-wrap: wrap-reverse"
+          list={ITEMS_2}
+        />
       </Details>
       <Details summary="flex-flow">
-        <FlexContainer style={{ flexFlow: 'row wrap' }} caption="flex-flow: row wrap" list={ITEMS_2} />
-        <FlexContainer style={{ flexFlow: 'column wrap' }} caption="flex-flow: column wrap" list={ITEMS_2} />
+        <FlexContainer
+          style={{ flexFlow: 'row wrap' }}
+          caption="flex-flow: row wrap"
+          list={ITEMS_2}
+        />
+        <FlexContainer
+          style={{ flexFlow: 'column wrap' }}
+          caption="flex-flow: column wrap"
+          list={ITEMS_2}
+        />
       </Details>
       <Details summary="justify-content">
         <FlexContainer style={{ justifyContent: 'center' }} caption="justify-content: center" />
-        <FlexContainer style={{ justifyContent: 'flex-start' }} caption="justify-content: flex-start (this is default)" />
+        <FlexContainer
+          style={{ justifyContent: 'flex-start' }}
+          caption="justify-content: flex-start (this is default)"
+        />
         <FlexContainer style={{ justifyContent: 'flex-end' }} caption="justify-content: flex-end" />
-        <FlexContainer style={{ justifyContent: 'space-around' }} caption="justify-content: space-around" />
-        <FlexContainer style={{ justifyContent: 'space-between' }} caption="justify-content: space-between" />
+        <FlexContainer
+          style={{ justifyContent: 'space-around' }}
+          caption="justify-content: space-around"
+        />
+        <FlexContainer
+          style={{ justifyContent: 'space-between' }}
+          caption="justify-content: space-between"
+        />
       </Details>
       <Details summary="align-items">
         <FlexContainer style={{ alignItems: 'center' }} caption="align-items: center" />
         <FlexContainer style={{ alignItems: 'flex-start' }} caption="align-items: flex-start" />
         <FlexContainer style={{ alignItems: 'flex-end' }} caption="align-items: flex-end" />
-        <FlexContainer style={{ alignItems: 'stretch' }} caption="align-items: stretch (this is default)" />
+        <FlexContainer
+          style={{ alignItems: 'stretch' }}
+          caption="align-items: stretch (this is default)"
+        />
         <FlexContainer style={{ alignItems: 'baseline' }} caption="align-items: baseline">
           <FlexItem style={{ height: '100px' }}>1</FlexItem>
           <FlexItem style={{ height: '150px' }}>2</FlexItem>
@@ -89,12 +130,36 @@ const Flexbox = props => (
         </FlexContainer>
       </Details>
       <Details summary="align-content">
-        <FlexContainer style={{ flexWrap: 'wrap', alignContent: 'center' }} caption="align-content: center, flex-wrap: wrap" list={ITEMS_2} />
-        <FlexContainer style={{ flexWrap: 'wrap', alignContent: 'flex-start' }} caption="align-content: flex-start, flex-wrap: wrap" list={ITEMS_2} />
-        <FlexContainer style={{ flexWrap: 'wrap', alignContent: 'flex-end' }} caption="align-content: flex-end, flex-wrap: wrap" list={ITEMS_2} />
-        <FlexContainer style={{ flexWrap: 'wrap', alignContent: 'space-around' }} caption="align-content: space-around, flex-wrap: wrap" list={ITEMS_2} />
-        <FlexContainer style={{ flexWrap: 'wrap', alignContent: 'space-between' }} caption="align-content: space-between, flex-wrap: wrap" list={ITEMS_2} />
-        <FlexContainer style={{ flexWrap: 'wrap', alignContent: 'stretch' }} caption="align-content: stretch (this is default), flex-wrap: wrap" list={ITEMS_2} />
+        <FlexContainer
+          style={{ flexWrap: 'wrap', alignContent: 'center' }}
+          caption="align-content: center, flex-wrap: wrap"
+          list={ITEMS_2}
+        />
+        <FlexContainer
+          style={{ flexWrap: 'wrap', alignContent: 'flex-start' }}
+          caption="align-content: flex-start, flex-wrap: wrap"
+          list={ITEMS_2}
+        />
+        <FlexContainer
+          style={{ flexWrap: 'wrap', alignContent: 'flex-end' }}
+          caption="align-content: flex-end, flex-wrap: wrap"
+          list={ITEMS_2}
+        />
+        <FlexContainer
+          style={{ flexWrap: 'wrap', alignContent: 'space-around' }}
+          caption="align-content: space-around, flex-wrap: wrap"
+          list={ITEMS_2}
+        />
+        <FlexContainer
+          style={{ flexWrap: 'wrap', alignContent: 'space-between' }}
+          caption="align-content: space-between, flex-wrap: wrap"
+          list={ITEMS_2}
+        />
+        <FlexContainer
+          style={{ flexWrap: 'wrap', alignContent: 'stretch' }}
+          caption="align-content: stretch (this is default), flex-wrap: wrap"
+          list={ITEMS_2}
+        />
       </Details>
     </Details>
     <Details summary="The flex item properties are:">

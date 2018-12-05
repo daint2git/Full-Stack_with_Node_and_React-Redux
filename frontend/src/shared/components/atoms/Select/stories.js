@@ -4,14 +4,14 @@ import { withStateHandlers } from 'recompose'
 import Select, { Option } from './'
 
 const OPTIONS = [
-  { value: '1', children: 'qwe'},
-  { value: '2', children: 'asd'},
-  { value: '3', children: 'zxc'},
+  { value: '1', children: 'qwe' },
+  { value: '2', children: 'asd' },
+  { value: '3', children: 'zxc' },
 ]
 
 const EnhancedSelect = withStateHandlers(
-  { name: 'example' , value: 'qwe' },
-  { onChange:  state => e => ({ ...state, value:  e.target.value })}
+  { name: 'example', value: 'qwe' },
+  { onChange: state => e => ({ ...state, value: e.target.value }) },
 )(({ render, ...other }) => render(other))
 
 storiesOf('ATOMS|Select', module)

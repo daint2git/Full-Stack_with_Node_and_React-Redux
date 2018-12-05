@@ -14,7 +14,7 @@ const WIDTH = 22
 const HEIGHT = 22
 
 const FileIcon = ({ fileName }) => {
-  switch(fileExtension(fileName)) {
+  switch (fileExtension(fileName)) {
     case 'pdf':
       return <IconFilePdf width={WIDTH} height={HEIGHT} />
     case 'doc':
@@ -42,8 +42,6 @@ const FileIcon = ({ fileName }) => {
   }
 }
 
-const Enhanced = compose(
-  setPropTypes({ fileName: PropTypes.string }),
-)(FileIcon)
+const Enhanced = compose(setPropTypes({ fileName: PropTypes.string }))(FileIcon)
 
 export default Enhanced

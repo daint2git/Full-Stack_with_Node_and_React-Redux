@@ -53,11 +53,7 @@ const LoginForm = ({ email, password, errors = {}, onChange, onSubmit }) => (
     </Group>
     <FormError errorMessage={errors.reason} />
     <Spacer />
-    <Button
-      classes={loadClass`button`}
-      size="large"
-      onClick={onSubmit}
-    >
+    <Button classes={loadClass`button`} size="large" onClick={onSubmit}>
       Log in
     </Button>
     <Spacer />

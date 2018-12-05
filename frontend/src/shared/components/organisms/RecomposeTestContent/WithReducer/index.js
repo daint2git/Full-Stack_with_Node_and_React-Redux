@@ -19,7 +19,9 @@ const WithReducer = ({ state: { counter }, dispatch }) => (
     <Heading component="h3">withReducer</Heading>
     <Group classes={loadClass`buttons`}>
       <Button onClick={() => dispatch({ type: INCREAMENT, value: 1 })}>increment</Button>
-      <Button type="info" onClick={() => dispatch({ type: DECREAMENT, value: 1 })}>decrement</Button>
+      <Button type="info" onClick={() => dispatch({ type: DECREAMENT, value: 1 })}>
+        decrement
+      </Button>
     </Group>
     <Spacer padding={5} />
     <TextValue>{`Counter: ${counter}`}</TextValue>
@@ -31,10 +33,13 @@ export default withReducer(
   'dispatch',
   (state, action) => {
     const { type, value } = action
-    switch(type) {
-      case INCREAMENT: return { ...state, counter: state.counter + value }
-      case DECREAMENT: return { ...state, counter: state.counter - value }
-      default: return state
+    switch (type) {
+      case INCREAMENT:
+        return { ...state, counter: state.counter + value }
+      case DECREAMENT:
+        return { ...state, counter: state.counter - value }
+      default:
+        return state
     }
   },
   { counter: 0 },

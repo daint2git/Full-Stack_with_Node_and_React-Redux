@@ -1,10 +1,8 @@
 {
-  "name": "backend",
+  "name": "fullstack-with-node-and-react-redux",
   "version": "1.0.0",
-  "description": "- Technology: \r   - `Node`\r   - `PostgreSql`\r - Author: `DaiNT2`\r - Email: `daint2@fsoft.com.vn`",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon app.js"
   },
   "author": "daint2",

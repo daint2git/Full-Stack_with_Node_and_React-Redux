@@ -6,7 +6,9 @@ import TextValue from './'
 storiesOf('ATOMS|TextValue', module)
   .add('default', () => <TextValue>TextValue</TextValue>)
   .add('ellipsis', () => (
-    <TextValue ellipsis style={{ width: '100px' }}>TextValue TextValue TextValue</TextValue>
+    <TextValue ellipsis style={{ width: '100px' }}>
+      TextValue TextValue TextValue
+    </TextValue>
   ))
   .add('align', () => (
     <>

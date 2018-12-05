@@ -22,7 +22,9 @@ export default function(props) {
   console.log(0 <= null)
   return (
     <PageLayout currentPath="/javascript">
-      <Heading component="h2" weight="bold">JavaScript page</Heading>
+      <Heading component="h2" weight="bold">
+        JavaScript page
+      </Heading>
     </PageLayout>
   )
 }

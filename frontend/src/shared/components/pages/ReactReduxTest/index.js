@@ -10,7 +10,9 @@ import PageLayout from 'shared/components/templates/PageLayout'
 
 const ReactReduxTest = props => (
   <PageLayout currentPath="/react-redux">
-    <Heading component="h2" weight="bold">React-redux page</Heading>
+    <Heading component="h2" weight="bold">
+      React-redux page
+    </Heading>
     <ReactReduxTestContent {...props} />
   </PageLayout>
 )

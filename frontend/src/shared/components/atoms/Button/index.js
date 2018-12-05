@@ -16,21 +16,22 @@ const EnhancedComponent = compose(
   }),
   setPropTypes({
     classes: PropTypes.string,
-    type: PropTypes.oneOf(['primary', 'secondary', 'success', 'danger', 'warning', 'info', 'light', 'dark']),
+    type: PropTypes.oneOf([
+      'primary',
+      'secondary',
+      'success',
+      'danger',
+      'warning',
+      'info',
+      'light',
+      'dark',
+    ]),
     size: PropTypes.oneOf(['small', 'medium', 'large']),
     disabled: PropTypes.bool,
     shouldPreventSubmit: PropTypes.bool,
     hidden: PropTypes.bool,
   }),
-  mapProps(({
-    classes,
-    type,
-    size,
-    disabled,
-    shouldPreventSubmit,
-    dispatch,
-    ...other
-  }) => ({
+  mapProps(({ classes, type, size, disabled, shouldPreventSubmit, dispatch, ...other }) => ({
     ...other,
     className: loadClass`root animation ${classes}`,
     'data-type': type,
@@ -40,8 +41,8 @@ const EnhancedComponent = compose(
   branch(({ hidden }) => hidden, renderNothing),
 )(Button)
 
-const ConnectedComponent = connect(
-  state => ({ shouldPreventSubmit: state.loading.shouldPreventSubmit }),
-)(EnhancedComponent)
+const ConnectedComponent = connect(state => ({
+  shouldPreventSubmit: state.loading.shouldPreventSubmit,
+}))(EnhancedComponent)
 
 export default (STORY_BOOK ? EnhancedComponent : ConnectedComponent)

@@ -21,13 +21,7 @@ const EnhancedComponent = compose(
   defaultProps({
     onChange: noop,
   }),
-  mapProps(({
-    classes,
-    attention,
-    align,
-    multiline,
-    ...other
-  }) => ({
+  mapProps(({ classes, attention, align, multiline, ...other }) => ({
     ...other,
     className: loadClass`root ${classes}`,
     'data-attention': attention,

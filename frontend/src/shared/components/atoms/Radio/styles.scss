@@ -76,7 +76,7 @@
       cursor: default;
       pointer-events: none;
 
-      > .children {
+      >.children {
         color: $color_input_disabled_checked;
       }
     }

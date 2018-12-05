@@ -28,7 +28,7 @@ module.exports.postAccount = (req, res, next) => {
         avatar: responseData[0].avatar,
         isAdministrator: responseData[0].role === 'administrator',
         isEditor: responseData[0].role === 'editor',
-        isViewer: responseData[0].role === 'viewer'
+        isViewer: responseData[0].role === 'viewer',
       }
       if (password !== account.password) {
         errors.password = 'Password is invalid!'

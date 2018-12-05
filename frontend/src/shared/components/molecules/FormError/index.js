@@ -8,7 +8,9 @@ const loadClass = cssModuleNameTag(styles)
 
 const FormError = ({ errorMessage, children, ...other }) => (
   <div className={loadClass`root`} {...other}>
-    <TextValue color="danger" align="center">{errorMessage || children}</TextValue>
+    <TextValue color="danger" align="center">
+      {errorMessage || children}
+    </TextValue>
   </div>
 )
 

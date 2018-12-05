@@ -13,7 +13,9 @@ const loading = (store, next, action) => {
       return data
     })
     .catch(error => {
-      const { response: { status, data } } = error
+      const {
+        response: { status, data },
+      } = error
       clearTimeout(timerId)
       dispatch(stopLoading())
       return Promise.reject({ status, data })

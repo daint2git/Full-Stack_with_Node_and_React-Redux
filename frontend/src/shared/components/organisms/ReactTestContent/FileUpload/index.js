@@ -30,11 +30,7 @@ function FileView(props) {
 }
 
 function FileUpload(props) {
-  const {
-    file,
-    fileId,
-    onChangeFile,
-  } = props
+  const { file, fileId, onChangeFile } = props
   return (
     <div className={loadClass`root`}>
       <Button onClick={() => document.getElementById(fileId).click()}>Upload</Button>
@@ -52,6 +48,6 @@ export default compose(
     },
     {
       onChangeFile: state => e => ({ ...state, file: e.target.files[0] }),
-    }
-  )
+    },
+  ),
 )(FileUpload)

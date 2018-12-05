@@ -9,7 +9,9 @@ const loadClass = cssModuleNameTag(styles)
 const Table = compose(
   setPropTypes({ classes: PropTypes.string }),
   mapProps(({ classes, ...other }) => ({ ...other, className: loadClass`root ${classes}` })),
-)(function Table(props) { return <table {...props} /> })
+)(function Table(props) {
+  return <table {...props} />
+})
 
 const CellContext = React.createContext('head')
 

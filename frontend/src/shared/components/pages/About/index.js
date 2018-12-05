@@ -3,7 +3,9 @@ import PageLayout from 'shared/components/templates/PageLayout'
 
 const About = props => (
   <PageLayout currentPath="/about">
-    <Heading component="h2" weight="bold">Author by DaiNT2</Heading>
+    <Heading component="h2" weight="bold">
+      Author by DaiNT2
+    </Heading>
   </PageLayout>
 )
 

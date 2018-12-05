@@ -4,7 +4,9 @@ import PageLayout from 'shared/components/templates/PageLayout'
 
 const ComponentTest = props => (
   <PageLayout currentPath="/component">
-    <Heading component="h2" weight="bold">Component page</Heading>
+    <Heading component="h2" weight="bold">
+      Component page
+    </Heading>
     <ComponentTestContent {...props} />
   </PageLayout>
 )

@@ -11,3 +11,9 @@ storiesOf('MOLECULES|FormField', module)
       <TextInput placeholder="Please enter username" />
     </FormField>
   ))
+  .add('default', () => (
+    <FormField>
+      <TextValue>password</TextValue>
+      <TextInput placeholder="Please enter password" />
+    </FormField>
+  ))

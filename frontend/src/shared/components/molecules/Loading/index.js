@@ -13,12 +13,7 @@ const Loading = ({ loading }) => (
   <div className={cssModules`root`} data-loading={loading}>
     <Overlay type="loading" />
     <div className={cssModules`icon`}>
-      <IconLoading
-        className={cssModules`animation`}
-        alt="loading"
-        width={50}
-        height={50}
-      />
+      <IconLoading className={cssModules`animation`} alt="loading" width={50} height={50} />
     </div>
   </div>
 )
@@ -28,8 +23,6 @@ const EnhancedComponent = compose(
   setPropTypes({ loading: PropTypes.bool.isRequired }),
 )(Loading)
 
-const ConnectedComponent = connect(
-  state => ({ loading: state.loading.loading }),
-)(EnhancedComponent)
+const ConnectedComponent = connect(state => ({ loading: state.loading.loading }))(EnhancedComponent)
 
 export default (STORY_BOOK ? EnhancedComponent : ConnectedComponent)

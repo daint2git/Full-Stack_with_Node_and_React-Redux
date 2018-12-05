@@ -34,9 +34,7 @@ const CreateProductModal = ({
   onReset,
 }) => (
   <Modal onClose={closeModal} classes={loadClass`modal`}>
-    <Header onClose={closeModal}>
-      {type === CREATE ? 'Add new product' : 'Detail product'}
-    </Header>
+    <Header onClose={closeModal}>{type === CREATE ? 'Add new product' : 'Detail product'}</Header>
     <Body>
       <FormField>
         <FieldLabel size="large">Name</FieldLabel>
@@ -106,11 +104,7 @@ const CreateProductModal = ({
       <Spacer />
       <FormField>
         <FieldLabel>Active</FieldLabel>
-        <ToggleButton
-          name="active"
-          active={active}
-          onChange={onActiveChange}
-        />
+        <ToggleButton name="active" active={active} onChange={onActiveChange} />
       </FormField>
     </Body>
     <Footer>
@@ -136,41 +130,41 @@ const INITIAL_LOCAL_STATE = ({ modal: { type, form } }) => ({
 })
 
 export default compose(
-  withStateHandlers(props => INITIAL_LOCAL_STATE(props),
-    {
-      onChange: state => e => ({ ...state, [e.target.name]: e.target.value }),
-      onActiveChange: state => e => ({ ...state, [e.target.name]: e.target.checked }),
-      onSubmit: (state, props) => e => {
-        const { name, description, image, price, quantity, manufacturer, category, active } = state
-        const { modal: { type, form: { id } }, createProduct, updateProduct } = props
-        return type === CREATE
-          ? createProduct(
-              {
-                name,
-                description,
-                image,
-                price,
-                quantity,
-                manufacturer,
-                category,
-                active,
-              }
-            )
-          : updateProduct(
-              id,
-              {
-                name,
-                description,
-                image,
-                price,
-                quantity,
-                manufacturer,
-                category,
-                active,
-              }
-            )
-      },
-      onReset: (_, props) => () => INITIAL_LOCAL_STATE(props),
+  withStateHandlers(props => INITIAL_LOCAL_STATE(props), {
+    onChange: state => e => ({ ...state, [e.target.name]: e.target.value }),
+    onActiveChange: state => e => ({ ...state, [e.target.name]: e.target.checked }),
+    onSubmit: (state, props) => e => {
+      const { name, description, image, price, quantity, manufacturer, category, active } = state
+      const {
+        modal: {
+          type,
+          form: { id },
+        },
+        createProduct,
+        updateProduct,
+      } = props
+      return type === CREATE
+        ? createProduct({
+            name,
+            description,
+            image,
+            price,
+            quantity,
+            manufacturer,
+            category,
+            active,
+          })
+        : updateProduct(id, {
+            name,
+            description,
+            image,
+            price,
+            quantity,
+            manufacturer,
+            category,
+            active,
+          })
     },
-  ),
+    onReset: (_, props) => () => INITIAL_LOCAL_STATE(props),
+  }),
 )(CreateProductModal)

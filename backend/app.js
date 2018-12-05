@@ -18,10 +18,12 @@ app.use(express.urlencoded({ extended: true }))
 // for parsing multipart/form-data
 app.use(upload.array())
 
-app.use(cors({
-  credentials: true,
-  origin: 'http://localhost:6969',
-}))
+app.use(
+  cors({
+    credentials: true,
+    origin: 'http://localhost:6969',
+  }),
+)
 
 app.use('/api/accounts', accountsRouter)
 app.use('/api/products', productsRouter)

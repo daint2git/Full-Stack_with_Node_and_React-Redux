@@ -14,11 +14,7 @@ export const Option = props => <option {...props} />
 const Options = repeatComponent(Option, 'options')
 
 const Select = ({ classes, attention, disabled, options, children, ...other }) => (
-  <div
-    className={loadClass`root ${classes}`}
-    data-attention={attention}
-    data-disabled={disabled}
-  >
+  <div className={loadClass`root ${classes}`} data-attention={attention} data-disabled={disabled}>
     <select disabled={disabled} {...other}>
       {either(children)(<Options options={options} />)}
     </select>

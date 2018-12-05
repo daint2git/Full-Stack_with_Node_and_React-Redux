@@ -13,7 +13,9 @@ import PageLayout from 'shared/components/templates/PageLayout'
 
 const ProductsPage = ({ user: { isViewer }, openCreateModal, ...other }) => (
   <PageLayout currentPath="/products">
-    <Heading component="h2" weight="bold">Products page</Heading>
+    <Heading component="h2" weight="bold">
+      Products page
+    </Heading>
     <Spacer />
     <WrapLayout>
       <Button size="large" disabled={isViewer} onClick={openCreateModal}>

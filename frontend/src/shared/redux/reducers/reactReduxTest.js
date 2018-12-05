@@ -7,10 +7,7 @@ export const changeInput = text => changeInputSuccess({ text })
 
 const readProductsSuccess = createAction('READ_PRODUCTS_SUCCESS')
 export const readProducts = request =>
-  steps(
-    fetch({ method: 'get', url: 'products', ...request }),
-    [readProductsSuccess],
-  )
+  steps(fetch({ method: 'get', url: 'products', ...request }), [readProductsSuccess])
 
 export const INITIAL_STATE = () => ({
   result: '',

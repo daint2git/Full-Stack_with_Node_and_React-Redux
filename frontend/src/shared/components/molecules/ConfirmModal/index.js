@@ -13,8 +13,12 @@ const ConfirmModal = ({ classes, title, children, onClick, onClose }) => (
     <Header onClose={onClose}>{title}</Header>
     <Body>{children}</Body>
     <Footer>
-      <Button size="large" type="danger" onClick={onClick}>OK</Button>
-      <Button size="large" type="light" onClick={onClose}>CANCEL</Button>
+      <Button size="large" type="danger" onClick={onClick}>
+        OK
+      </Button>
+      <Button size="large" type="light" onClick={onClose}>
+        CANCEL
+      </Button>
     </Footer>
   </Modal>
 )

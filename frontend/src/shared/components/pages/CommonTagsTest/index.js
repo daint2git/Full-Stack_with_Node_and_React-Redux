@@ -20,32 +20,29 @@ import Figure from 'shared/components/atoms/Figure'
 import TextInput from 'shared/components/atoms/TextInput'
 import PageLayout from 'shared/components/templates/PageLayout'
 
-const StaticHtml = props => (
+const StaticHtml = props =>
   html`
-  <h3>About page</h3>
-  <div>About text</div>
-  <div>
-    <p>html of common-tags</p>
-  </div>
-`
-)
+    <h3>About page</h3>
+    <div>About text</div>
+    <div><p>html of common-tags</p></div>
+  `
 
 const CommonTagsTest = props => (
   <PageLayout currentPath="/common-tags">
-    <Heading component="h2" weight="bold">common-tags module page</Heading>
+    <Heading component="h2" weight="bold">
+      common-tags module page
+    </Heading>
     <Details summary="Available Tags">
       <Figure caption="stripIndent">
         <TextInput
           multiline
           rows="4"
-          placeholder={
-            stripIndent`
+          placeholder={stripIndent`
               This is a multi-line string.
               You'll notice that it is indented.
               We don't want to output this indentation.
                   But we do want to keep this line indented.
-            `
-          }
+            `}
           onChange={() => {}}
         />
       </Figure>
@@ -53,123 +50,103 @@ const CommonTagsTest = props => (
         <TextInput
           multiline
           rows="4"
-          placeholder={
-            stripIndents`
+          placeholder={stripIndents`
               This is a multi-line string.
               You'll notice that it is indented.
               We don't want to output this indentation.
                   But we do want to keep this line indented.
-            `
-          }
+            `}
         />
       </Figure>
       <Figure caption="oneLine">
         <TextInput
           multiline
           rows="4"
-          placeholder={
-            oneLine`
+          placeholder={oneLine`
               foo
               bar
               baz
-            `
-          }
+            `}
         />
       </Figure>
       <Figure caption="inlineLists">
         <TextInput
           multiline
           rows="4"
-          placeholder={
-            inlineLists`
+          placeholder={inlineLists`
               I like ${['apples', 'bananas', 'watermelons']}
               They're good!
-            `
-          }
+            `}
         />
       </Figure>
       <Figure caption="oneLineInlineLists">
         <TextInput
           multiline
           rows="4"
-          placeholder={
-            oneLineInlineLists`
+          placeholder={oneLineInlineLists`
               I like ${['apples', 'bananas', 'watermelons']}
               They're good!
-            `
-          }
+            `}
         />
       </Figure>
       <Figure caption="commaLists">
         <TextInput
           multiline
           rows="4"
-          placeholder={
-            commaLists`
+          placeholder={commaLists`
               I like ${['apples', 'bananas', 'watermelons']}
               They're good!
-            `
-          }
+            `}
         />
       </Figure>
       <Figure caption="commaListsOr">
         <TextInput
           multiline
           rows="4"
-          placeholder={
-            commaListsOr`
+          placeholder={commaListsOr`
               I like ${['apples', 'bananas', 'watermelons']}
               They're good!
-            `
-          }
+            `}
         />
       </Figure>
       <Figure caption="commaListsAnd">
         <TextInput
           multiline
           rows="4"
-          placeholder={
-            commaListsAnd`
+          placeholder={commaListsAnd`
               I like ${['apples', 'bananas', 'watermelons']}
               They're good!
-            `
-          }
+            `}
         />
       </Figure>
       <Figure caption="oneLineCommaLists">
         <TextInput
           multiline
           rows="4"
-          placeholder={
-            oneLineCommaLists`
+          placeholder={oneLineCommaLists`
               I like ${['apples', 'bananas', 'watermelons']}
               They're good!
-            `
-          }
+            `}
         />
       </Figure>
       <Figure caption="oneLineCommaListsOr">
         <TextInput
           multiline
           rows="4"
-          placeholder={
-            oneLineCommaListsOr`
+          placeholder={oneLineCommaListsOr`
               I like ${['apples', 'bananas', 'watermelons']}
               They're good!
-            `
-          }
+            `}
         />
       </Figure>
       <Figure caption="oneLineCommaListsAnd">
         <TextInput
           multiline
           rows="4"
-          placeholder={
-            oneLineCommaListsAnd`
+          placeholder={oneLineCommaListsAnd`
               I like ${['apples', 'bananas', 'watermelons']}
               They're good!
-            `
-          }
+            `}
         />
       </Figure>
       <StaticHtml />
@@ -179,39 +156,31 @@ const CommonTagsTest = props => (
         <TextInput
           multiline
           rows="4"
-          placeholder={
-            oneLine`
+          placeholder={oneLine`
               foo
               bar\nbaz
-            `
-          }
+            `}
         />
         <TextInput
           multiline
           rows="4"
-          placeholder={
-            oneLine`
+          placeholder={oneLine`
               ${String.raw`
                 foo
                 bar\nbaz
               `}
-            `
-          }
+            `}
         />
         <TextInput
           multiline
           rows="4"
-          placeholder={
-            oneLine(String.raw)`
+          placeholder={oneLine(String.raw)`
               foo
               bar\nbaz
-            `
-          }
+            `}
         />
       </Figure>
-      <Figure caption="Make Your Own Template Tag">
-        {new TemplateTag()`foo bar`}
-      </Figure>
+      <Figure caption="Make Your Own Template Tag">{new TemplateTag()`foo bar`}</Figure>
     </Details>
   </PageLayout>
 )
