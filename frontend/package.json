@@ -50,7 +50,7 @@
     "date-fns": "^1.29.0",
     "file-extension": "^4.0.5",
     "immer": "^1.5.0",
-    "lodash-es": "^4.17.10",
+    "lodash-es": "^4.17.14",
     "prop-types": "^15.6.2",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
