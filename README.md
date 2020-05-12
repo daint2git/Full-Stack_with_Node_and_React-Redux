@@ -23,7 +23,6 @@
     - css3
   - Components are created in my style
 - Author: `DaiNT2`
-- Email: `daint2@fsoft.com.vn`
 
 ## Development Mode
 
