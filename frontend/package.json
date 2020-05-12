@@ -2,7 +2,6 @@
   "name": "fullstack-with-node-and-react-redux",
   "version": "1.0.0",
   "main": "index.js",
-  "author": "daint2@fsoft.com.vn",
   "license": "MIT",
   "engines": {
     "node": ">=8.10.0",
